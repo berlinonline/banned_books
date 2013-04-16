@@ -1,0 +1,13 @@
+
+class %%PROJECT_NAME%%::honeybee-core {
+
+  Exec { path => [ '/bin/', '/sbin/' , '/usr/bin/', '/usr/sbin/' ] }
+  
+  $project_basedir = "$::hosting_root/%%PROJECT_NAME%%"
+
+  nginx::site { '%%PROJECT_NAME%%.dev':
+    name => 'cms.%%PROJECT_NAME%%',
+    server_name => 'cms.%%PROJECT_NAME%%.dev',
+    docroot => "$project_basedir/applications/honeybee-core/honeybee/pub"
+  }
+}

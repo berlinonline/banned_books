@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ae:configurations
+    xmlns="http://berlinonline.de/schemas/honeybee/imports/1.0"
+    xmlns:env="http://berlinonline.de/schemas/honeybee/config/envelope/definition/1.0"
+    xmlns:ae="http://agavi.org/agavi/config/global/envelope/1.0">
+    <ae:configuration>
+        <consumers>
+
+            <consumer name="banned-books-csv" class="Honeybee\Core\Import\Consumer\ModuleConsumer">
+                <provider name="csv-provider" class="Honeybee\Core\Import\Provider\CsvProvider">
+                    <settings>
+                        <setting name="filepath">%core.app_dir%/project/verbannte-buecher.csv</setting>
+                    </settings>
+                </provider>
+                <settings>
+                    <setting name="module">Honeybee\Domain\Book\BookModule</setting>
+                    <setting name="update_field">meta[csvImportId]</setting>
+                </settings>
+                <filters>
+                    <filter name="default" class="Honeybee\Core\Import\Filter\RemapFilter">
+                        <settings>
+                            <setting name="include_unmapped">off</setting>
+                            <setting name="map">
+                                <setting name="ss">ssFlag</setting>
+                                <setting name="autor_vorname">authorFirstname</setting>
+                                <setting name="autor_nachname">authorLastname</setting>
+                                <setting name="titel">title</setting>
+                                <setting name="verlag">publisherOne</setting>
+                                <setting name="ort">placeOne</setting>
+                                <setting name="jahr">yearOne</setting>
+                                <setting name="verlag_2">publisherTwo</setting>
+                                <setting name="ort_2">placeTwo</setting>
+                                <setting name="jahr_2">yearTwo</setting>
+                                <setting name="weitere">additionalInfos</setting>
+                                <setting name="seite">pageNumber</setting>
+                                <setting name="volltext">ocrResult</setting>
+                                <setting name="id">meta[csvImportId]</setting>
+                            </setting>
+                        </settings>
+                    </filter>
+                </filters>
+            </consumer>
+
+        </consumers>
+    </ae:configuration>
+</ae:configurations>

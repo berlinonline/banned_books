@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ae:configurations
+    xmlns="http://agavi.org/agavi/config/parts/validators/1.0"
+    xmlns:ae="http://agavi.org/agavi/config/global/envelope/1.0"
+    parent="%core.module_dir%/Book/config/validators.xml">
+    <ae:configuration>
+        <validators>
+
+            <validator class="or" name="invalid_book" required="true">
+                <validator class="BookDocumentValidator" name="invalid_book_data" required="false">
+                    <arguments>
+                        <argument>book</argument>
+                    </arguments>
+                    <errors>
+                        <error>An invalid (book)id was given.</error>
+                    </errors>
+                </validator>
+
+                <validator class="BookDocumentValidator" name="invalid_book_id" required="false">
+                    <arguments>
+                        <argument>id</argument>
+                    </arguments>
+                    <errors>
+                        <error>An invalid id was given.</error>
+                    </errors>
+                </validator>
+            </validator>
+
+            <validator class="string" name="invalid_gate" required="false">
+                <arguments>
+                    <argument>gate</argument>
+                </arguments>
+                <errors>
+                    <error>An invalid gate was given.</error>
+                </errors>
+            </validator>
+
+        </validators>
+    </ae:configuration>
+</ae:configurations>

@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ae:configurations
+    xmlns="http://agavi.org/agavi/config/parts/validators/1.0"
+    xmlns:ae="http://agavi.org/agavi/config/global/envelope/1.0"
+    parent="%core.module_dir%/Book/config/validators.xml">
+    <ae:configuration>
+        <validators method="read">
+            <validator class="BookDocumentValidator" name="invalid_book_id" required="false">
+                <arguments>
+                    <argument>id</argument>
+                </arguments>
+            </validator>
+        </validators>
+
+        <validators method="write">
+            <validator class="BookDocumentValidator" name="invalid_book" required="false">
+                <arguments>
+                    <argument>book</argument>
+                </arguments>
+            </validator>
+        </validators>
+    </ae:configuration>
+</ae:configurations>

@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ae:configurations
+    xmlns="http://berlinonline.de/schemas/honeybee/config/access_control/1.0" 
+    xmlns:env="http://berlinonline.de/schemas/honeybee/config/envelope/definition/1.0" 
+    xmlns:ae="http://agavi.org/agavi/config/global/envelope/1.0">
+    <ae:configuration>
+        <!-- 
+            Defines all actions that shall be available upon the book resource.
+
+            :INFO:
+            In opposite to the permissions file, which will probally vanish,
+            this file will serve as a source to the later rights gui,
+            allowing to show the available actions per resource/module.
+        -->
+        <resources>
+            <resource name="book">
+                <description>Defines a resource that represents book documents.</description>
+                <actions>
+                    <action>book.edit::read</action>
+                    <action>book.edit::write</action>
+                    <action>book.edit::promote</action>
+                    <action>book.edit::delete</action>
+
+                    <action>book.publish::write</action>
+                    <action>book.publish::promote</action>
+                    <action>book.publish::demote</action>
+
+                    <action>book.published::read</action>
+                    <action>book.published::write</action>
+                    <action>book.published::promote</action>
+                    <action>book.published::demote</action>
+                    <action>book.published::delete</action>
+
+                    <action>book.archive::write</action>
+                    <action>book.archive::promote</action>
+                    <action>book.archive::demote</action>
+
+                    <action>book.archived::read</action>
+                    <action>book.archived::write</action>
+                    <action>book.archived::promote</action>
+                    <action>book.archived::demote</action>
+                    <action>book.archived::delete</action>
+
+                    <action>book.delete::write</action>
+                </actions>
+            </resource>
+        </resources>
+    </ae:configuration>
+</ae:configurations>

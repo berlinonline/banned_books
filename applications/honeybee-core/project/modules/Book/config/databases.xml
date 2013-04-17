@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ae:configurations 
+    xmlns="http://agavi.org/agavi/config/parts/databases/1.0" 
+    xmlns:ae="http://agavi.org/agavi/config/global/envelope/1.0">
+    <ae:configuration>
+        <databases default="Book.Write">
+
+            <database name="Book.Write" class="Honeybee\Agavi\Database\CouchDb\Database">
+                <ae:parameter name="url">http://127.0.0.1:5984/</ae:parameter>
+                <ae:parameter name="database">honeybee_book</ae:parameter>
+                <ae:parameter name="setup">true</ae:parameter>
+                <ae:parameter name="scripts_dir">%core.modules_dir%/Book/config/couchdb/</ae:parameter>
+            </database>
+
+            <database name="Book.Read" class="Honeybee\Agavi\Database\ElasticSearch\Database">
+                <ae:parameter name="host">127.0.0.1</ae:parameter>
+                <ae:parameter name="port">9200</ae:parameter>
+                <ae:parameter name="transport">Http</ae:parameter>
+                <ae:parameter name="index">honeybee_book</ae:parameter>
+                <ae:parameter name="setup">true</ae:parameter>
+                <ae:parameter name="mapping_dir">%core.modules_dir%/Book/config/elasticsearch/</ae:parameter>
+                <ae:parameter name="river">
+                    <ae:parameter name="couch_db">honeybee_book</ae:parameter>
+                </ae:parameter>
+            </database>
+
+            <!-- Example frontend export config:
+            <database name="Category.Pulq.Fe" class="Honeybee\Agavi\Database\CouchDb\Database">
+                <ae:parameter name="url">http://127.0.0.1:5984/</ae:parameter>
+                <ae:parameter name="database">famport_pulq_fe_category</ae:parameter>
+                <ae:parameter name="setup">true</ae:parameter>
+                <ae:parameter name="scripts_location">%project.dir%/config/couchdb/</ae:parameter>
+            </database>
+            -->
+        </databases>
+    </ae:configuration>
+</ae:configurations>

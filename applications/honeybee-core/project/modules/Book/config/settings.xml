@@ -124,6 +124,9 @@
                                         <ae:parameter>pageNumber</ae:parameter>
                                         <ae:parameter>ocrResult</ae:parameter>
                                     </ae:parameter>
+				    <ae:parameter name="corrections">
+                                        <ae:parameter>corrections</ae:parameter>
+                                    </ae:parameter>	
                                 </ae:parameter>
                             </ae:parameter>
 

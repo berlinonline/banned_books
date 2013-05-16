@@ -69,6 +69,10 @@
             <description>Holds the result of running an ocr scan over the list-page of banned books.</description>
         </field>
 
+	<field name="corrections" type="textarea">
+            <description>Holds a set of correction notices.</description>
+        </field>
+
         <!--
         ##############################################################################
         #  Below you'll find mandatory boilerplate markup for honeybee integration.  #

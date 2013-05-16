@@ -58,6 +58,7 @@
                             <ae:parameter name="ssFlag">SS-Index</ae:parameter>
                             <ae:parameter name="pageNumber">Seitennummer</ae:parameter>
                             <ae:parameter name="ocrResult">OCR Scanergebnis</ae:parameter>
+                            <ae:parameter name="corrections">Berichtigungen</ae:parameter>
                             
                             <ae:parameter name="publisherOne">Verlag</ae:parameter>
                             <ae:parameter name="publisherTwo">Verlag</ae:parameter>
@@ -72,6 +73,7 @@
                         <ae:parameter name="de">
                             <ae:parameter name="edit-form-title">Book erstellen/bearbeiten</ae:parameter>
                             <ae:parameter name="meta">Metadaten</ae:parameter>
+                            <ae:parameter name="corrections">Berichtigungen</ae:parameter>
                             <ae:parameter name="main">Stammdaten</ae:parameter>
                             <ae:parameter name="content">Inhalte</ae:parameter>
                             <ae:parameter name="primary-published">Erstauflage</ae:parameter>

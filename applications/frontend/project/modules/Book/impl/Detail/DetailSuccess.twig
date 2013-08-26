@@ -1,0 +1,35 @@
+<div class="books-alphabetical">
+    <h1>{{book.title}}</h1>
+    <dl>
+
+        <dt>Titel</dt>
+        <dd>{{book.title}}</dd>
+
+        <dt>Authoren</dt>
+        <dd>
+            <ul>
+            {% for author in book.authors %}
+                <li>{{author.first_name}} {{author.last_name}}</li>
+            {% endfor %}
+            </ul>
+        </dd>
+
+        <dt>Ausgaben</dt>
+        <dd>
+            <ul>
+            {% for edition in book.editions %}
+                <li>
+                    <dl>
+                        <dt>Verlag</dt>
+                        <dd>{{edition.publisher}}</dd>
+                        <dt>Ort</dt>
+                        <dd>{{edition.location}}</dd>
+                        <dt>Jahr</dt>
+                        <dd>{{edition.year}}</dd>
+                    </dl>
+                </li>
+            {% endfor %}
+            </ul>
+        </dd>
+    </dl>
+</div>

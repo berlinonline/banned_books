@@ -1,0 +1,67 @@
+{
+    "settings": {
+        "number_of_shards": 1,
+        "number_of_replicas": 1,
+        "analysis": {
+            "analyzer" : {
+                "DefaultAnalyzer": {
+                    "type": "custom",
+                    "tokenizer": "whitespace",
+                    "filter": [
+                        "lowercase"
+                    ]
+                },
+                "AutoCompleteAnalyzer": {
+                    "type": "custom",
+                    "tokenizer": "whitespace",
+                    "filter": [
+                        "lowercase",
+                        "edge"
+                    ]
+                },
+                "FirstLetterAnalyzer": {
+                    "type": "custom",
+                    "tokenizer": "first_letter"
+                },
+                "IcuAnalyzer_DE": {
+                    "type": "custom",
+                    "tokenizer": "keyword",
+                    "filter": [
+                        "collation_de"
+                    ]
+                }
+            },
+            "filter" : {
+                "snowball": {
+                    "type": "snowball",
+                    "language": "German2"
+                },
+                "edge": {
+                  "type": "edgeNGram",
+                  "min_gram": 1,
+                  "max_gram": 10,
+                  "side": "front"
+                },
+                "collation_de": {
+                    "type": "icu_collation",
+                    "language": "de",
+                    "country": "DE",
+                    "alternate": "shifted",
+                    "caseLevel": true,
+                    "caseFirst": "upper",
+                    "numeric": true,
+                    "hiraganaQuaternaryMode": false
+                }
+            },
+            "tokenizer" : {
+                "first_letter" : {
+                    "type" : "edgeNGram",
+                    "min_gram" : "1",
+                    "max_gram" : "1"
+                }
+            }
+        }
+    },
+    "mappings": {
+    }
+}

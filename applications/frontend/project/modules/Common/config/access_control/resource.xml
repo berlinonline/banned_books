@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ae:configurations
+    xmlns="http://berlinonline.de/schemas/pulq/config/access_control/1.0" 
+    xmlns:env="http://berlinonline.de/schemas/pulq/config/envelope/definition/1.0" 
+    xmlns:ae="http://agavi.org/agavi/config/global/envelope/1.0">
+    <ae:configuration>
+        <!-- 
+            Defines all actions that shall be available upon the common resource.
+
+            :INFO:
+            In opposite to the permissions file, which will probally vanish,
+            this file will serve as a source to the later rights gui,
+            allowing to show the available actions per resource/module.
+        -->
+        <resources>
+            <resource name="common">
+                <description>Defines a resource that represents common documents.</description>
+                <actions>
+                    <action>common.edit::read</action>
+                    <action>common.edit::write</action>
+
+                    <action>common.publish::write</action>
+
+                    <action>common.published::read</action>
+                    <action>common.published::write</action>
+
+                    <action>common.archive::write</action>
+
+                    <action>common.archived::read</action>
+                    <action>common.archived::write</action>
+
+                    <action>common.delete::write</action>
+                    <action>common.publish::write</action>
+                </actions>
+            </resource>
+        </resources>
+    </ae:configuration>
+</ae:configurations>

@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ae:configurations
+    xmlns:ae="http://agavi.org/agavi/config/global/envelope/1.0"
+    xmlns="http://agavi.org/agavi/config/parts/filters/1.0">
+    <ae:configuration context="web" environment="(development.*|preview|stage)">
+        <filters>
+            <filter name="EsiFilter" class="Pulq\Agavi\Filter\EsiFilter">
+                <ae:parameter name="output_types">
+                    <ae:parameter>html</ae:parameter>
+                </ae:parameter>
+            </filter>
+        </filters>
+    </ae:configuration>
+</ae:configurations>

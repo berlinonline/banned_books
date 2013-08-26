@@ -1,0 +1,29 @@
+<!doctype html>
+<html>
+<head>
+    <title>{{ _title }} - Berlin.de</title>
+    <meta charset="UTF-8" />    
+    {% set locale = tm.getCurrentLocale() %}
+    {% set dir = locale.getCharacterOrientation() == 'right-to-left' ? 'rtl' : 'ltr' %}
+    {% set is_error_page = TRUE == rq.getAttribute('is_error_page') %}
+    <!-- <base href="{{ ro.getBaseHref() }}" id="base_href"/> -->
+    <esi:include src="https://www.berlin.de/template/land9/__ml/land9_abs/head.inc" /> 
+    <!-- %%STYLESHEETS%% -->
+
+   
+   </head>
+   <body data-spy="scroll" data-target=".famport.content-navi-left" data-offset="100" class="{{_body_class}}">
+        <!-- Include for portal header -->
+        <esi:include src="https://www.berlin.de/template/land9/__ml/land9_abs/top.inc" /> 
+            <!-- *********************************************************
+                    MAIN CONTENT AREA (WHITE BG)
+            ********************************************************** -->
+                {{ slots.header|raw }}
+                {{ inner|raw }}
+                {{ slots.footer|raw }}
+        <!-- Include for portal footer -->
+        <esi:include src="https://www.berlin.de/template/land9/__ml/land9_abs/foot.inc" />
+        <!-- %%JAVASCRIPTS%% -->
+        <script src="http://service.berlin.de/feedback/js.php"></script>
+    </body>
+</html>

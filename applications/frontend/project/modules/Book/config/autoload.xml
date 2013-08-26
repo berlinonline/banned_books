@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ae:configurations 
+    xmlns="http://agavi.org/agavi/config/parts/autoload/1.0" 
+    xmlns:ae="http://agavi.org/agavi/config/global/envelope/1.0">
+    <ae:configuration>
+
+        <!-- Agavi -->
+        <autoload name="BookBaseAction">%core.module_dir%/Book/lib/agavi/action/BookBaseAction.class.php</autoload>
+        <autoload name="BookBaseView">%core.module_dir%/Book/lib/agavi/view/BookBaseView.class.php</autoload>
+        
+        <!-- Service -->
+        <autoload name="BookService">%core.module_dir%/Book/lib/BookService.class.php</autoload>
+
+        <!-- Data Objects -->
+        <autoload name="Book">%core.module_dir%/Book/lib/Book.class.php</autoload>
+
+        <!-- Validators -->
+        <autoload name="BookSlugValidator">%core.module_dir%/Book/lib/Book.class.php</autoload>
+
+        <!-- Validators -->
+        <autoload name="BookSlugValidator">%core.module_dir%/Book/lib/agavi/validate/BookSlugValidator.class.php</autoload>
+    </ae:configuration>
+</ae:configurations>

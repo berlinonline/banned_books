@@ -1,0 +1,72 @@
+{
+    "index_analyzer": "DefaultAnalyzer",
+    "search_analyzer": "DefaultAnalyzer",
+    "dynamic" : false,
+    "_source": { "enabled": true },
+    "properties" : {
+        "title": {
+            "type": "multi_field",
+            "fields": {
+                "title": {
+                    "type": "string",
+                    "store": true
+                },
+                "raw": {
+                    "type": "string",
+                    "index": "not_analyzed",
+                    "store": true
+                },
+                "first": {
+                    "type": "string",
+                    "index_analyzer": "FirstLetterAnalyzer",
+                    "store": true
+                }
+            }
+        },
+        "authors": {
+            "type": "object",
+            "properties": {
+                "first_name": {
+                    "type": "string"
+                },
+                "last_name": {
+                    "type": "string"
+                }
+            }
+        },
+        "edition": {
+            "type": "object",
+            "properties": {
+                "publisher": {
+                    "type": "string"
+                },
+                "location": {
+                    "type": "string"
+                },
+                "year": {
+                    "type": "string"
+                }
+            }
+        },
+        "pages": {
+            "type": "integer"
+        },
+        "ss": {
+            "type": "boolean"
+        },
+        "slug": {
+            "type": "multi_field",
+            "fields": {
+                "title": {
+                    "type": "string",
+                    "store": true
+                },
+                "raw": {
+                    "type": "string",
+                    "index": "not_analyzed",
+                    "store": true
+                }
+            }
+        }
+    }
+}

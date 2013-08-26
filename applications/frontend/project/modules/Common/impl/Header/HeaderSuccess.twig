@@ -1,0 +1,52 @@
+<!-- *********************************************************
+        CONTENT-HEADER
+********************************************************** -->
+<div class="row">
+    <div class="span12">
+
+
+        <!-- template start: content-header -->
+        <div class="html5-header content-header ">
+            <div class="row-fluid">
+                <div class="span6">
+                    <div class="html5-section section-logo">
+                        {#
+                        <div class="html5-figure image">
+                            <a href="#">
+                                <img src="/berlinonline/images/logo_ba_mh.png" alt="" />
+                            </a>
+                        </div><!-- /html5-figure -->
+                        #}
+                        <div class="html5-section text">
+                            <a href="#">
+                                <span class="institution">Verbotene Bücher</span>
+                            </a>
+                        </div><!-- /html5-section -->
+                    </div><!-- /html5-section -->
+                </div>
+                <div class="span6">
+                    <div class="html5-nav meta-navi">
+                        <ul class="nav">
+                            <li><a href="{{ro.gen('book.byletter')}}">Bücher A-Z</a></li>
+                            <li><a href="#">Impressum</a></li>
+                            {#<li class="socialMedia"><a href=""><img src="/berlinonline/images/schland.png" alt="" /></a></li>#}
+                        </ul>
+                    </div><!-- /html5-nav -->
+                    {{ slots.searchform|raw }}
+                </div>
+            </div>
+        </div><!-- /html5-header -->
+        <!-- /template end: content-header -->
+
+    </div>
+</div>
+
+
+<!-- *********************************************************
+        CONTENT-HEAD-NAVIGATION
+********************************************************** -->
+<div class="row" >
+    <div class="span12">
+
+    </div>
+</div>

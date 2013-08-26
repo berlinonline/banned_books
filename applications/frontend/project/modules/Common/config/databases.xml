@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ae:configurations 
+    xmlns="http://agavi.org/agavi/config/parts/databases/1.0" 
+    xmlns:ae="http://agavi.org/agavi/config/global/envelope/1.0">
+    <ae:configuration>
+        <databases default="Common.Read">
+            <database name="Common.Read" class="Pulq\Agavi\Database\ElasticSearch\RiverSetupDatabase">
+                <ae:parameter name="host">127.0.0.1</ae:parameter>
+                <ae:parameter name="port">9200</ae:parameter>
+                <ae:parameter name="transport">Http</ae:parameter>
+                <ae:parameter name="index">
+                    <ae:parameter name="name">pulq_common</ae:parameter>
+                    <ae:parameter name="definition_filename">common.index.json</ae:parameter>
+                    <ae:parameter name="setup_dir">%core.modules_dir%/common/config/elasticsearch/</ae:parameter>
+                    <ae:parameter name="types">
+                        <ae:parameter>common</ae:parameter>
+                    </ae:parameter>
+                </ae:parameter>
+
+                <ae:parameter name="couchdb">
+                    <ae:parameter name="url">http://localhost:5984/</ae:parameter>
+                    <ae:parameter name="database">common_fe</ae:parameter>
+                </ae:parameter>
+                <ae:parameter name="river_script">common.river.js</ae:parameter>
+                <ae:parameter name="river_settings">
+                    <ae:parameter name="bulk_size">100</ae:parameter>
+                    <ae:parameter name="bulk_timeout">0.1s</ae:parameter>
+                </ae:parameter>
+            </database>
+
+        </databases>
+    </ae:configuration>
+</ae:configurations>

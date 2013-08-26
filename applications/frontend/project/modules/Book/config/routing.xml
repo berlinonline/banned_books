@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ae:configurations 
+    xmlns:ae="http://agavi.org/agavi/config/global/envelope/1.0" 
+    xmlns="http://agavi.org/agavi/config/parts/routing/1.0">
+    <ae:configuration context="web">
+        <routes>
+            <route name="book" pattern="/buecher" module="Book">
+                <route name=".byletter" pattern="/alphabetisch/(letter:[A-Za-zÄÖÜ])?$" action="ByLetter" method="read">
+                    <defaults>
+                        <default for="letter">A</default>
+                    </defaults>
+                </route>
+                <route name=".detail" pattern="/(book:[A-Za-z0-9ÄÖÜäöüß-]+)$" action="Detail" method="read" />
+            </route>
+        </routes>
+    </ae:configuration>
+
+    <ae:configuration context="console">
+        <routes>
+        </routes>
+    </ae:configuration>
+</ae:configurations>

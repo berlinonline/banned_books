@@ -1,0 +1,121 @@
+{
+  "mappings": {
+    "book": {
+      "search_analyzer": "DefaultAnalyzer",
+      "index_analyzer": "DefaultAnalyzer",
+      "dynamic": false,
+      "properties": {
+        "publishers": {
+          "type": "string"
+        },
+        "slug": {
+          "fields": {
+            "raw": {
+              "index": "not_analyzed",
+              "type": "string",
+              "store": true
+            },
+            "title": {
+              "type": "string",
+              "store": true
+            }
+          },
+          "type": "multi_field"
+        },
+        "description": {
+          "type": "string",
+          "store": true
+        },
+        "title": {
+          "fields": {
+            "raw": {
+              "index": "not_analyzed",
+              "type": "string",
+              "store": true
+            },
+            "title": {
+              "type": "string",
+              "store": true
+            }
+          },
+          "type": "multi_field"
+        },
+        "locations": {
+          "type": "string"
+        },
+        "editors": {
+          "type": "string"
+        },
+        "authors": {
+          "type": "object",
+          "properties": {
+            "first_name": {
+              "type": "string"
+            },
+            "last_name": {
+              "type": "string"
+            }
+          }
+        },
+        "pages": {
+          "type": "number"
+        }
+      },
+      "_source": {
+        "enabled": true
+      }
+    }
+  },
+  "settings": {
+    "number_of_replicas": 1,
+    "analysis": {
+      "filter": {
+        "collation_de": {
+          "language": "de",
+          "country": "DE",
+          "alternate": "shifted",
+          "numeric": true,
+          "caseLevel": true,
+          "hiraganaQuaternaryMode": false,
+          "type": "icu_collation",
+          "caseFirst": "upper"
+        },
+        "snowball": {
+          "type": "snowball",
+          "language": "German2"
+        },
+        "edge": {
+          "max_gram": 10,
+          "type": "edgeNGram",
+          "side": "front",
+          "min_gram": 1
+        }
+      },
+      "analyzer": {
+        "IcuAnalyzer_DE": {
+          "filter": [
+            "collation_de"
+          ],
+          "type": "custom",
+          "tokenizer": "keyword"
+        },
+        "AutoCompleteAnalyzer": {
+          "filter": [
+            "lowercase",
+            "edge"
+          ],
+          "type": "custom",
+          "tokenizer": "whitespace"
+        },
+        "DefaultAnalyzer": {
+          "filter": [
+            "lowercase"
+          ],
+          "type": "custom",
+          "tokenizer": "whitespace"
+        }
+      }
+    },
+    "number_of_shards": 1
+  }
+}

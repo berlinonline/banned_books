@@ -1,0 +1,26 @@
+<h1>{{title}}</h1>
+<div class="items-alphabetical">
+    <div>
+        <ul class="azlist-pager">
+        {% for letter, link in letter_links %}
+
+            <li class="{% if not link %}inactive{% endif %}">
+                <a {% if link %}href="{{link}}"{% endif %}>{{letter}}</a>
+            </li>
+        {% endfor %}
+        </ul>
+    </div>
+
+    <div class="azlist">
+        <h2 class="azlist-letter">{{letter}}</h2>
+        <ul class="list">
+        {% for item in items %}
+            <li class="{{loop.index0}}">
+                <a href="{{item.url}}">
+                    {{item.listText}}
+                </a>
+            </li>
+        {% endfor %}
+        </ul>
+    </div>
+<div>

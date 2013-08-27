@@ -10,14 +10,16 @@
         
         <!-- Service -->
         <autoload name="BookService">%core.module_dir%/Book/lib/BookService.class.php</autoload>
+        <autoload name="AuthorService">%core.module_dir%/Book/lib/AuthorService.class.php</autoload>
+        <autoload name="PublisherService">%core.module_dir%/Book/lib/PublisherService.class.php</autoload>
+        <autoload name="AlphabeticalService">%core.module_dir%/Book/lib/AlphabeticalService.class.php</autoload>
 
         <!-- Data Objects -->
         <autoload name="Book">%core.module_dir%/Book/lib/Book.class.php</autoload>
+        <autoload name="Author">%core.module_dir%/Book/lib/Author.class.php</autoload>
+        <autoload name="Publisher">%core.module_dir%/Book/lib/Publisher.class.php</autoload>
 
         <!-- Validators -->
-        <autoload name="BookSlugValidator">%core.module_dir%/Book/lib/Book.class.php</autoload>
-
-        <!-- Validators -->
-        <autoload name="BookSlugValidator">%core.module_dir%/Book/lib/agavi/validate/BookSlugValidator.class.php</autoload>
+        <autoload name="SlugValidator">%core.module_dir%/Book/lib/agavi/validate/SlugValidator.class.php</autoload>
     </ae:configuration>
 </ae:configurations>

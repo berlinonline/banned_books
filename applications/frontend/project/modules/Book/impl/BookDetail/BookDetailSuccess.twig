@@ -1,0 +1,35 @@
+<div class="book-detail">
+    <h1>{{book.title}}</h1>
+    <dl>
+
+        <dt>Titel</dt>
+        <dd>{{book.title}}</dd>
+
+        <dt>Authoren</dt>
+        <dd>
+            <ul>
+            {% for author in book.authors %}
+                <li><a href="{{author.url}}">{{author.fullName}}</a></li>
+            {% endfor %}
+            </ul>
+        </dd>
+
+        <dt>Ausgaben</dt>
+        <dd>
+            <ul>
+            {% for edition in book.editions %}
+                <li>
+                    <dl>
+                        <dt>Verlag</dt>
+                        <dd><a href="{{edition.publisher.url}}">{{edition.publisher.name}}</a></dd>
+                        <dt>Ort</dt>
+                        <dd>{{edition.location}}</dd>
+                        <dt>Jahr</dt>
+                        <dd>{{edition.year}}</dd>
+                    </dl>
+                </li>
+            {% endfor %}
+            </ul>
+        </dd>
+    </dl>
+</div>

@@ -1,0 +1,20 @@
+<div class="author-detail">
+    <h1>{{author.fullName}}</h1>
+    <dl>
+
+        <dt>Vorname</dt>
+        <dd>{{author.firstName}}</dd>
+
+        <dt>Nachname</dt>
+        <dd>{{author.lastName}}</dd>
+
+        <dt>Bücher</dt>
+        <dd>
+            <ul>
+            {% for book in author.books %}
+                <li><a href="{{book.url}}">{{book.title}}</a></li>
+            {% endfor %}
+            </ul>
+        </dd>
+    </dl>
+</div>

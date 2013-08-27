@@ -16,7 +16,7 @@
         -->
         <system_actions>
             <system_action name="default">
-                <module>Book</module>
+                <module>Common</module>
                 <action>Index</action>
             </system_action>
             <system_action name="error_404">

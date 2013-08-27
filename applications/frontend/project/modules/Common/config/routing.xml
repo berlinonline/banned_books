@@ -4,8 +4,14 @@
     xmlns="http://agavi.org/agavi/config/parts/routing/1.0">
     <ae:configuration context="web">
         <routes>
+            <route name="common.search" pattern="^/suche$" module="Common" action="Search" />
             <route name="common" pattern="/common" module="Common">
-                <route name=".index" pattern="/$" action="Index" method="read" />
+                <route
+                    name=".searchsuggest"
+                    pattern="/searchsuggest$"
+                    action="SearchSuggest"
+                    method="read"
+                    output_type="json" />
             </route>
         </routes>
     </ae:configuration>

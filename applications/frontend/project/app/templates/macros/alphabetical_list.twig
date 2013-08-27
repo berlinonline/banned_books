@@ -1,0 +1,33 @@
+{#
+    @param items        A list of items, each containing a "title" and a "url" property
+    @param letter_links An associative array with letters as keys
+                        and urls/null as values, null values will be rendered
+                        with "inactive" class
+#}
+{% macro alphabetical_list(items, letter_links, letter) %}
+<div class="items-alphabetical">
+    <div>
+        <ul class="azlist-pager">
+        {% for letter, link in letter_links %}
+
+            <li class="{% if not link %}inactive{% endif %}">
+                <a {% if link %}href="{{link}}"{% endif %}>{{letter}}</a>
+            </li>
+        {% endfor %}
+        </ul>
+    </div>
+
+    <div class="azlist">
+        <h2 class="azlist-letter">{{letter}}</h2>
+        <ul class="list">
+        {% for item in items %}
+            <li class="{{loop.index0}}">
+                <a href="{{item.url}}">
+                    {{item.title}}
+                </a>
+            </li>
+        {% endfor %}
+        </ul>
+    </div>
+<div>
+{% endmacro %}

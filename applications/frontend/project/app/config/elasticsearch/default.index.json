@@ -9,7 +9,8 @@
                     "tokenizer": "whitespace",
                     "filter": [
                         "lowercase"
-                    ]
+                    ],
+                    "char_filter": ["punctuation"]
                 },
                 "AutoCompleteAnalyzer": {
                     "type": "custom",
@@ -58,6 +59,12 @@
                     "type" : "edgeNGram",
                     "min_gram" : "1",
                     "max_gram" : "1"
+                }
+            },
+            "char_filter" : {
+                "punctuation" : {
+                    "type": "mapping",
+                    "mappings": [".=>", ",=>", "~=>"]
                 }
             }
         }

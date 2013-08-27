@@ -1,0 +1,13 @@
+<div class="publisher-detail">
+    <h1>{{publisher.name}}</h1>
+    <dl>
+        <dt>Bücher</dt>
+        <dd>
+            <ul>
+            {% for book in publisher.books %}
+                <li><a href="{{book.url}}">{{book.title}}</a></li>
+            {% endfor %}
+            </ul>
+        </dd>
+    </dl>
+</div>

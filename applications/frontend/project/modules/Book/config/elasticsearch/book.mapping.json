@@ -26,19 +26,85 @@
         "authors": {
             "type": "object",
             "properties": {
-                "first_name": {
-                    "type": "string"
+                "firstName": {
+                    "type": "multi_field",
+                    "fields": {
+                        "firstName": {
+                            "type": "string",
+                            "store": true
+                        },
+                        "raw": {
+                            "type": "string",
+                            "index": "not_analyzed",
+                            "store": true
+                        }
+                    }
                 },
-                "last_name": {
-                    "type": "string"
+                "lastName": {
+                    "type": "multi_field",
+                    "fields": {
+                        "lastName": {
+                            "type": "string",
+                            "store": true
+                        },
+                        "raw": {
+                            "type": "string",
+                            "index": "not_analyzed",
+                            "store": true
+                        }
+                    }
+                },
+                "slug": {
+                    "type": "multi_field",
+                    "fields": {
+                        "title": {
+                            "type": "string",
+                            "store": true
+                        },
+                        "raw": {
+                            "type": "string",
+                            "index": "not_analyzed",
+                            "store": true
+                        }
+                    }
                 }
             }
         },
-        "edition": {
+        "editions": {
             "type": "object",
             "properties": {
                 "publisher": {
-                    "type": "string"
+                    "type": "object",
+                    "properties": {
+                        "name": {
+                            "type": "multi_field",
+                            "fields": {
+                                "publisher": {
+                                    "type": "string",
+                                    "store": true
+                                },
+                                "raw": {
+                                    "type": "string",
+                                    "index": "not_analyzed",
+                                    "store": true
+                                }
+                            }
+                        },
+                        "slug": {
+                            "type": "multi_field",
+                            "fields": {
+                                "title": {
+                                    "type": "string",
+                                    "store": true
+                                },
+                                "raw": {
+                                    "type": "string",
+                                    "index": "not_analyzed",
+                                    "store": true
+                                }
+                            }
+                        }
+                    }
                 },
                 "location": {
                     "type": "string"
@@ -65,6 +131,20 @@
                     "type": "string",
                     "index": "not_analyzed",
                     "store": true
+                }
+            }
+        },
+        "suggest": {
+            "type": "multi_field",
+            "fields": {
+                "suggest": {
+                    "type": "string",
+                    "index_analyzer": "AutoCompleteAnalyzer"
+                },
+                "result": {
+                    "type": "string",
+                    "index_analyzer": "DefaultAnalyzer",
+                    "search_analyzer": "DefaultAnalyzer"
                 }
             }
         }

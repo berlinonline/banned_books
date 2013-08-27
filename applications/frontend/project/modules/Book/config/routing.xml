@@ -5,12 +5,36 @@
     <ae:configuration context="web">
         <routes>
             <route name="book" pattern="/buecher" module="Book">
-                <route name=".byletter" pattern="/alphabetisch/(letter:[A-Za-zÄÖÜ])?$" action="ByLetter" method="read">
+                <route name=".byletter" pattern="/alphabetisch/(letter:[A-Za-zÄÖÜ])?$" action="Alphabetical" method="read">
                     <defaults>
                         <default for="letter">A</default>
+                        <default for="type">book</default>
+                        <default for="title">Bücher A-Z</default>
                     </defaults>
                 </route>
-                <route name=".detail" pattern="/(book:[A-Za-z0-9ÄÖÜäöüß-]+)$" action="Detail" method="read" />
+                <route name=".detail" pattern="/(book:[A-Za-z0-9ÄÖÜäöüß-]+)$" action="BookDetail" method="read" />
+            </route>
+
+            <route name="author" pattern="/autoren" module="Book">
+                <route name=".byletter" pattern="/alphabetisch/(letter:[A-Za-zÄÖÜ])?$" action="Alphabetical" method="read">
+                    <defaults>
+                        <default for="letter">A</default>
+                        <default for="type">author</default>
+                        <default for="title">Autoren A-Z</default>
+                    </defaults>
+                </route>
+                <route name=".detail" pattern="/(author:[A-Za-z0-9ÄÖÜäöüß-]+)$" action="AuthorDetail" method="read" />
+            </route>
+
+            <route name="publisher" pattern="/verlage" module="Book">
+                <route name=".byletter" pattern="/alphabetisch/(letter:[A-Za-zÄÖÜ])?$" action="Alphabetical" method="read">
+                    <defaults>
+                        <default for="letter">A</default>
+                        <default for="type">publisher</default>
+                        <default for="title">Verlage A-Z</default>
+                    </defaults>
+                </route>
+                <route name=".detail" pattern="/(publisher:[A-Za-z0-9ÄÖÜäöüß-]+)$" action="PublisherDetail" method="read" />
             </route>
         </routes>
     </ae:configuration>

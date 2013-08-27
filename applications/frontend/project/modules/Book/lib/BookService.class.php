@@ -49,43 +49,34 @@ class BookService extends BaseElasticSearchService
         return $book_set[0];
     }
 
-    public function getStartingLetters()
-    {
-        $query = Query::create(new Query\MatchAll());
-
-        $title_facet = new Facet\Terms('title');
-        $title_facet->setField('title.raw');
-        $title_facet->setScript("term != '' ? term[0] : term");
-        $query->addFacet($title_facet);
-
-        $resultData = $this->executeQuery($query);
-
-        $facet_results = $resultData->getFacets();
-
-        $results = $facet_results['title']['terms'];
-
-        $letters = array_unique(
-            array_map(
-                function($element) {
-                    return strtoupper($element['term']);
-                },
-                $results
-            )
-        );
-
-        return $letters;
-    }
-
-    public function getByStartingLetter($letter)
-    {
-        $filter = new Filter\Term(array('title.first' => $letter));
-        #echo json_encode($query->toArray());die();
+    public function getByAuthor(Author $author) {
+        $filter = new Filter\Term(array(
+            'authors.firstName.raw' => $author->getFirstName(),
+            'authors.lastName.raw' => $author->getLastName(),
+        ));
         $query = Query::create($filter);
+        #echo json_encode($query->toArray());die();
 
         $query->setLimit(10000);
 
         $resultData = $this->executeQuery($query);
 
         return $this->extractFromResultSet($resultData);
+
+    }
+
+    public function getByPublisher(Publisher $publisher) {
+        $filter = new Filter\Term(array(
+            'editions.publisher.name.raw' => $publisher->getName(),
+        ));
+        $query = Query::create($filter);
+        #echo json_encode($query->toArray());die();
+
+        $query->setLimit(10000);
+
+        $resultData = $this->executeQuery($query);
+
+        return $this->extractFromResultSet($resultData);
+
     }
 }

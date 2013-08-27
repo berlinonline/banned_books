@@ -1,0 +1,58 @@
+{
+    "index_analyzer": "DefaultAnalyzer",
+    "search_analyzer": "DefaultAnalyzer",
+    "dynamic" : false,
+    "_source": { "enabled": true },
+    "properties" : {
+        "firstName": {
+            "type": "string"
+        },
+        "lastName": {
+            "type": "multi_field",
+            "fields": {
+                "lastName": {
+                    "type": "string",
+                    "store": true
+                },
+                "raw": {
+                    "type": "string",
+                    "index": "not_analyzed",
+                    "store": true
+                },
+                "first": {
+                    "type": "string",
+                    "index_analyzer": "FirstLetterAnalyzer",
+                    "store": true
+                }
+            }
+        },
+        "slug": {
+            "type": "multi_field",
+            "fields": {
+                "title": {
+                    "type": "string",
+                    "store": true
+                },
+                "raw": {
+                    "type": "string",
+                    "index": "not_analyzed",
+                    "store": true
+                }
+            }
+        },
+        "suggest": {
+            "type": "multi_field",
+            "fields": {
+                "suggest": {
+                    "type": "string",
+                    "index_analyzer": "AutoCompleteAnalyzer"
+                },
+                "result": {
+                    "type": "string",
+                    "index_analyzer": "DefaultAnalyzer",
+                    "search_analyzer": "DefaultAnalyzer"
+                }
+            }
+        }
+    }
+}

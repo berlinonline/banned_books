@@ -1,0 +1,42 @@
+<h1>{{_title}}</h1>
+
+{% if books %}
+<h2>Bücher</h2>
+<ul class="list">
+{% for book in books %}
+    <li class="{{loop.index0}}">
+        <a href="{{book.url}}">
+            {{book.listText}}
+        </a>
+    </li>
+{% endfor %}
+</ul>
+{% endif %}
+
+
+{% if authors %}
+<h2>Autoren</h2>
+<ul class="list">
+{% for author in authors %}
+    <li class="{{loop.index0}}">
+        <a href="{{author.url}}">
+            {{author.listText}}
+        </a>
+    </li>
+{% endfor %}
+</ul>
+{% endif %}
+
+
+{% if publishers %}
+<h2>Verlage</h2>
+<ul class="list">
+{% for publisher in publishers %}
+    <li class="{{loop.index0}}">
+        <a href="{{publisher.url}}">
+            {{publisher.listText}}
+        </a>
+    </li>
+{% endfor %}
+</ul>
+{% endif %}

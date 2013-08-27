@@ -15,6 +15,7 @@ class Book extends BaseDataObject
         return array(
             'list' => array(
                 'title',
+                'listText',
                 'url',
             ),
             'detail' => array(
@@ -32,5 +33,24 @@ class Book extends BaseDataObject
         $routing = \AgaviContext::getInstance()->getRouting();
 
         return $routing->gen('book.detail', array('book' => $this->slug));
+    }
+
+    public function getListText() {
+        return $this->title;
+    }
+
+    public function getAuthors() {
+        return array_map(function($data) {
+            $author = new Author($data);
+            return $author->toArray('list');
+        }, $this->authors);
+    }
+
+    public function getEditions() {
+        return array_map(function($edition) {
+            $publisher = new Publisher($edition['publisher']);
+            $edition['publisher'] = $publisher->toArray('list');
+            return $edition;
+        }, $this->editions);
     }
 }

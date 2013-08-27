@@ -18,7 +18,7 @@
                         </div><!-- /html5-figure -->
                         #}
                         <div class="html5-section text">
-                            <a href="#">
+                            <a href="{{ro.getBaseHref()}}">
                                 <span class="institution">Verbotene Bücher</span>
                             </a>
                         </div><!-- /html5-section -->
@@ -28,8 +28,9 @@
                     <div class="html5-nav meta-navi">
                         <ul class="nav">
                             <li><a href="{{ro.gen('book.byletter')}}">Bücher A-Z</a></li>
-                            <li><a href="#">Impressum</a></li>
-                            {#<li class="socialMedia"><a href=""><img src="/berlinonline/images/schland.png" alt="" /></a></li>#}
+                            <li><a href="{{ro.gen('author.byletter')}}">Autoren A-Z</a></li>
+                            <li><a href="{{ro.gen('publisher.byletter')}}">Verlage A-Z</a></li>
+                            {#<li><a href="#">Impressum</a></li>#}
                         </ul>
                     </div><!-- /html5-nav -->
                     {{ slots.searchform|raw }}

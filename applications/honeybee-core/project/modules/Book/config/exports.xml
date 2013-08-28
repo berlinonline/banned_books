@@ -30,6 +30,16 @@
                             </setting>
                         </settings>
                     </filter>
+                    <filter name="suggest-combine" class="Honeybee\Core\Export\Filter\CombineFilter">
+                        <settings>
+                            <setting name="key">suggest</setting>
+                            <setting name="fieldnames">
+                                <settings>
+                                    <setting>title</setting>
+                                </settings>
+                            </setting>
+                        </settings>
+                    </filter>
                 </filters>
             </export>
         </exports>

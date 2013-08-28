@@ -3,7 +3,6 @@
     <ae:configuration>
 
         <available_locales default_locale="de_DE">
-			<!-- German, Germany -->
             <available_locale identifier="de_DE">
                 <ae:parameter name="description">Deutsch</ae:parameter>
             </available_locale>
@@ -14,20 +13,31 @@
                 <message_translator class="AgaviSimpleTranslator">
                      <ae:parameter name="labels">
                         <ae:parameter name="de">
-                            <ae:parameter name="brand-name">Verbotene Bücher - CMS</ae:parameter>
-                            <ae:parameter name="brand-title">Verbotene Bücher - CMS</ae:parameter>
+                            <ae:parameter name="brand-name">Verbannte Bücher - CMS</ae:parameter>
+                            <ae:parameter name="brand-title">Liste von Büchern die zur NS-Zeit verboten wurden.</ae:parameter>
+                            <ae:parameter name="book">Bücher</ae:parameter>
                             <ae:parameter name="Book">Bücher</ae:parameter>
+                            <ae:parameter name="user">CMS Nutzer</ae:parameter>
+                            <ae:parameter name="User">CMS Nutzer</ae:parameter>
                         </ae:parameter>
                         <ae:parameter name="en">
-                            <ae:parameter name="brand-name">Banned Books CMS</ae:parameter>
-                            <ae:parameter name="brand-title">Banned Books - CMS</ae:parameter>
-                            <ae:parameter name="Book">Books</ae:parameter>
+                            <ae:parameter name="brand-name">Banned Books</ae:parameter>
+                            <ae:parameter name="brand-title">List of books that where banned during the NS-Regim in Germany.</ae:parameter>
                         </ae:parameter>
                     </ae:parameter>
                 </message_translator>
         </translator>
+        <!-- example for translating custom roles.
+        <translator domain="user">
+            <message_translator class="AgaviSimpleTranslator">
+                 <ae:parameter name="roles">
+                    <ae:parameter name="de">
+                        <ae:parameter name="third-party-editor">Nutzer mit eingeschr. Rechten (Drittanbieter)</ae:parameter>
+                    </ae:parameter>
+                </ae:parameter>
+            </message_translator>
+        </translator> -->
     </translators>
 
     </ae:configuration>
 </ae:configurations>
-

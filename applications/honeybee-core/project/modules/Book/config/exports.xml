@@ -5,27 +5,33 @@
     xmlns:ae="http://agavi.org/agavi/config/global/envelope/1.0">
     <ae:configuration>
         <exports>
-            <!--
-            <export name="pulq-fe" class="Honeybee\Core\Export\DocumentExport">
+            <export name="pulq-fe" class="\Honeybee\Core\Export\DocumentExport">
                 <description>
-                    Exports books to the couchdb export database, which serves as an elasticsearch river source.
+                    Exports book to the couchdb export database, which serves as an elasticsearch river source.
                 </description>
                 <settings>
-                    <setting name="connection">Book.Pulq.Fe</setting>
+                    <setting name="storage">
+                        <setting name="implementor">\Honeybee\Core\Storage\CouchDb\GenericStorage</setting>
+                        <setting name="connection">Book.Pulq.Fe</setting>
+                    </setting>
                 </settings>
                 <filters>
                     <filter name="simple-props" class="Honeybee\Core\Export\Filter\PropertyFilter">
                         <settings>
                             <setting name="properties">
                                 <setting name="title">title</setting>
-                                <setting name="authorFirstname">description</setting>
-                                <setting name="authorLastname">slug</setting>
+                                <setting name="ssFlag">ss</setting>
+                                <setting name="additionalInfos">infos</setting>
+                                <setting name="pageNumber">page</setting>
+                                <setting name="slug">slug</setting>
+                                <setting name="authorFirstname">authors[0][firstName]</setting>
+                                <setting name="authorLastname">authors[0][lastName]</setting>
+                                <setting name="editions">editions</setting>
                             </setting>
                         </settings>
                     </filter>
                 </filters>
             </export>
-            -->
         </exports>
     </ae:configuration>
 </ae:configurations>

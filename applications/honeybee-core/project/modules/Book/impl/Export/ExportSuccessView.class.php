@@ -2,8 +2,8 @@
 
 class Book_Export_ExportSuccessView extends BookBaseView
 {
-    public function executeText(AgaviRequestDataHolder $parameters)
+    public function executeConsole(\AgaviRequestDataHolder $request_data)
     {
-        $this->getResponse()->setContent("Finished exporting ur Book documents.");
+        $this->getResponse()->setContent("Finished exporting Book documents.");
     }
 }

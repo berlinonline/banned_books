@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<ae:configurations 
-    xmlns="http://berlinonline.de/schemas/honeybee/workflow/1.0" 
+<ae:configurations
+    xmlns="http://berlinonline.de/schemas/honeybee/workflow/1.0"
     xmlns:ae="http://agavi.org/agavi/config/global/envelope/1.0">
     <ae:configuration>
         <workflow name="book.default">
@@ -27,19 +27,18 @@
                 <step name="publish">
                     <description>Tries to publish a given book document.</description>
                     <plugin type="Honeybee\Core\Workflow\Plugin\PublishPlugin">
-                        <!-- <ae:parameters>
+                        <ae:parameters>
                             <ae:parameter name="exports">
                                 <ae:parameters>
                                     <ae:parameter>pulq-fe</ae:parameter>
                                 </ae:parameters>
                             </ae:parameter>
-                        </ae:parameters> -->
+                        </ae:parameters>
                         <gates>
                             <gate_step label="publishing ok" name="promote">published</gate_step>
                             <gate_step label="publishing error" name="demote">edit</gate_step>
                         </gates>
                     </plugin>
-
                 </step>
 
                 <step name="published">
@@ -48,6 +47,11 @@
                         <ae:parameters>
                             <ae:parameter name="module">Book</ae:parameter>
                             <ae:parameter name="action">Edit</ae:parameter>
+                            <ae:parameter name="exports">
+                                <ae:parameters>
+                                    <ae:parameter>pulq-fe</ae:parameter>
+                                </ae:parameters>
+                            </ae:parameter>
                         </ae:parameters>
                         <gates>
                             <gate_step label="archive book" name="promote">archive</gate_step>

@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ae:configurations xmlns:ae="http://agavi.org/agavi/config/global/envelope/1.0" xmlns="http://agavi.org/agavi/config/parts/routing/1.0">
+    <ae:configuration context="web">
+        <routes>
+            <route name="dummy" pattern="" />
+        </routes>
+    </ae:configuration>
+
+    <ae:configuration context="console">
+        <routes>
+            <route pattern="^migrate.run$" action="Migrate" method="write">
+                <ae:parameter name="description">Migrate project data structures to a different version.</ae:parameter>
+            </route>
+            <route pattern="^migrate.list$" action="List_Migrations" method="read">
+                <ae:parameter name="description">Lists available migrations.</ae:parameter>
+            </route>
+        </routes>
+    </ae:configuration>
+
+</ae:configurations>

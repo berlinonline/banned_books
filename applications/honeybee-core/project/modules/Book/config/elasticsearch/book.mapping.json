@@ -39,6 +39,10 @@
           "analyzer":"IcuAnalyzer_DE",
           "inlclude_in_all":false
         },
+        "filter":{
+          "type":"string",
+          "index":"not_analyzed"
+        },
         "suggest":{
           "type":"string",
           "analyzer":"AutoCompleteAnalyzer",
@@ -60,6 +64,10 @@
           "analyzer":"IcuAnalyzer_DE",
           "inlclude_in_all":false
         },
+        "filter":{
+          "type":"string",
+          "index":"not_analyzed"
+        },
         "suggest":{
           "type":"string",
           "analyzer":"AutoCompleteAnalyzer",
@@ -78,113 +86,9 @@
           "analyzer":"IcuAnalyzer_DE",
           "inlclude_in_all":false
         },
-        "suggest":{
+        "filter":{
           "type":"string",
-          "analyzer":"AutoCompleteAnalyzer",
-          "inlclude_in_all":false
-        }
-      }
-    },
-    "publisherOne":{
-      "type":"multi_field",
-      "fields":{
-        "publisherOne":{
-          "type":"string"
-        },
-        "sort":{
-          "type":"string",
-          "analyzer":"IcuAnalyzer_DE",
-          "inlclude_in_all":false
-        },
-        "suggest":{
-          "type":"string",
-          "analyzer":"AutoCompleteAnalyzer",
-          "inlclude_in_all":false
-        }
-      }
-    },
-    "yearOne":{
-      "type":"multi_field",
-      "fields":{
-        "yearOne":{
-          "type":"string"
-        },
-        "sort":{
-          "type":"string",
-          "analyzer":"IcuAnalyzer_DE",
-          "inlclude_in_all":false
-        },
-        "suggest":{
-          "type":"string",
-          "analyzer":"AutoCompleteAnalyzer",
-          "inlclude_in_all":false
-        }
-      }
-    },
-    "placeOne":{
-      "type":"multi_field",
-      "fields":{
-        "placeOne":{
-          "type":"string"
-        },
-        "sort":{
-          "type":"string",
-          "analyzer":"IcuAnalyzer_DE",
-          "inlclude_in_all":false
-        },
-        "suggest":{
-          "type":"string",
-          "analyzer":"AutoCompleteAnalyzer",
-          "inlclude_in_all":false
-        }
-      }
-    },
-    "publisherTwo":{
-      "type":"multi_field",
-      "fields":{
-        "publisherTwo":{
-          "type":"string"
-        },
-        "sort":{
-          "type":"string",
-          "analyzer":"IcuAnalyzer_DE",
-          "inlclude_in_all":false
-        },
-        "suggest":{
-          "type":"string",
-          "analyzer":"AutoCompleteAnalyzer",
-          "inlclude_in_all":false
-        }
-      }
-    },
-    "yearTwo":{
-      "type":"multi_field",
-      "fields":{
-        "yearTwo":{
-          "type":"string"
-        },
-        "sort":{
-          "type":"string",
-          "analyzer":"IcuAnalyzer_DE",
-          "inlclude_in_all":false
-        },
-        "suggest":{
-          "type":"string",
-          "analyzer":"AutoCompleteAnalyzer",
-          "inlclude_in_all":false
-        }
-      }
-    },
-    "placeTwo":{
-      "type":"multi_field",
-      "fields":{
-        "placeTwo":{
-          "type":"string"
-        },
-        "sort":{
-          "type":"string",
-          "analyzer":"IcuAnalyzer_DE",
-          "inlclude_in_all":false
+          "index":"not_analyzed"
         },
         "suggest":{
           "type":"string",
@@ -205,6 +109,77 @@
     "corrections":{
       "type":"string"
     },
+    "editions":{
+      "type":"object",
+      "properties":{
+        "publisher":{
+          "type":"multi_field",
+          "fields":{
+            "publisher":{
+              "type":"string"
+            },
+            "sort":{
+              "type":"string",
+              "analyzer":"IcuAnalyzer_DE",
+              "inlclude_in_all":false
+            },
+            "filter":{
+              "type":"string",
+              "index":"not_analyzed"
+            },
+            "suggest":{
+              "type":"string",
+              "analyzer":"AutoCompleteAnalyzer",
+              "inlclude_in_all":false
+            }
+          }
+        },
+        "location":{
+          "type":"multi_field",
+          "fields":{
+            "location":{
+              "type":"string"
+            },
+            "sort":{
+              "type":"string",
+              "analyzer":"IcuAnalyzer_DE",
+              "inlclude_in_all":false
+            },
+            "filter":{
+              "type":"string",
+              "index":"not_analyzed"
+            },
+            "suggest":{
+              "type":"string",
+              "analyzer":"AutoCompleteAnalyzer",
+              "inlclude_in_all":false
+            }
+          }
+        },
+        "year":{
+          "type":"multi_field",
+          "fields":{
+            "year":{
+              "type":"string"
+            },
+            "sort":{
+              "type":"string",
+              "analyzer":"IcuAnalyzer_DE",
+              "inlclude_in_all":false
+            },
+            "filter":{
+              "type":"string",
+              "index":"not_analyzed"
+            },
+            "suggest":{
+              "type":"string",
+              "analyzer":"AutoCompleteAnalyzer",
+              "inlclude_in_all":false
+            }
+          }
+        }
+      }
+    },
     "meta":{
       "type":"object",
       "dynamic":true
@@ -222,6 +197,10 @@
               "type":"string",
               "analyzer":"IcuAnalyzer_DE",
               "inlclude_in_all":false
+            },
+            "filter":{
+              "type":"string",
+              "index":"not_analyzed"
             },
             "suggest":{
               "type":"string",
@@ -241,6 +220,10 @@
               "analyzer":"IcuAnalyzer_DE",
               "inlclude_in_all":false
             },
+            "filter":{
+              "type":"string",
+              "index":"not_analyzed"
+            },
             "suggest":{
               "type":"string",
               "analyzer":"AutoCompleteAnalyzer",
@@ -258,6 +241,10 @@
               "type":"string",
               "analyzer":"IcuAnalyzer_DE",
               "inlclude_in_all":false
+            },
+            "filter":{
+              "type":"string",
+              "index":"not_analyzed"
             },
             "suggest":{
               "type":"string",
@@ -279,6 +266,10 @@
               "type":"string",
               "analyzer":"IcuAnalyzer_DE",
               "inlclude_in_all":false
+            },
+            "filter":{
+              "type":"string",
+              "index":"not_analyzed"
             },
             "suggest":{
               "type":"string",
@@ -304,6 +295,10 @@
                   "analyzer":"IcuAnalyzer_DE",
                   "inlclude_in_all":false
                 },
+                "filter":{
+                  "type":"string",
+                  "index":"not_analyzed"
+                },
                 "suggest":{
                   "type":"string",
                   "analyzer":"AutoCompleteAnalyzer",
@@ -321,6 +316,10 @@
                   "type":"string",
                   "analyzer":"IcuAnalyzer_DE",
                   "inlclude_in_all":false
+                },
+                "filter":{
+                  "type":"string",
+                  "index":"not_analyzed"
                 },
                 "suggest":{
                   "type":"string",

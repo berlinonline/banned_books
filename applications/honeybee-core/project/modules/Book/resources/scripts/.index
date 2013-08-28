@@ -1,4 +1,4 @@
 book.namespace.js
 book.ListController.js
-book.TreeController
+book.TreeController.js
 book.init.js

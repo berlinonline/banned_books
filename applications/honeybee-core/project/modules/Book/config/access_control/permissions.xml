@@ -17,6 +17,10 @@
             -->
             <role name="default-permissions">
                 <acl>
+                    <grant>book::read</grant>
+                    <grant>book::write</grant>
+                    <grant>book::create</grant>
+
                     <!-- edit state perms -->
                     <grant>book.edit::read</grant>
                     <grant>book.edit::write</grant>

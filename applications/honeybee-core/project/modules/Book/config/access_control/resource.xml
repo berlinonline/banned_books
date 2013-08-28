@@ -16,6 +16,10 @@
             <resource name="book">
                 <description>Defines a resource that represents book documents.</description>
                 <actions>
+                    <action>book::read</action>
+                    <action>book::write</action>
+                    <action>book::create</action>
+
                     <action>book.edit::read</action>
                     <action>book.edit::write</action>
                     <action>book.edit::promote</action>

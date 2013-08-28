@@ -6,6 +6,21 @@
     <ae:configuration>
         <validators>
             <validator class="ListStateValidator" name="invalid_list_state" required="true" />
+            <validator class="string" name="invalid_reference_module" required="false">
+                <arguments>
+                    <argument>referenceModule</argument>
+                </arguments>
+            </validator>
+            <validator class="string" name="invalid_reference_field" required="false">
+                <arguments>
+                    <argument>referenceField</argument>
+                </arguments>
+            </validator>
+            <validator class="string" name="invalid_export_format" required="false">
+                <arguments>
+                    <argument>export_format</argument>
+                </arguments>
+            </validator>
         </validators>
     </ae:configuration>
 </ae:configurations>

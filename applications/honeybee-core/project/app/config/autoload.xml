@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ae:configurations
+    xmlns:ae="http://agavi.org/agavi/config/global/envelope/1.0"
+    xmlns="http://agavi.org/agavi/config/parts/autoload/1.0"
+    xmlns:xi="http://www.w3.org/2001/XInclude">
+    <ae:configuration>
+        <autoloads>
+            <autoload name="MigrationRunner">%core.app_dir%/project/lib/Migration/MigrationRunner.class.php</autoload>
+            <autoload name="IMigration">%core.app_dir%/project/lib/Migration/IMigration.iface.php</autoload>
+            <autoload name="ModuleMigration">%core.app_dir%/project/lib/Migration/ModuleMigration.class.php</autoload>
+        </autoloads>
+    </ae:configuration>
+</ae:configurations>

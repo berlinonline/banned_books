@@ -6,6 +6,35 @@
     <ae:configuration>
         <consumers>
 
+            <!--
+                Use this consumer via: ./bin/cli book.import -consumer fakedata
+                to generate documents containing fake data for the Book module.
+                This will generate fake documents recursively for referenced modules as well
+                (only one level of recursion depth).
+            -->
+            <consumer name="fakedata" class="Honeybee\Core\Import\Consumer\ModuleConsumer">
+                <provider name="fake-provider" class="Honeybee\Core\Import\Provider\FakeProvider">
+                    <settings>
+                        <setting name="module">Honeybee\Domain\Book\BookModule</setting> <!-- Dat0r module to generate documents for -->
+                        <setting name="limit">50</setting> <!-- number of documents to create -->
+                        <setting name="locale">de_DE</setting> <!-- locale used for fakedata generation -->
+                        <setting name="excluded_fields"> <!-- names of fields to ignore when generating fake data -->
+                            <settings>
+                                <setting>asset</setting>
+                                <setting>image</setting>
+                                <setting>images</setting>
+                            </settings>
+                        </setting>
+                    </settings>
+                </provider>
+                <settings>
+                    <setting name="module">Honeybee\Domain\Book\BookModule</setting>
+                </settings>
+                <filters>
+                    <filter name="default" class="Honeybee\Core\Import\Filter\BaseFilter" /> <!-- No filtering necessary for fakedata -->
+                </filters>
+            </consumer>
+
             <consumer name="banned-books-csv" class="Honeybee\Core\Import\Consumer\ModuleConsumer">
                 <provider name="csv-provider" class="Honeybee\Core\Import\Provider\CsvProvider">
                     <settings>
@@ -20,21 +49,38 @@
                     <filter name="default" class="Honeybee\Core\Import\Filter\RemapFilter">
                         <settings>
                             <setting name="include_unmapped">off</setting>
+                            <setting name="static_values_in_empty_arrays">off</setting>
                             <setting name="map">
-                                <setting name="ss">ssFlag</setting>
+                                <setting name="titel">title</setting>
                                 <setting name="autor_vorname">authorFirstname</setting>
                                 <setting name="autor_nachname">authorLastname</setting>
-                                <setting name="titel">title</setting>
-                                <setting name="verlag">publisherOne</setting>
-                                <setting name="ort">placeOne</setting>
-                                <setting name="jahr">yearOne</setting>
-                                <setting name="verlag_2">publisherTwo</setting>
-                                <setting name="ort_2">placeTwo</setting>
-                                <setting name="jahr_2">yearTwo</setting>
+                                <setting name="ss">ssFlag</setting>
                                 <setting name="weitere">additionalInfos</setting>
                                 <setting name="seite">pageNumber</setting>
                                 <setting name="volltext">ocrResult</setting>
                                 <setting name="id">meta[csvImportId]</setting>
+
+                                <setting name="verlag">editions[0][publisher]</setting>
+                                <setting name="ort">editions[0][location]</setting>
+                                <setting name="jahr">editions[0][year]</setting>
+                                <setting name="editions[0][type]">
+                                    <settings>
+                                        <setting name="static_value">
+                                            Honeybee\Domain\Book\EditionDocument
+                                        </setting>
+                                    </settings>
+                                </setting>
+
+                                <setting name="verlag_2">editions[1][publisher]</setting>
+                                <setting name="ort_2">editions[1][location]</setting>
+                                <setting name="jahr_2">editions[1][year]</setting>
+                                <setting name="editions[1][type]">
+                                    <settings>
+                                        <setting name="static_value">
+                                            Honeybee\Domain\Book\EditionDocument
+                                        </setting>
+                                    </settings>
+                                </setting>
                             </setting>
                         </settings>
                     </filter>

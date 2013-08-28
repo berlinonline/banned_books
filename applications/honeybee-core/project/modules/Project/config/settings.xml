@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- 
+    This file holds the (gui) settings for the User module.
+    Stuff in here will be used to satisfy configuring view behaviour, 
+    for example the list view and the edit view.
+    Settings that are tightly coupled to the structure or core-domain belong into the module.xml
+    and shall be accessed via the corresponding (honeybee) module instance.
+-->
+<ae:configurations 
+    xmlns:ae="http://agavi.org/agavi/config/global/envelope/1.0" 
+    xmlns="http://agavi.org/agavi/config/parts/settings/1.0">
+    <ae:configuration>
+        <settings prefix="project.">
+            <setting name="migration_dir">%core.app_dir%/project/migrations/</setting>
+        </settings>
+    </ae:configuration>
+</ae:configurations>

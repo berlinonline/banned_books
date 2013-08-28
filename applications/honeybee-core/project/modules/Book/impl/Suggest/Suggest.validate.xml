@@ -5,7 +5,7 @@
     parent="%core.module_dir%/Book/config/validators.xml">
     <ae:configuration>
         <validators>
-            <validator class="string" name="invalid_phrase" required="true">
+            <validator class="string" name="invalid_phrase" required="false">
                 <arguments>
                     <argument>term</argument>
                 </arguments>

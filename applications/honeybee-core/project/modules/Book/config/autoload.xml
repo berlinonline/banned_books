@@ -9,14 +9,7 @@
         <autoload name="BookBaseView">%core.module_dir%/Book/lib/agavi/view/BookBaseView.class.php</autoload>
         <autoload name="BookDocumentValidator">%core.module_dir%/Book/lib/agavi/validator/BookDocumentValidator.class.php</autoload>
         
-        <!-- Import -->
-        <autoload name="BookDataImport">%core.module_dir%/Book/lib/import/BookDataImport.class.php</autoload>
-        <autoload name="BookDataImportConfig">%core.module_dir%/Book/lib/import/BookDataImportConfig.class.php</autoload>
-
         <!-- Service -->
         <autoload name="BookService">%core.module_dir%/Book/lib/BookService.class.php</autoload>
-
-        <!-- Repository -->
-        <autoload name="BookFinder">%core.module_dir%/Book/lib/repository/BookFinder.class.php</autoload>
     </ae:configuration>
 </ae:configurations>

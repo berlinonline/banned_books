@@ -1,142 +1,92 @@
 <?xml version="1.0" encoding="utf-8" ?>
-<module name="Book" namespace="Honeybee\Domain">
-    <description>Holds the structure definition for Book documents.</description>
-    <!--  Section: module integration settings - Only edit if you know what you are doing. -->
-    <options>
-        <option name="prefix">book</option>
-        <option name="identifier_field">identifier</option>
-        <option name="baseModule">\Honeybee\Core\Dat0r\Module</option>
-        <option name="baseDocument">\Honeybee\Core\Dat0r\Document</option>
-    </options>
-    <fields>
+<module_schema namespace="Honeybee\Domain">
 
-        <!--
-        ##############################################################################
-        #  This module's custom field definitions go here                            #
-        ##############################################################################
-        -->
+    <module_definition name="Book">
+        <implementor>\Honeybee\Core\Dat0r\Module</implementor>
+        <document_implementor>\Honeybee\Core\Dat0r\Document</document_implementor>
+        <description>Holds the structure definition for Book documents.</description>
 
-        <field name="title" type="text">
-            <description>Holds a book's "title" (text)attribute.</description>
-        </field>
+        <options>
+            <option name="prefix">book</option>
+            <option name="identifier_field">identifier</option>
+            <option name="slugPattern">{title}-{shortId}</option>
+        </options>
 
-        <field name="ssFlag" type="boolean">
-            <description>Holds a book's "ss-flag" (boolean)attribute.</description>
-        </field>
+        <fields>
+            <field name="title" type="text">
+                <option name="mandatory">yes</option>
+            </field>
+            <field name="ssFlag" type="boolean" />
+            <field name="authorFirstname" type="text" />
+            <field name="authorLastname" type="text" />
+            <field name="additionalInfos" type="textarea" />
+            <field name="pageNumber" type="integer" />
+            <field name="ocrResult" type="textarea" />
+            <field name="corrections" type="textarea" />
+            <field name="editions" type="aggregate">
+                <option name="modules">
+                    <option>Edition</option>
+                </option>
+            </field>
+            <!-- Honeybee workflow integration; dont touch!! -->
+            <field name="meta" type="key-value">
+                <description>Holds a set of generic attributes.</description>
+                <option name="constraints">
+                    <option name="value_type">dynamic</option>
+                </option>
+            </field>
+            <field name="workflowTicket" type="aggregate">
+                <option name="modules">
+                    <option>WorkflowTicket</option>
+                </option>
+            </field>
+        </fields>
+    </module_definition>
 
-        <field name="authorFirstname" type="text">
-            <description>Holds a book author's "firstname" (text)attribute.</description>
-        </field>
+    <aggregate_definition name="WorkflowTicket">
+        <document_implementor>\Honeybee\Core\Dat0r\WorkflowTicket</document_implementor>
+        <description>
+            The WorkflowTicket aggregate holds reflects the current state of an documents workflow state.
+        </description>
+        <fields>
+            <field name="workflowName" type="text" />
+            <field name="workflowStep" type="text" />
+            <field name="owner" type="text" />
+            <field name="blocked" type="boolean" />
+            <field name="waitUntil" type="text" />
+            <field name="stepCounts" type="key-value" >
+                <option name="constraints">
+                    <option name="value_type">integer</option>
+                </option>
+            </field>
+            <field name="lastResult" type="aggregate">
+                <option name="modules">
+                    <option>PluginResult</option>
+                </option>
+            </field>
+        </fields>
+    </aggregate_definition>
 
-        <field name="authorLastname" type="text">
-            <description>Holds a book author's "lastname" (text)attribute.</description>
-        </field>
+    <aggregate_definition name="PluginResult">
+        <description>
+            A PluginResult reflects a state resulting from executing a workflow plugin.
+        </description>
+        <fields>
+            <field name="state" type="integer" />
+            <field name="gate" type="text" />
+            <field name="message" type="text" />
+        </fields>
+    </aggregate_definition>
 
-        <!-- @todo when multi aggregate support lands, turn these fields into one -->
-        <field name="publisherOne" type="text">
-            <description>Holds the publisher that first published the book.</description>
-        </field>
+    <aggregate_definition name="Edition">
+        <description>
+            An Edition instance holds data on specific book edition.
+        </description>
+        <fields>
+            <field name="publisher" type="text" />
+            <field name="location" type="text" />
+            <field name="year" type="text" />
+        </fields>
+    </aggregate_definition>
 
-         <field name="yearOne" type="text">
-            <description>Holds the year the book was first published in.</description>
-        </field>
-
-        <field name="placeOne" type="text">
-            <description>Holds the place where a book was first published.</description>
-        </field>
-
-        <field name="publisherTwo" type="text">
-            <description>Holds the publisher that secondly published the book.</description>
-        </field>
-
-        <field name="yearTwo" type="text">
-            <description>Holds the year the book was secondly published in.</description>
-        </field>
-
-        <field name="placeTwo" type="text">
-            <description>Holds the place where a book was secondly published.</description>
-        </field>
-
-        <field name="additionalInfos" type="textarea">
-            <description>Holds further information.</description>
-        </field>
-
-        <field name="pageNumber" type="integer">
-            <description>Holds the number of the page that this book was scanned from.</description>
-        </field>
-
-        <field name="ocrResult" type="textarea">
-            <description>Holds the result of running an ocr scan over the list-page of banned books.</description>
-        </field>
-
-	<field name="corrections" type="textarea">
-            <description>Holds a set of correction notices.</description>
-        </field>
-
-        <!--
-        ##############################################################################
-        #  Below you'll find mandatory boilerplate markup for honeybee integration.  #
-        #  Just dont touch it and everything will be fine.                           #
-        ##############################################################################
-        -->
-
-        <!-- Section: document meta-data - don't edit.-->
-        <field name="meta" type="key-value">
-            <description>Holds a set of generic attributes.</description>
-            <option name="constraints">
-                <option name="value_type">dynamic</option>
-            </option>
-        </field>
-
-        <!-- Section: workflow integration - don't edit -->
-        <field name="workflowTicket" type="aggregate">
-            <description>Holds a person's location.</description>
-            <aggregate name="WorkflowTicket">
-                <description>The WorkflowTicket aggregate holds reflects the current state of an documents workflow state.</description>
-                <options>
-                    <option name="baseDocument">\Honeybee\Core\Dat0r\WorkflowTicket</option>
-                </options>
-                <fields>
-                    <field name="workflowName" type="text">
-                        <description>Holds the name of the related workflow.</description>
-                    </field>
-                    <field name="workflowStep" type="text">
-                        <description>Holds the current step's name, being the cursor for the workflow execution.</description>
-                    </field>
-                    <field name="owner" type="text">
-                        <description>Holds the name of the user currently owning the item.</description>
-                    </field>
-                    <field name="blocked" type="boolean">
-                        <description>Tells whether we are currently open to workflow executions or not.</description>
-                    </field>
-                    <field name="stepCounts" type="key-value">
-                        <description>Tracks the number of executions of workflow steps.</description>
-                        <option name="constraints">
-                            <option name="value_type">integer</option>
-                        </option>
-                    </field>
-                    <field name="waitUntil" type="text">
-                        <description>Holds a iso8601 date at which the workflow will be continued.</description>
-                    </field>
-                    <field name="lastResult" type="aggregate">
-                        <description>Holds a person's location.</description>
-                        <aggregate name="PluginResult">
-                            <description>A PluginResult reflects a state resulting from executing a workflow plugin.</description>
-                            <fields>
-                                <field name="state" type="integer">
-                                    <description>Holds a success/error code representing a certain state.</description>
-                                </field>
-                                <field name="gate" type="text">
-                                    <description>Holds the name of the gate to use when proceeding.</description>
-                                </field>
-                                <field name="message" type="text">
-                                    <description>Holds an optional message that accompanies the state code.</description>
-                                </field>
-                            </fields>
-                        </aggregate>
-                    </field>
-                </fields>
-            </aggregate>
-        </field>
-    </fields>
-</module>
+</module_schema>

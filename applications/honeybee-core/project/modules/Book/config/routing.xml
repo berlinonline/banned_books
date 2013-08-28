@@ -4,11 +4,11 @@
     xmlns="http://agavi.org/agavi/config/parts/routing/1.0">
     <ae:configuration context="web">
         <routes>
-            <route name=".list" pattern="/list" action="List" method="read" />
+            <route name=".list" pattern="/list(/{referenceModule:(\w+)})?(/{referenceField:(\w+)})?" action="List" method="read" />
             <route name=".suggest" pattern="/suggest" action="Suggest" method="read" />
             <route name=".edit" pattern="/edit" action="Edit" />
-            <route name=".tree" pattern="/tree" action="Tree" />
-            
+            <route name=".tree" pattern="/tree(/{referenceModule:(\w+)})?(/{referenceField:(\w+)})?" action="Tree" />
+
             <route name=".workflow" pattern="/workflow">
                 <route name=".checkout" pattern="/checkout" action="Workflow_Checkout" />
                 <route name=".execute" pattern="/execute" action="Workflow_Execute" />
@@ -19,17 +19,11 @@
 
     <ae:configuration context="console">
         <routes>
-            <route pattern="book.export" module="Book" action="Export" method="write">
-                <ae:parameter name="implementor">Honeybee\Domain\Book\BookModule</ae:parameter>
-                <callbacks>
-                  <callback class="Honeybee\Agavi\Routing\ModuleRoutingCallback"/>
-                </callbacks>
+            <route pattern="^import$" action="Import" method="write">
+                <ae:parameter name="description">Import data into the Book module via specified consumers.</ae:parameter>
             </route>
-            <route pattern="book.import" module="Book" action="Import" method="write">
-                <ae:parameter name="implementor">Honeybee\Domain\Book\BookModule</ae:parameter>
-                <callbacks>
-                  <callback class="Honeybee\Agavi\Routing\ModuleRoutingCallback"/>
-                </callbacks>
+            <route pattern="^export$" action="Export" method="write">
+                <ae:parameter name="description">Export data from the Book module as specified in exports.xml file.</ae:parameter>
             </route>
         </routes>
     </ae:configuration>

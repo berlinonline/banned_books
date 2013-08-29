@@ -36,6 +36,9 @@
                             <ae:parameter name="authorLastname">Nachname</ae:parameter>
                             <ae:parameter name="ssFlag">SS-Indiziert</ae:parameter>
 
+                            <ae:parameter name="export-csv">als CSV-Datei</ae:parameter>
+                            <ae:parameter name="export-xml_zipped">als ZIP-Archiv mit XML-Dateien</ae:parameter>
+
                             <!-- reference batch dialogs -->
                             <ae:parameter name="batch_actions">Stapelverarbeitung</ae:parameter>
                             <ae:parameter name="override_references">bestehendende Verknüpfungen überschreiben</ae:parameter>

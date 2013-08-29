@@ -12,6 +12,12 @@
     <ae:configuration>
         <settings prefix="book.">
             <setting name="workflow">book.default</setting>
+            <setting name="enabled_exports">
+                <ae:parameters>
+                    <ae:parameter>xml_zipped</ae:parameter>
+                    <ae:parameter>csv</ae:parameter>
+                </ae:parameters>
+            </setting>
             <!-- list integration {@see IListConfig} -->
             <setting name="list_config">
                 <!-- common list params -->

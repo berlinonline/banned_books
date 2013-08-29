@@ -6,35 +6,6 @@
     <ae:configuration>
         <consumers>
 
-            <!--
-                Use this consumer via: ./bin/cli book.import -consumer fakedata
-                to generate documents containing fake data for the Book module.
-                This will generate fake documents recursively for referenced modules as well
-                (only one level of recursion depth).
-            -->
-            <consumer name="fakedata" class="Honeybee\Core\Import\Consumer\ModuleConsumer">
-                <provider name="fake-provider" class="Honeybee\Core\Import\Provider\FakeProvider">
-                    <settings>
-                        <setting name="module">Honeybee\Domain\Book\BookModule</setting> <!-- Dat0r module to generate documents for -->
-                        <setting name="limit">50</setting> <!-- number of documents to create -->
-                        <setting name="locale">de_DE</setting> <!-- locale used for fakedata generation -->
-                        <setting name="excluded_fields"> <!-- names of fields to ignore when generating fake data -->
-                            <settings>
-                                <setting>asset</setting>
-                                <setting>image</setting>
-                                <setting>images</setting>
-                            </settings>
-                        </setting>
-                    </settings>
-                </provider>
-                <settings>
-                    <setting name="module">Honeybee\Domain\Book\BookModule</setting>
-                </settings>
-                <filters>
-                    <filter name="default" class="Honeybee\Core\Import\Filter\BaseFilter" /> <!-- No filtering necessary for fakedata -->
-                </filters>
-            </consumer>
-
             <consumer name="banned-books-csv" class="Honeybee\Core\Import\Consumer\ModuleConsumer">
                 <provider name="csv-provider" class="Honeybee\Core\Import\Provider\CsvProvider">
                     <settings>

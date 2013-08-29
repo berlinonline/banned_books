@@ -42,6 +42,92 @@
                     </filter>
                 </filters>
             </export>
+
+            <export name="list-csv" class="\Honeybee\Core\Export\GenericExport">
+                <description>Exports books data as a csv file.</description>
+                <settings>
+                    <setting name="storage">
+                        <setting name="implementor">Honeybee\Core\Storage\Memory\CsvStorage</setting>
+                        <setting name="options">
+                            <settings>
+                                <setting name="csv_headers">
+                                    <setting>UID</setting>
+                                    <setting>Titel</setting>
+                                    <setting>Author Vorname</setting>
+                                    <setting>Author Nachname</setting>
+                                    <setting>SS Indiziert</setting>
+                                    <setting>zusätzl. Infos</setting>
+                                    <setting>Listen-Seitennummer</setting>
+                                    <setting>Edition 1: Verlag</setting>
+                                    <setting>Edition 1: Ort</setting>
+                                    <setting>Edition 1: Jahr</setting>
+                                    <setting>Edition 2: Verlag</setting>
+                                    <setting>Edition 2: Ort</setting>
+                                    <setting>Edition 2: Jahr</setting>
+                                </setting>
+                            </settings>
+                        </setting>
+                    </setting>
+                </settings>
+                <filters>
+                    <filter name="simple-props" class="Honeybee\Core\Export\Filter\PropertyFilter">
+                        <settings>
+                            <setting name="properties">
+                                <setting name="identifier">uid</setting>
+                                <setting name="title">title</setting>
+                                <setting name="authorFirstname">authorFirstName</setting>
+                                <setting name="authorLastname">authorLastName</setting>
+                                <setting name="ssFlag">ss</setting>
+                                <setting name="additionalInfos">infos</setting>
+                                <setting name="pageNumber">page</setting>
+                                <setting name="editions[0][publisher]">editionOnePublisher</setting>
+                                <setting name="editions[0][location]">editionOneLocation</setting>
+                                <setting name="editions[0][year]">editionOneYear</setting>
+                                <setting name="editions[1][publisher]">editionTwoPublisher</setting>
+                                <setting name="editions[1][location]">editionTwoLocation</setting>
+                                <setting name="editions[1][year]">editionTwoYear</setting>
+                            </setting>
+                        </settings>
+                    </filter>
+                </filters>
+            </export>
+
+            <export name="list-xml-zip" class="\Honeybee\Core\Export\GenericExport">
+                <description>Exports books data as a csv file.</description>
+                <settings>
+                    <setting name="storage">
+                        <setting name="implementor">Honeybee\Core\Storage\Memory\XmlZipArchiveStorage</setting>
+                        <setting name="options">
+                            <settings>
+                                <setting name="archive_base_path">Books</setting>
+                                <setting name="file_pattern">{uid}.xml</setting>
+                                <setting name="archive_name">books-list.zip</setting>
+                            </settings>
+                        </setting>
+                    </setting>
+                </settings>
+                <filters>
+                    <filter name="simple-props" class="Honeybee\Core\Export\Filter\PropertyFilter">
+                        <settings>
+                            <setting name="properties">
+                                <setting name="identifier">uid</setting>
+                                <setting name="title">title</setting>
+                                <setting name="authorFirstname">author[firstname]</setting>
+                                <setting name="authorLastname">author[lastname]</setting>
+                                <setting name="ssFlag">ss</setting>
+                                <setting name="additionalInfos">infos</setting>
+                                <setting name="pageNumber">page</setting>
+                                <setting name="editions[0][publisher]">editions[0][publisher]</setting>
+                                <setting name="editions[0][location]">editions[0][location]</setting>
+                                <setting name="editions[0][year]">editions[0][year]</setting>
+                                <setting name="editions[1][publisher]">editions[1][publisher]</setting>
+                                <setting name="editions[1][location]">editions[1][location]</setting>
+                                <setting name="editions[1][year]">editions[1][year]</setting>
+                            </setting>
+                        </settings>
+                    </filter>
+                </filters>
+            </export>
         </exports>
     </ae:configuration>
 </ae:configurations>

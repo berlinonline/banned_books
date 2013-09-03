@@ -53,8 +53,8 @@
                                 <setting name="csv_headers">
                                     <setting>UID</setting>
                                     <setting>Titel</setting>
-                                    <setting>Author Vorname</setting>
-                                    <setting>Author Nachname</setting>
+                                    <setting>Autor Vorname</setting>
+                                    <setting>Autor Nachname</setting>
                                     <setting>SS Indiziert</setting>
                                     <setting>zusätzl. Infos</setting>
                                     <setting>Listen-Seitennummer</setting>

@@ -3,7 +3,7 @@
 cd ../..
 git submodule init
 git submodule update
-cd applications/portal/pulq
+cd applications/frontend/pulq
 git checkout master
 make install
 cd .. 

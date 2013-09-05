@@ -9,5 +9,20 @@ define banned_books::application (
     name => $app_name,
     docroot => "${app_docroot}"
   }
+
+  file {
+    "/home/vagrant/init_fe.sh":
+      ensure  => present,
+      mode    => '0744',
+      owner   => 'vagrant',
+      group   => 'vagrant',
+      content => template('banned_books/init_fe.sh.erb');
+    "/home/vagrant/init_cms.sh":
+      ensure  => present,
+      mode    => '0744',
+      owner   => 'vagrant',
+      group   => 'vagrant',
+      content => template('banned_books/init_cms.sh.erb')
+  }
 }
 

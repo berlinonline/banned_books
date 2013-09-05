@@ -1,8 +1,7 @@
-
 #!/bin/bash
 
 cd ../..
-git submodule init --update --recursive
+git submodule update --init --recursive
 cd applications/honeybee-core/honeybee
 make install
 cd .. 

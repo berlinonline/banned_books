@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ae:configurations
+    xmlns="http://berlinonline.de/schemas/honeybee/exports/1.0"
+    xmlns:env="http://berlinonline.de/schemas/honeybee/config/envelope/definition/1.0"
+    xmlns:ae="http://agavi.org/agavi/config/global/envelope/1.0">
+    <ae:configuration>
+        <exports>
+            <export name="pulq-fe" class="\Honeybee\Core\Export\DocumentExport">
+                <description>
+                    Exports authors to the couchdb export database, which serves as an elasticsearch river source.
+                </description>
+                <settings>
+                    <setting name="storage">
+                        <setting name="implementor">\Honeybee\Core\Storage\CouchDb\GenericStorage</setting>
+                        <setting name="connection">Pulq.Fe</setting>
+                    </setting>
+                </settings>
+                <filters>
+                    <filter name="simple-props" class="Honeybee\Core\Export\Filter\PropertyFilter">
+                        <settings>
+                            <setting name="properties">
+                                <setting name="firstname">firstname</setting>
+                                <setting name="lastname">lastname</setting>
+                                <setting name="slug">slug</setting>
+                            </setting>
+                        </settings>
+                    </filter>
+                    <filter name="suggest-combine" class="Honeybee\Core\Export\Filter\CombineFilter">
+                        <settings>
+                            <setting name="key">suggest</setting>
+                            <setting name="fieldnames">
+                                <settings>
+                                    <setting>fullname</setting>
+                                </settings>
+                            </setting>
+                        </settings>
+                    </filter>
+                </filters>
+            </export>
+
+            <export name="list-csv" class="\Honeybee\Core\Export\GenericExport">
+                <description>Exports authors data as a csv file.</description>
+                <settings>
+                    <setting name="storage">
+                        <setting name="implementor">Honeybee\Core\Storage\Memory\CsvStorage</setting>
+                        <setting name="options">
+                            <settings>
+                                <setting name="csv_headers">
+                                    <setting>UID</setting>
+                                    <setting>Vorname</setting>
+                                    <setting>Nachname</setting>
+                                </setting>
+                            </settings>
+                        </setting>
+                    </setting>
+                </settings>
+                <filters>
+                    <filter name="simple-props" class="Honeybee\Core\Export\Filter\PropertyFilter">
+                        <settings>
+                            <setting name="properties">
+                                <setting name="identifier">uid</setting>
+                                <setting name="firstname">firstname</setting>
+                                <setting name="lastname">lastname</setting>
+                            </setting>
+                        </settings>
+                    </filter>
+                </filters>
+            </export>
+
+            <export name="list-xml-zip" class="\Honeybee\Core\Export\GenericExport">
+                <description>Exports authors data as a csv file.</description>
+                <settings>
+                    <setting name="storage">
+                        <setting name="implementor">Honeybee\Core\Storage\Memory\XmlZipArchiveStorage</setting>
+                        <setting name="options">
+                            <settings>
+                                <setting name="archive_base_path">Authors</setting>
+                                <setting name="file_pattern">{uid}.xml</setting>
+                                <setting name="archive_name">authors-list.zip</setting>
+                            </settings>
+                        </setting>
+                    </setting>
+                </settings>
+                <filters>
+                    <filter name="simple-props" class="Honeybee\Core\Export\Filter\PropertyFilter">
+                        <settings>
+                            <setting name="properties">
+                                <setting name="identifier">uid</setting>
+                                <setting name="firstname">firstname</setting>
+                                <setting name="lastname">lastname</setting>
+                            </setting>
+                        </settings>
+                    </filter>
+                </filters>
+            </export>
+        </exports>
+    </ae:configuration>
+</ae:configurations>

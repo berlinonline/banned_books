@@ -38,12 +38,24 @@
                         <ae:parameter name="sortfield">title.sort</ae:parameter>
                     </ae:parameter>
                     <ae:parameter name="authorFirstname">
-                        <ae:parameter name="valuefield">authorFirstname</ae:parameter>
-                        <ae:parameter name="sortfield">authorFirstname.sort</ae:parameter>
+                        <ae:parameter name="valuefield">author</ae:parameter>
+                        <ae:parameter name="sortfield">author.author.firstname.sort</ae:parameter>
+                        <ae:parameter name="renderer">
+                            <ae:parameter name="implementor">ReferenceListValueRenderer</ae:parameter>
+                            <ae:parameter name="options">
+                                <ae:parameter name="displayField">firstname</ae:parameter>
+                            </ae:parameter>
+                        </ae:parameter>
                     </ae:parameter>
                     <ae:parameter name="authorLastname">
-                        <ae:parameter name="valuefield">authorLastname</ae:parameter>
-                        <ae:parameter name="sortfield">authorLastname.sort</ae:parameter>
+                        <ae:parameter name="valuefield">author</ae:parameter>
+                        <ae:parameter name="sortfield">author.author.lastname.sort</ae:parameter>
+                        <ae:parameter name="renderer">
+                            <ae:parameter name="implementor">ReferenceListValueRenderer</ae:parameter>
+                            <ae:parameter name="options">
+                                <ae:parameter name="displayField">lastname</ae:parameter>
+                            </ae:parameter>
+                        </ae:parameter>
                     </ae:parameter>
                     <ae:parameter name="ssFlag">
                         <ae:parameter name="valuefield">ssFlag</ae:parameter>
@@ -84,14 +96,15 @@
                       by changing the controller implementation you can easily pluck in new actions by extending the base controller.
                     by convention the first two parameters of your controller's action callbacks should always be "is_batch" and "item".
                     @todo convert batchActions to the same format as itemActions, requires clientside adjustments etc.
+                -->
                 <ae:parameter name="batchActions">
                     <ae:parameters>
                         <ae:parameter name="delete">ctrl.proceed(is_batch, null, 'delete')</ae:parameter>
                         <ae:parameter name="promote">ctrl.proceed(is_batch, null, 'promote')</ae:parameter>
                         <ae:parameter name="demote">ctrl.proceed(is_batch, null, 'demote')</ae:parameter>
-                        <ae:parameter name="assign_categories">ctrl.assignReference(is_batch, null, 'categories')</ae:parameter>
                     </ae:parameters>
                 </ae:parameter>
+                <!--
                 <ae:parameter name="itemActions">
                     <ae:parameters>
                         <ae:parameter name="assign_categories">
@@ -125,8 +138,7 @@
                                 <ae:parameter name="groups">
                                     <ae:parameter name="main">
                                         <ae:parameter>title</ae:parameter>
-                                        <ae:parameter>authorFirstname</ae:parameter>
-                                        <ae:parameter>authorLastname</ae:parameter>
+                                        <ae:parameter>author</ae:parameter>
                                         <ae:parameter>ssFlag</ae:parameter>
                                     </ae:parameter>
                                     <ae:parameter name="additionalInfos">

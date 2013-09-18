@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ae:configurations
+    xmlns="http://agavi.org/agavi/config/parts/databases/1.0"
+    xmlns:ae="http://agavi.org/agavi/config/global/envelope/1.0">
+    <ae:configuration>
+        <databases default="Pulq.Fe">
+            <database name="Pulq.Fe" class="Honeybee\Agavi\Database\CouchDb\Database">
+                <ae:parameter name="url">http://127.0.0.1:5984/</ae:parameter>
+                <ae:parameter name="database">%core.project_prefix%_%core.environment%_pulq_fe</ae:parameter>
+            </database>
+        </databases>
+    </ae:configuration>
+</ae:configurations>

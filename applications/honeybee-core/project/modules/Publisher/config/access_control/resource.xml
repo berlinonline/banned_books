@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ae:configurations
+    xmlns="http://berlinonline.de/schemas/honeybee/config/access_control/1.0" 
+    xmlns:env="http://berlinonline.de/schemas/honeybee/config/envelope/definition/1.0" 
+    xmlns:ae="http://agavi.org/agavi/config/global/envelope/1.0">
+    <ae:configuration>
+        <!-- 
+            Defines all actions that shall be available upon the publisher resource.
+
+            :INFO:
+            In opposite to the permissions file, which will probally vanish,
+            this file will serve as a source to the later rights gui,
+            allowing to show the available actions per resource/module.
+        -->
+        <resources>
+            <resource name="publisher">
+                <description>Defines a resource that represents publisher documents.</description>
+                <actions>
+                    <action>publisher::read</action>
+                    <action>publisher::write</action>
+                    <action>publisher::create</action>
+
+                    <action>publisher.edit::read</action>
+                    <action>publisher.edit::write</action>
+                    <action>publisher.edit::promote</action>
+                    <action>publisher.edit::delete</action>
+
+                    <action>publisher.publish::write</action>
+                    <action>publisher.publish::promote</action>
+                    <action>publisher.publish::demote</action>
+
+                    <action>publisher.published::read</action>
+                    <action>publisher.published::write</action>
+                    <action>publisher.published::promote</action>
+                    <action>publisher.published::demote</action>
+                    <action>publisher.published::delete</action>
+
+                    <action>publisher.archive::write</action>
+                    <action>publisher.archive::promote</action>
+                    <action>publisher.archive::demote</action>
+
+                    <action>publisher.archived::read</action>
+                    <action>publisher.archived::write</action>
+                    <action>publisher.archived::promote</action>
+                    <action>publisher.archived::demote</action>
+                    <action>publisher.archived::delete</action>
+
+                    <action>publisher.delete::write</action>
+                </actions>
+            </resource>
+        </resources>
+    </ae:configuration>
+</ae:configurations>

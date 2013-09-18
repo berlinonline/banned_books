@@ -1,0 +1,194 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+    This file holds the (gui) settings for the Author module.
+    Stuff in here will be used to satisfy configuring view behaviour,
+    for example the list view and the edit view.
+    Settings that are tightly coupled to the structure or core-domain belong into the module.xml
+    and shall be accessed via the corresponding (honeybee) module instance.
+-->
+<ae:configurations
+    xmlns:ae="http://agavi.org/agavi/config/global/envelope/1.0"
+    xmlns="http://agavi.org/agavi/config/parts/settings/1.0">
+    <ae:configuration>
+        <settings prefix="author.">
+            <setting name="workflow">author.default</setting>
+            <!-- list integration {@see IListConfig} -->
+            <setting name="list_config">
+                <!-- common list params -->
+                <ae:parameter name="defaultLimit">15</ae:parameter>
+                <ae:parameter name="translationDomain">author.list</ae:parameter>
+                <ae:parameter name="pagingRange">9</ae:parameter>
+                <ae:parameter name="routeName">author.list</ae:parameter>
+                <ae:parameter name="typeKey">author</ae:parameter>
+                <ae:parameter name="suggestField">fullname</ae:parameter>
+
+                <!--
+                    define which list data shall be displayed
+                    the names are fully qualified paths referring to values inside the list data
+                -->
+                <ae:parameter name="fields">
+                    <ae:parameter name="fullname">
+                        <ae:parameter name="valuefield">fullname</ae:parameter>
+                        <ae:parameter name="sortfield">fullname.sort</ae:parameter>
+                    </ae:parameter>
+                    <ae:parameter name="firstname">
+                        <ae:parameter name="valuefield">firstname</ae:parameter>
+                        <ae:parameter name="sortfield">firstname.sort</ae:parameter>
+                    </ae:parameter>
+                    <ae:parameter name="lastname">
+                        <ae:parameter name="valuefield">lastname</ae:parameter>
+                        <ae:parameter name="sortfield">lastname.sort</ae:parameter>
+                    </ae:parameter>
+                    <ae:parameter name="state">
+                        <ae:parameter name="valuefield">workflowTicket</ae:parameter>
+                        <ae:parameter name="renderer">
+                            <ae:parameter name="implementor">AggregateListRenderer</ae:parameter>
+                            <ae:parameter name="options">
+                                <ae:parameter name="displayField">workflowStep</ae:parameter>
+                                <ae:parameter name="translate">true</ae:parameter>
+                                <ae:parameter name="domain">author.workflow</ae:parameter>
+                            </ae:parameter>
+                        </ae:parameter>
+                        <ae:parameter name="sortfield">workflowTicket.workflowStep.sort</ae:parameter>
+                    </ae:parameter>
+                </ae:parameter>
+
+                <!-- define our clientside controller along with some options -->
+                <ae:parameter name="clientSideController">
+                    <ae:parameter name="implementor">AuthorListController</ae:parameter>
+                    <ae:parameter name="options">
+                        <!-- custom options to pass to the controller go here. -->
+                    </ae:parameter>
+                </ae:parameter>
+
+                <!--
+                    define the actions that are available for the batch processing:
+                    - you can choose to delegate actions to the workflow handler or the configured client-side controller
+                    - actions are assigned using a simple invocation syntax refering to either the workflow handler or controller.
+                    - whereas the workflow handler only provides a proceed and a run method,
+                      by changing the controller implementation you can easily pluck in new actions by extending the base controller.
+                    by convention the first two parameters of your controller's action callbacks should always be "is_batch" and "item".
+                    @todo convert batchActions to the same format as itemActions, requires clientside adjustments etc.
+                <ae:parameter name="batchActions">
+                    <ae:parameters>
+                        <ae:parameter name="delete">ctrl.proceed(is_batch, null, 'delete')</ae:parameter>
+                        <ae:parameter name="promote">ctrl.proceed(is_batch, null, 'promote')</ae:parameter>
+                        <ae:parameter name="demote">ctrl.proceed(is_batch, null, 'demote')</ae:parameter>
+                        <ae:parameter name="assign_categories">ctrl.assignReference(is_batch, null, 'categories')</ae:parameter>
+                    </ae:parameters>
+                </ae:parameter>
+                <ae:parameter name="itemActions">
+                    <ae:parameters>
+                        <ae:parameter name="assign_categories">
+                            <ae:parameter name="action">assignReference</ae:parameter>
+                            <ae:parameter name="parameters">
+                                <ae:parameters>
+                                    <ae:parameter>categories</ae:parameter>
+                                </ae:parameters>
+                            </ae:parameter>
+                        </ae:parameter>
+                    </ae:parameters>
+                </ae:parameter>
+                -->
+            </setting>
+
+            <!--
+                Holds the definition of the edit template.
+                Templates are separated into tabs.
+                Each tab can holds an arbitary number of number of rows; at least one.
+                Each row is made up of 1-4 columns, whereas two columns is the most common usage.
+                Every column is assigned several fields that are vertically stacked inside.
+                An example for defining a custom input template is displayed below.
+                Just uncomment and adjust to kick off custom templating.
+            -->
+            <setting name="input_template">
+                <ae:parameter name="tabs">
+                    <ae:parameter name="content">
+                        <ae:parameter name="rows">
+                            <ae:parameter>
+                                <ae:parameter name="groups">
+                                    <ae:parameter name="main">
+                                        <ae:parameter>firstname</ae:parameter>
+                                        <ae:parameter>lastname</ae:parameter>
+                                    </ae:parameter>
+                                </ae:parameter>
+                            </ae:parameter>
+                        </ae:parameter>
+                    </ae:parameter>
+                </ae:parameter>
+            </setting>
+
+            <!--
+            You may provide custom widgets here, but not override 'hardwired'
+            widget implementations such as the one for the reference field.
+            <setting name="input_widgets">
+                <ae:parameter name="keywords">
+                    <ae:parameter name="type">widget-tags-list</ae:parameter>
+                    <ae:parameter name="options">
+                        <ae:parameter name="autobind">TRUE</ae:parameter>
+                        <ae:parameter name="fieldname">keywords</ae:parameter>
+                    </ae:parameter>
+                </ae:parameter>
+            </setting>
+            -->
+
+            <!-- Custom renderer configuration -->
+            <setting name="rendering_config">
+                <!-- asset widget renderer example
+                <ae:parameter name="images">
+                    <ae:parameter name="input">
+                        <ae:parameter name="type">ImageFieldInputRenderer</ae:parameter>
+                        <ae:parameter name="options">
+                            <ae:parameter name="max_files">20</ae:parameter>
+                            <ae:parameter name="allowed_types">
+                                <ae:parameter>image/jpeg</ae:parameter>
+                                <ae:parameter>image/png</ae:parameter>
+                                <ae:parameter>image/gif</ae:parameter>
+                            </ae:parameter>
+                        </ae:parameter>
+                    </ae:parameter>
+                </ae:parameter>
+                -->
+                <ae:parameter name="identifier">
+                    <ae:parameter name="input">KoReadOnlyFieldInputRenderer</ae:parameter>
+                </ae:parameter>
+                <ae:parameter name="shortId">
+                    <ae:parameter name="input">KoReadOnlyFieldInputRenderer</ae:parameter>
+                </ae:parameter>
+                <ae:parameter name="revision">
+                    <ae:parameter name="input">KoReadOnlyFieldInputRenderer</ae:parameter>
+                </ae:parameter>
+                <ae:parameter name="uuid">
+                    <ae:parameter name="input">KoReadOnlyFieldInputRenderer</ae:parameter>
+                </ae:parameter>
+                <ae:parameter name="language">
+                    <ae:parameter name="input">KoReadOnlyFieldInputRenderer</ae:parameter>
+                </ae:parameter>
+                <ae:parameter name="version">
+                    <ae:parameter name="input">KoReadOnlyFieldInputRenderer</ae:parameter>
+                </ae:parameter>
+            </setting>
+
+            <!--
+            <setting name="tree_config">
+                <ae:parameter name="typeKey">author</ae:parameter>
+                <ae:parameter name="translationDomain">author.list</ae:parameter>
+                <ae:parameter name="clientSideController">
+                    <ae:parameter name="implementor">AuthorTreeController</ae:parameter>
+                    <ae:parameter name="options">
+                        <ae:parameter name="rootNodeIdentifier">root-node</ae:parameter>
+                        <ae:parameter name="invisibleStates">
+                            <ae:parameter>delete</ae:parameter>
+                        </ae:parameter>
+                    </ae:parameter>
+                </ae:parameter>
+                <ae:parameter name="batchActions">
+                    <ae:parameters>
+                        <ae:parameter name="delete">delete</ae:parameter>
+                    </ae:parameters>
+                </ae:parameter>
+            </setting>
+        -->
+        </settings>
+    </ae:configuration>
+</ae:configurations>

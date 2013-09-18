@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ae:configurations
+    xmlns="http://berlinonline.de/schemas/honeybee/config/access_control/1.0" 
+    xmlns:env="http://berlinonline.de/schemas/honeybee/config/envelope/definition/1.0" 
+    xmlns:ae="http://agavi.org/agavi/config/global/envelope/1.0">
+    <ae:configuration>
+        <!-- 
+            Defines all actions that shall be available upon the author resource.
+
+            :INFO:
+            In opposite to the permissions file, which will probally vanish,
+            this file will serve as a source to the later rights gui,
+            allowing to show the available actions per resource/module.
+        -->
+        <resources>
+            <resource name="author">
+                <description>Defines a resource that represents author documents.</description>
+                <actions>
+                    <action>author::read</action>
+                    <action>author::write</action>
+                    <action>author::create</action>
+
+                    <action>author.edit::read</action>
+                    <action>author.edit::write</action>
+                    <action>author.edit::promote</action>
+                    <action>author.edit::delete</action>
+
+                    <action>author.publish::write</action>
+                    <action>author.publish::promote</action>
+                    <action>author.publish::demote</action>
+
+                    <action>author.published::read</action>
+                    <action>author.published::write</action>
+                    <action>author.published::promote</action>
+                    <action>author.published::demote</action>
+                    <action>author.published::delete</action>
+
+                    <action>author.archive::write</action>
+                    <action>author.archive::promote</action>
+                    <action>author.archive::demote</action>
+
+                    <action>author.archived::read</action>
+                    <action>author.archived::write</action>
+                    <action>author.archived::promote</action>
+                    <action>author.archived::demote</action>
+                    <action>author.archived::delete</action>
+
+                    <action>author.delete::write</action>
+                </actions>
+            </resource>
+        </resources>
+    </ae:configuration>
+</ae:configurations>

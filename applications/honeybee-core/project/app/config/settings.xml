@@ -25,6 +25,8 @@
         <settings prefix="project.modules.">
             <setting name="sort_order">
                 <ae:parameter>Book</ae:parameter>
+                <ae:parameter>Author</ae:parameter>
+                <ae:parameter>Publisher</ae:parameter>
                 <ae:parameter>User</ae:parameter>
             </setting>
         </settings>

@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ae:configurations
+    xmlns="http://berlinonline.de/schemas/honeybee/config/access_control/1.0" 
+    xmlns:env="http://berlinonline.de/schemas/honeybee/config/envelope/definition/1.0" 
+    xmlns:ae="http://agavi.org/agavi/config/global/envelope/1.0">
+    <ae:configuration>
+        <roles>
+            <!-- 
+                Defines which resource actions actions may be executed by the default editor.
+                
+                :INFO: 
+                Atm this is restricted for providing permission to for the default role only.
+                This will change extremely when we reach the iterations,
+                that have their main focus on the acl configuration.
+                Most probally then this file will be removed in the favour of a db driven management
+                with a fancy UI.
+            -->
+            <role name="default-permissions">
+                <acl>
+                    <grant>publisher::read</grant>
+                    <grant>publisher::write</grant>
+                    <grant>publisher::create</grant>
+
+                    <!-- edit state perms -->
+                    <grant>publisher.edit::read</grant>
+                    <grant>publisher.edit::write</grant>
+                    <grant>publisher.edit::promote</grant>
+                    <grant>publisher.edit::delete</grant>
+                    <!-- <grant if="user_is_item_owner">publisher.edit::write</grant> -->
+
+                    <!-- delete state perms -->
+                    <grant>publisher.delete::write</grant>
+                    
+                    <!-- publish state perms -->
+                    <grant>publisher.publish::write</grant>
+
+                    <!-- published state perms -->
+                    <grant>publisher.published::read</grant>
+                    <grant>publisher.published::write</grant>
+                    <grant>publisher.published::promote</grant>
+                    <grant>publisher.published::demote</grant>
+                    <grant>publisher.published::delete</grant>
+                    <!-- <grant if="user_is_item_owner">publisher.published::write</grant> -->
+
+                    <!-- archive state perms -->
+                    <grant>publisher.archive::write</grant>
+
+                    <!-- archived state perms -->
+                    <grant>publisher.archived::read</grant>
+                    <grant>publisher.archived::write</grant>
+                    <grant>publisher.archived::promote</grant>
+                    <grant>publisher.archived::demote</grant>
+                    <grant>publisher.archived::delete</grant>
+                    <!-- <grant if="user_is_item_owner">publisher.archived::write</grant> -->
+                </acl>
+            </role>
+        </roles>
+    </ae:configuration>
+</ae:configurations>

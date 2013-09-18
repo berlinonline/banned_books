@@ -8,6 +8,8 @@
             <autoload name="MigrationRunner">%core.app_dir%/project/lib/Migration/MigrationRunner.class.php</autoload>
             <autoload name="IMigration">%core.app_dir%/project/lib/Migration/IMigration.iface.php</autoload>
             <autoload name="ModuleMigration">%core.app_dir%/project/lib/Migration/ModuleMigration.class.php</autoload>
+            <autoload name="BooksCsvConsumer">%core.app_dir%/project/lib/Import/BooksCsvConsumer.class.php</autoload>
+            <autoload name="BookExport">%core.app_dir%/project/lib/Export/BookExport.class.php</autoload>
         </autoloads>
     </ae:configuration>
 </ae:configurations>

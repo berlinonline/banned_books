@@ -80,15 +80,14 @@
                             <ae:parameter name="shortId">Kurze Id</ae:parameter>
 
                             <ae:parameter name="title">Titel</ae:parameter>
-                            <ae:parameter name="authorFirstname">Author: Vorname</ae:parameter>
-                            <ae:parameter name="authorLastname">Author: Nachname</ae:parameter>
+                            <ae:parameter name="author">Author</ae:parameter>
                             <ae:parameter name="additionalInfos">weitere Informationen</ae:parameter>
                             <ae:parameter name="ssFlag">SS-Index</ae:parameter>
                             <ae:parameter name="pageNumber">Seitennummer</ae:parameter>
                             <ae:parameter name="ocrResult">OCR Scanergebnis</ae:parameter>
                             <ae:parameter name="corrections">Berichtigungen</ae:parameter>
 
-                            <ae:parameter name="editions.edition.publisher">Verlag</ae:parameter>
+                            <ae:parameter name="publisher">Verlag</ae:parameter>
                             <ae:parameter name="editions.edition.location">Ort</ae:parameter>
                             <ae:parameter name="editions.edition.year">Jahr</ae:parameter>
 

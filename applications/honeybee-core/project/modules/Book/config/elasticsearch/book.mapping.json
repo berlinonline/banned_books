@@ -53,69 +53,21 @@
     "ssFlag":{
       "type":"boolean"
     },
-    "authorFirstname":{
-      "type":"multi_field",
-      "fields":{
-        "authorFirstname":{
-          "type":"string"
-        },
-        "sort":{
-          "type":"string",
-          "analyzer":"IcuAnalyzer_DE",
-          "inlclude_in_all":false
-        },
-        "filter":{
-          "type":"string",
-          "index":"not_analyzed"
-        },
-        "suggest":{
-          "type":"string",
-          "analyzer":"AutoCompleteAnalyzer",
-          "inlclude_in_all":false
-        }
-      }
-    },
-    "authorLastname":{
-      "type":"multi_field",
-      "fields":{
-        "authorLastname":{
-          "type":"string"
-        },
-        "sort":{
-          "type":"string",
-          "analyzer":"IcuAnalyzer_DE",
-          "inlclude_in_all":false
-        },
-        "filter":{
-          "type":"string",
-          "index":"not_analyzed"
-        },
-        "suggest":{
-          "type":"string",
-          "analyzer":"AutoCompleteAnalyzer",
-          "inlclude_in_all":false
-        }
-      }
-    },
-    "additionalInfos":{
-      "type":"string"
-    },
-    "pageNumber":{
-      "type":"integer"
-    },
-    "ocrResult":{
-      "type":"string"
-    },
-    "corrections":{
-      "type":"string"
-    },
-    "editions":{
+    "author":{
       "type":"object",
       "properties":{
-        "publisher":{
+        "id":{
+          "type":"string",
+          "index":"not_analyzed"
+        },
+        "module":{
+          "type":"string",
+          "index":"not_analyzed"
+        },
+        "author.firstname":{
           "type":"multi_field",
           "fields":{
-            "publisher":{
+            "author.firstname":{
               "type":"string"
             },
             "sort":{
@@ -134,6 +86,67 @@
             }
           }
         },
+        "author.lastname":{
+          "type":"multi_field",
+          "fields":{
+            "author.lastname":{
+              "type":"string"
+            },
+            "sort":{
+              "type":"string",
+              "analyzer":"IcuAnalyzer_DE",
+              "inlclude_in_all":false
+            },
+            "filter":{
+              "type":"string",
+              "index":"not_analyzed"
+            },
+            "suggest":{
+              "type":"string",
+              "analyzer":"AutoCompleteAnalyzer",
+              "inlclude_in_all":false
+            }
+          }
+        },
+        "author.fullname":{
+          "type":"multi_field",
+          "fields":{
+            "author.fullname":{
+              "type":"string"
+            },
+            "sort":{
+              "type":"string",
+              "analyzer":"IcuAnalyzer_DE",
+              "inlclude_in_all":false
+            },
+            "filter":{
+              "type":"string",
+              "index":"not_analyzed"
+            },
+            "suggest":{
+              "type":"string",
+              "analyzer":"AutoCompleteAnalyzer",
+              "inlclude_in_all":false
+            }
+          }
+        }
+      }
+    },
+    "additionalInfos":{
+      "type":"string"
+    },
+    "pageNumber":{
+      "type":"integer"
+    },
+    "ocrResult":{
+      "type":"string"
+    },
+    "corrections":{
+      "type":"string"
+    },
+    "editions":{
+      "type":"object",
+      "properties":{
         "location":{
           "type":"multi_field",
           "fields":{
@@ -175,6 +188,19 @@
               "type":"string",
               "analyzer":"AutoCompleteAnalyzer",
               "inlclude_in_all":false
+            }
+          }
+        },
+        "publisher":{
+          "type":"object",
+          "properties":{
+            "id":{
+              "type":"string",
+              "index":"not_analyzed"
+            },
+            "module":{
+              "type":"string",
+              "index":"not_analyzed"
             }
           }
         }

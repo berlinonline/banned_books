@@ -15,10 +15,10 @@
                         <ae:parameter name="de">
                             <ae:parameter name="brand-name">Verbannte Bücher - CMS</ae:parameter>
                             <ae:parameter name="brand-title">Liste von Büchern die zur NS-Zeit verboten wurden.</ae:parameter>
-                            <ae:parameter name="book">Bücher</ae:parameter>
                             <ae:parameter name="Book">Bücher</ae:parameter>
-                            <ae:parameter name="user">CMS Nutzer</ae:parameter>
                             <ae:parameter name="User">CMS Nutzer</ae:parameter>
+                            <ae:parameter name="Author">Autoren</ae:parameter>
+                            <ae:parameter name="Publisher">Verlage</ae:parameter>
                         </ae:parameter>
                         <ae:parameter name="en">
                             <ae:parameter name="brand-name">Banned Books</ae:parameter>

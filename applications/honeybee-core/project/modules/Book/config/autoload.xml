@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<ae:configurations 
-    xmlns="http://agavi.org/agavi/config/parts/autoload/1.0" 
+<ae:configurations
+    xmlns="http://agavi.org/agavi/config/parts/autoload/1.0"
     xmlns:ae="http://agavi.org/agavi/config/global/envelope/1.0">
     <ae:configuration>
 
@@ -8,7 +8,6 @@
         <autoload name="BookBaseAction">%core.module_dir%/Book/lib/agavi/action/BookBaseAction.class.php</autoload>
         <autoload name="BookBaseView">%core.module_dir%/Book/lib/agavi/view/BookBaseView.class.php</autoload>
         <autoload name="BookDocumentValidator">%core.module_dir%/Book/lib/agavi/validator/BookDocumentValidator.class.php</autoload>
-        
         <!-- Service -->
         <autoload name="BookService">%core.module_dir%/Book/lib/BookService.class.php</autoload>
     </ae:configuration>

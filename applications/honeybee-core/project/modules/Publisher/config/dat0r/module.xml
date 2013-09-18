@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<module_schema namespace="Honeybee\Domain">
+
+    <module_definition name="Publisher">
+        <implementor>\Honeybee\Core\Dat0r\Module</implementor>
+        <document_implementor>\Honeybee\Core\Dat0r\Document</document_implementor>
+        <description>
+            Holds the structure definition for Publisher documents.
+        </description>
+        <option name="prefix">publisher</option>
+        <option name="identifier_field">identifier</option>
+        <option name="slugPattern">publisher-{shortId}</option>
+        <!-- <option name="act_as_tree">yes</option>
+        <option name="tree_label_field">title</option> -->
+        <fields>
+
+             <field name="name" type="text">
+                <option name="mandatory">true</option>
+            </field>
+
+            <!-- Honeybee workflow integration; dont touch!! -->
+            <field name="meta" type="key-value">
+                <description>Holds a set of generic attributes.</description>
+                <option name="constraints">
+                    <option name="value_type">dynamic</option>
+                </option>
+            </field>
+            <field name="workflowTicket" type="aggregate">
+                <option name="modules">
+                    <option>WorkflowTicket</option>
+                </option>
+            </field>
+        </fields>
+    </module_definition>
+
+    <aggregate_definition name="WorkflowTicket">
+        <document_implementor>\Honeybee\Core\Dat0r\WorkflowTicket</document_implementor>
+        <description>
+            The WorkflowTicket aggregate holds reflects the current state of an documents workflow state.
+        </description>
+        <fields>
+            <field name="workflowName" type="text" />
+            <field name="workflowStep" type="text" />
+            <field name="owner" type="text" />
+            <field name="blocked" type="boolean" />
+            <field name="waitUntil" type="text" />
+            <field name="stepCounts" type="key-value" >
+                <option name="constraints">
+                    <option name="value_type">integer</option>
+                </option>
+            </field>
+            <field name="lastResult" type="aggregate">
+                <option name="modules">
+                    <option>PluginResult</option>
+                </option>
+            </field>
+        </fields>
+    </aggregate_definition>
+
+    <aggregate_definition name="PluginResult">
+        <description>
+            A PluginResult reflects a state resulting from executing a workflow plugin.
+        </description>
+        <fields>
+            <field name="state" type="integer" />
+            <field name="gate" type="text" />
+            <field name="message" type="text" />
+        </fields>
+    </aggregate_definition>
+
+</module_schema>

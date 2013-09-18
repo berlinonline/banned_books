@@ -5,14 +5,14 @@
     xmlns:ae="http://agavi.org/agavi/config/global/envelope/1.0">
     <ae:configuration>
         <exports>
-            <export name="pulq-fe" class="\Honeybee\Core\Export\DocumentExport">
+            <export name="pulq-fe" class="BookExport">
                 <description>
                     Exports book to the couchdb export database, which serves as an elasticsearch river source.
                 </description>
                 <settings>
                     <setting name="storage">
                         <setting name="implementor">\Honeybee\Core\Storage\CouchDb\GenericStorage</setting>
-                        <setting name="connection">Book.Pulq.Fe</setting>
+                        <setting name="connection">Pulq.Fe</setting>
                     </setting>
                 </settings>
                 <filters>
@@ -20,12 +20,24 @@
                         <settings>
                             <setting name="properties">
                                 <setting name="title">title</setting>
-                                <setting name="ssFlag">ss</setting>
+                                <setting name="ssFlag">
+                                    <setting name="export_key">ss</setting>
+                                    <setting name="cast_to">boolean</setting>
+                                </setting>
                                 <setting name="additionalInfos">infos</setting>
-                                <setting name="pageNumber">page</setting>
+                                <setting name="pageNumber">
+                                    <setting name="export_key">pages</setting>
+                                    <setting name="cast_to">int</setting>
+                                </setting>
                                 <setting name="slug">slug</setting>
-                                <setting name="authorFirstname">authors[0][firstName]</setting>
-                                <setting name="authorLastname">authors[0][lastName]</setting>
+                                <setting name="author">
+                                    <setting name="export_key">authors</setting>
+                                    <setting name="display_fields">
+                                        <setting>firstname</setting>
+                                        <setting>lastname</setting>
+                                        <setting>slug</setting>
+                                    </setting>
+                                </setting>
                                 <setting name="editions">editions</setting>
                             </setting>
                         </settings>

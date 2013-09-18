@@ -17,8 +17,21 @@
                 <option name="mandatory">yes</option>
             </field>
             <field name="ssFlag" type="boolean" />
-            <field name="authorFirstname" type="text" />
-            <field name="authorLastname" type="text" />
+            <field name="author" type="reference">
+                <option name="max">1</option>
+                <option name="references">
+                    <option>
+                        <option name="module">\Honeybee\Domain\Author\AuthorModule</option>
+                        <option name="identity_field">identifier</option>
+                        <option name="display_field">fullname</option>
+                        <option name="index_fields">
+                            <option>firstname</option>
+                            <option>lastname</option>
+                            <option>fullname</option>
+                        </option>
+                    </option>
+                </option>
+            </field>
             <field name="additionalInfos" type="textarea" />
             <field name="pageNumber" type="integer" />
             <field name="ocrResult" type="textarea" />
@@ -79,13 +92,23 @@
     </aggregate_definition>
 
     <aggregate_definition name="Edition">
+        <document_implementor>\Honeybee\Core\Dat0r\BaseDocument</document_implementor>
         <description>
             An Edition instance holds data on specific book edition.
         </description>
         <fields>
-            <field name="publisher" type="text" />
             <field name="location" type="text" />
             <field name="year" type="text" />
+            <field name="publisher" type="reference">
+                <option name="max">1</option>
+                <option name="references">
+                    <option>
+                        <option name="module">\Honeybee\Domain\Publisher\PublisherModule</option>
+                        <option name="identity_field">identifier</option>
+                        <option name="display_field">name</option>
+                    </option>
+                </option>
+            </field>
         </fields>
     </aggregate_definition>
 

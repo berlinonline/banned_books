@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ae:configurations 
+    xmlns="http://agavi.org/agavi/config/parts/autoload/1.0" 
+    xmlns:ae="http://agavi.org/agavi/config/global/envelope/1.0">
+    <ae:configuration>
+
+        <!-- Agavi -->
+        <autoload name="PublisherBaseAction">%core.module_dir%/Publisher/lib/agavi/action/PublisherBaseAction.class.php</autoload>
+        <autoload name="PublisherBaseView">%core.module_dir%/Publisher/lib/agavi/view/PublisherBaseView.class.php</autoload>
+        <autoload name="PublisherDocumentValidator">%core.module_dir%/Publisher/lib/agavi/validator/PublisherDocumentValidator.class.php</autoload>
+        
+        <!-- Service -->
+        <autoload name="PublisherService">%core.module_dir%/Publisher/lib/PublisherService.class.php</autoload>
+    </ae:configuration>
+</ae:configurations>

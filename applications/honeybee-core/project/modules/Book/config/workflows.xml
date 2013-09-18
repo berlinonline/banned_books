@@ -33,7 +33,6 @@
                                     <ae:parameter>pulq-fe</ae:parameter>
                                 </ae:parameters>
                             </ae:parameter>
-                            <ae:parameter name="async">true</ae:parameter>
                         </ae:parameters>
                         <gates>
                             <gate_step label="publishing ok" name="promote">published</gate_step>

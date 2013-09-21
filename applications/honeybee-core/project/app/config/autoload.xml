@@ -10,6 +10,7 @@
             <autoload name="ModuleMigration">%core.app_dir%/project/lib/Migration/ModuleMigration.class.php</autoload>
             <autoload name="BooksCsvConsumer">%core.app_dir%/project/lib/Import/BooksCsvConsumer.class.php</autoload>
             <autoload name="BookExport">%core.app_dir%/project/lib/Export/BookExport.class.php</autoload>
+            <autoload name="BookCsvFilter">%core.app_dir%/project/lib/Export/BookCsvFilter.class.php</autoload>
         </autoloads>
     </ae:configuration>
 </ae:configurations>

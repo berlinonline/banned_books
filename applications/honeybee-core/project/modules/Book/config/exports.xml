@@ -82,25 +82,7 @@
                     </setting>
                 </settings>
                 <filters>
-                    <filter name="simple-props" class="Honeybee\Core\Export\Filter\PropertyFilter">
-                        <settings>
-                            <setting name="properties">
-                                <setting name="identifier">uid</setting>
-                                <setting name="title">title</setting>
-                                <setting name="authorFirstname">authorFirstName</setting>
-                                <setting name="authorLastname">authorLastName</setting>
-                                <setting name="ssFlag">ss</setting>
-                                <setting name="additionalInfos">infos</setting>
-                                <setting name="pageNumber">page</setting>
-                                <setting name="editions[0][publisher]">editionOnePublisher</setting>
-                                <setting name="editions[0][location]">editionOneLocation</setting>
-                                <setting name="editions[0][year]">editionOneYear</setting>
-                                <setting name="editions[1][publisher]">editionTwoPublisher</setting>
-                                <setting name="editions[1][location]">editionTwoLocation</setting>
-                                <setting name="editions[1][year]">editionTwoYear</setting>
-                            </setting>
-                        </settings>
-                    </filter>
+                    <filter name="simple-props" class="BookCsvFilter" />
                 </filters>
             </export>
 
@@ -124,17 +106,26 @@
                             <setting name="properties">
                                 <setting name="identifier">uid</setting>
                                 <setting name="title">title</setting>
-                                <setting name="authorFirstname">author[firstname]</setting>
-                                <setting name="authorLastname">author[lastname]</setting>
-                                <setting name="ssFlag">ss</setting>
+                                <setting name="ssFlag">
+                                    <setting name="export_key">ss</setting>
+                                    <setting name="cast_to">boolean</setting>
+                                </setting>
                                 <setting name="additionalInfos">infos</setting>
-                                <setting name="pageNumber">page</setting>
-                                <setting name="editions[0][publisher]">editions[0][publisher]</setting>
-                                <setting name="editions[0][location]">editions[0][location]</setting>
-                                <setting name="editions[0][year]">editions[0][year]</setting>
-                                <setting name="editions[1][publisher]">editions[1][publisher]</setting>
-                                <setting name="editions[1][location]">editions[1][location]</setting>
-                                <setting name="editions[1][year]">editions[1][year]</setting>
+                                <setting name="pageNumber">
+                                    <setting name="export_key">pages</setting>
+                                    <setting name="cast_to">int</setting>
+                                </setting>
+                                <setting name="slug">slug</setting>
+                                <setting name="author">
+                                    <setting name="export_key">authors</setting>
+                                    <setting name="display_fields">
+                                        <setting>identifier</setting>
+                                        <setting>slug</setting>
+                                        <setting>firstname</setting>
+                                        <setting>lastname</setting>
+                                    </setting>
+                                </setting>
+                                <setting name="editions">editions</setting>
                             </setting>
                         </settings>
                     </filter>

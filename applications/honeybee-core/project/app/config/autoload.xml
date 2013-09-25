@@ -11,6 +11,7 @@
             <autoload name="BooksCsvConsumer">%core.app_dir%/project/lib/Import/BooksCsvConsumer.class.php</autoload>
             <autoload name="BookExport">%core.app_dir%/project/lib/Export/BookExport.class.php</autoload>
             <autoload name="BookCsvFilter">%core.app_dir%/project/lib/Export/BookCsvFilter.class.php</autoload>
+            <autoload name="FileMetaDataReader">%core.app_dir%/project/lib/FileMetaDataReader.class.php</autoload>
         </autoloads>
     </ae:configuration>
 </ae:configurations>

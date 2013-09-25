@@ -1,0 +1,18 @@
+description "honeybee jobqueue spinner"
+author      "thorsten schmitt-rink"
+
+#start on startup
+#stop on shutdown
+
+# Automatically Respawn:
+#respawn
+#respawn limit 1 5
+
+script
+    cd /home/vagrant/projects/banned-books-cms/applications/honeybee-core/honeybee/
+    exec sudo -u vagrant ./bin/cli common.queue.spinner
+end script
+
+post-start script
+   # Optionally put a script here that will notifiy you that the queue has (re)started
+end script

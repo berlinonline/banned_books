@@ -22,7 +22,12 @@ define banned_books::application (
       mode    => '0744',
       owner   => 'vagrant',
       group   => 'vagrant',
-      content => template('banned_books/init_cms.sh.erb')
+      content => template('banned_books/init_cms.sh.erb');
+    "/etc/init/hbq-spinner.conf":
+      ensure  => present,
+      mode    => '0744',
+      owner   => 'root',
+      group   => 'root',
+      content => template('banned_books/hbq-spinner.conf.erb');
   }
 }
-

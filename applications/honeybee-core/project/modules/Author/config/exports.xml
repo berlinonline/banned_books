@@ -19,8 +19,8 @@
                     <filter name="simple-props" class="Honeybee\Core\Export\Filter\PropertyFilter">
                         <settings>
                             <setting name="properties">
-                                <setting name="firstname">firstname</setting>
-                                <setting name="lastname">lastname</setting>
+                                <setting name="firstname">firstName</setting>
+                                <setting name="lastname">lastName</setting>
                                 <setting name="slug">slug</setting>
                             </setting>
                         </settings>

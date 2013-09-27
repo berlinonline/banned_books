@@ -29,6 +29,16 @@ class BookExport extends Export\DocumentExport
         }
         $data['editions'] = $editions;
 
+        $authors = array();
+        if ($author = $document->getAuthor()->first()) {
+            $authors[] = array(
+                'firstName' => $author->getFirstname(),
+                'lastName' => $author->getLastname(),
+                'slug' => $author->getSlug()
+            );
+        }
+        $data['authors'] = $authors;
+
         return $data;
     }
 }

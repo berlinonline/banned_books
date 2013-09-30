@@ -14,7 +14,7 @@
             <setting name="workflow">book.default</setting>
             <setting name="enabled_exports">
                 <ae:parameters>
-                    <ae:parameter>xml_zipped</ae:parameter>
+                    <ae:parameter>xml</ae:parameter>
                     <ae:parameter>csv</ae:parameter>
                 </ae:parameters>
             </setting>

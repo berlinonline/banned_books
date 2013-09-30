@@ -62,6 +62,7 @@
                         <setting name="implementor">Honeybee\Core\Storage\Memory\CsvStorage</setting>
                         <setting name="options">
                             <settings>
+                                <setting name="write_to">output_stream</setting>
                                 <setting name="csv_headers">
                                     <setting>UID</setting>
                                     <setting>Titel</setting>
@@ -87,7 +88,7 @@
             </export>
 
             <export name="list-xml-zip" class="\Honeybee\Core\Export\GenericExport">
-                <description>Exports books data as a csv file.</description>
+                <description>Exports books data as a zip-archive containing xml files.</description>
                 <settings>
                     <setting name="storage">
                         <setting name="implementor">Honeybee\Core\Storage\Memory\XmlZipArchiveStorage</setting>
@@ -96,6 +97,51 @@
                                 <setting name="archive_base_path">Books</setting>
                                 <setting name="file_pattern">{uid}.xml</setting>
                                 <setting name="archive_name">books-list.zip</setting>
+                            </settings>
+                        </setting>
+                    </setting>
+                </settings>
+                <filters>
+                    <filter name="simple-props" class="Honeybee\Core\Export\Filter\PropertyFilter">
+                        <settings>
+                            <setting name="properties">
+                                <setting name="identifier">uid</setting>
+                                <setting name="title">title</setting>
+                                <setting name="ssFlag">
+                                    <setting name="export_key">ss</setting>
+                                    <setting name="cast_to">boolean</setting>
+                                </setting>
+                                <setting name="additionalInfos">infos</setting>
+                                <setting name="pageNumber">
+                                    <setting name="export_key">pages</setting>
+                                    <setting name="cast_to">int</setting>
+                                </setting>
+                                <setting name="slug">slug</setting>
+                                <setting name="author">
+                                    <setting name="export_key">authors</setting>
+                                    <setting name="display_fields">
+                                        <setting>identifier</setting>
+                                        <setting>slug</setting>
+                                        <setting>firstname</setting>
+                                        <setting>lastname</setting>
+                                    </setting>
+                                </setting>
+                                <setting name="editions">editions</setting>
+                            </setting>
+                        </settings>
+                    </filter>
+                </filters>
+            </export>
+
+            <export name="list-xml" class="\Honeybee\Core\Export\GenericExport">
+                <description>Exports books data as a xml file.</description>
+                <settings>
+                    <setting name="storage">
+                        <setting name="implementor">Honeybee\Core\Storage\Memory\XmlStorage</setting>
+                        <setting name="options">
+                            <settings>
+                                <setting name="archive_base_path">Books</setting>
+                                <setting name="write_to">output_stream</setting>
                             </settings>
                         </setting>
                     </setting>

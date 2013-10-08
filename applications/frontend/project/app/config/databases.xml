@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<ae:configurations 
-    xmlns="http://agavi.org/agavi/config/parts/databases/1.0" 
+<ae:configurations
+    xmlns="http://agavi.org/agavi/config/parts/databases/1.0"
     xmlns:ae="http://agavi.org/agavi/config/global/envelope/1.0">
     <ae:configuration>
         <databases default="Default.Read">
@@ -14,12 +14,14 @@
                     <ae:parameter name="setup_dir">%core.modules_dir%/Default/config/elasticsearch/</ae:parameter>
                     <ae:parameter name="types">
                         <ae:parameter name="book">%core.module_dir%/Book/config/elasticsearch/book.mapping.json</ae:parameter>
+                        <ae:parameter name="publisher">%core.module_dir%/Book/config/elasticsearch/publisher.mapping.json</ae:parameter>
+                        <ae:parameter name="author">%core.module_dir%/Book/config/elasticsearch/author.mapping.json</ae:parameter>
                     </ae:parameter>
                 </ae:parameter>
 
                 <ae:parameter name="couchdb">
-                    <ae:parameter name="url">http://localhost:5984/</ae:parameter>
-                    <ae:parameter name="database">%core.project_prefix%_%core.environment%_pulq_fe</ae:parameter>
+                    <ae:parameter name="url">http://banned-books-cms.local:5984/</ae:parameter>
+                    <ae:parameter name="database">banned-books-cms_development-vagrant_pulq_fe</ae:parameter>
                 </ae:parameter>
                 <ae:parameter name="river_script">%core.app_dir%/project/config/elasticsearch/default.river.js</ae:parameter>
                 <ae:parameter name="river_settings">

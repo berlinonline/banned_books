@@ -14,6 +14,8 @@
                     <ae:parameter name="setup_dir">%core.modules_dir%/book/config/elasticsearch/</ae:parameter>
                     <ae:parameter name="types">
                         <ae:parameter>book</ae:parameter>
+                        <ae:parameter>author</ae:parameter>
+                        <ae:parameter>publisher</ae:parameter>
                     </ae:parameter>
                 </ae:parameter>
 

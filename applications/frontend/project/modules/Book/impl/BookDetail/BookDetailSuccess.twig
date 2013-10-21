@@ -20,8 +20,10 @@
             {% for edition in book.editions %}
                 <li>
                     <dl>
-                        <dt>Verlag</dt>
-                        <dd><a href="{{edition.publisher.url}}">{{edition.publisher.name}}</a></dd>
+                        {% if edition.publisher %}
+                            <dt>Verlag</dt>
+                            <dd><a href="{{edition.publisher.url}}">{{edition.publisher.name}}</a></dd>
+                        {% endif %}
                         <dt>Ort</dt>
                         <dd>{{edition.location}}</dd>
                         <dt>Jahr</dt>

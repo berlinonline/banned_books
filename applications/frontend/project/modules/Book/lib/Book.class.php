@@ -48,8 +48,10 @@ class Book extends BaseDataObject
 
     public function getEditions() {
         return array_map(function($edition) {
-            $publisher = new Publisher($edition['publisher']);
-            $edition['publisher'] = $publisher->toArray('list');
+            if ($edition['publisher']) {
+                $publisher = new Publisher($edition['publisher']);
+                $edition['publisher'] = $publisher->toArray('list');
+            }
             return $edition;
         }, $this->editions);
     }

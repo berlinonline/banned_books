@@ -10,6 +10,6 @@ $project_basedir = "${hosting_root}/banned-books-cms"
 # define our concrete box configuration
 class { 'boxes::devbox-php-couchdb': }
 -> banned_books::application { 'banned-books-cms.local':
-    app_docroot => "${project_basedir}/applications/honeybee-core/honeybee/pub"
+    app_docroot => "${project_basedir}/applications/cms/honeybee/pub"
 }
 

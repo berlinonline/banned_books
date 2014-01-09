@@ -12,4 +12,3 @@ class { 'boxes::devbox-php-couchdb': }
 -> banned_books::application { 'banned-books-fe.local':
     app_docroot => "${project_basedir}/applications/frontend/pulq/pub"
 }
-

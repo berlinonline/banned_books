@@ -1,7 +1,7 @@
 <!doctype html>
 <html>
 <head>
-    <title>{{ _title }} - Berlin.de</title>
+    <title>{{ _title }} - Verbannte Bücher -  Berlin.de</title>
     <meta charset="UTF-8" />    
     {% set locale = tm.getCurrentLocale() %}
     {% set dir = locale.getCharacterOrientation() == 'right-to-left' ? 'rtl' : 'ltr' %}
@@ -19,7 +19,15 @@
                     MAIN CONTENT AREA (WHITE BG)
             ********************************************************** -->
                 {{ slots.header|raw }}
-                {{ inner|raw }}
+                <div class="row">
+                    <div class="span2 column-left">
+                        {% include "navigation.twig" %}
+                    </div>
+                    <div class="span7 column-content">
+                        {% include "disclaimer_top.twig" %}
+                        {{ inner|raw }}
+                    </div>
+                </div>
                 {{ slots.footer|raw }}
         <!-- Include for portal footer -->
         <esi:include src="https://www.berlin.de/template/land9/__ml/land9_abs/foot.inc" />

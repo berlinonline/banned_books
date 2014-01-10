@@ -20,7 +20,7 @@
                 </ae:parameter>
 
                 <ae:parameter name="couchdb">
-                    <ae:parameter name="url">http://banned-books-cms.local:5984/</ae:parameter>
+                    <ae:parameter name="url">http://banned-books-fe.local:5984/</ae:parameter>
                     <ae:parameter name="database">banned-books-cms_development-vagrant_pulq_fe</ae:parameter>
                 </ae:parameter>
                 <ae:parameter name="river_script">%core.app_dir%/project/config/elasticsearch/default.river.js</ae:parameter>

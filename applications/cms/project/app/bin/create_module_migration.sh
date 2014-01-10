@@ -11,7 +11,14 @@ class Migration${timestamp} extends ModuleMigration
 {
     public function up()
     {
+        \$couch_db_client = \$this->getConnection('Write');
 
+        \$this->proccessAllDocuments(
+            function(array \$document_data) use (\$couch_db_client)
+            {
+                // @todo migrate the module data here.
+            }
+        );
     }
 
     public function down()

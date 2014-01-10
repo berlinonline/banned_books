@@ -10,14 +10,8 @@
         <option name="slugPattern">{fullname}-{shortId}</option>
         <fields>
 
-            <field name="firstname" type="text">
-                <option name="mandatory">true</option>
-            </field>
-
-            <field name="lastname" type="text">
-                <option name="mandatory">true</option>
-            </field>
-
+            <field name="firstname" type="text" />
+            <field name="lastname" type="text" />
             <field name="fullname" type="text" />
 
             <!-- Honeybee workflow integration; dont touch!! -->

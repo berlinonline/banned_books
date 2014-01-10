@@ -4,6 +4,7 @@
     xmlns="http://agavi.org/agavi/config/parts/routing/1.0">
     <ae:configuration context="web">
         <routes>
+            <route name="common.blacklist" pattern="^/schwarze-liste$" module="Common" action="BlackList" />
             <route name="common.search" pattern="^/suche$" module="Common" action="Search" />
             <route name="common" pattern="/common" module="Common">
                 <route

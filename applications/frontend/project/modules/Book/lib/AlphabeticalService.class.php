@@ -60,6 +60,7 @@ class AlphabeticalService extends BaseElasticSearchService
 
         $title_facet = new Facet\Terms($this->es_type);
         $title_facet->setField($this->letter_field);
+        $title_facet->setSize(100);
         $query->addFacet($title_facet);
 
         $resultData = $this->executeQuery($query);

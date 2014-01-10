@@ -27,6 +27,28 @@
                         {% include "disclaimer_top.twig" %}
                         {{ inner|raw }}
                     </div>
+                    <div class="span3 column-right html5-aside" role="complementary">
+                        <div class="html5-section content-marginal">
+                            <div class="html5-section body">
+                                <div class="html5-section block boxmerge">
+                                    <div class="html5-header header">
+                                        <h3 class="title">Liste in Datenform</h3>
+                                    </div><!-- /html5-header -->
+                                    <div class="html5-section body">
+                                        <p>
+                                            Die List der verbotenen Bücher erhalten Sie in Datenform im
+                                            <a href="http://daten.berlin.de/datensaetze/liste-der-verbannten-bücher">Datenportal des Landes Berlin</a>
+                                        </p>
+                                        <p>
+                                            <a href="http://daten.berlin.de/datensaetze/liste-der-verbannten-bücher">
+                                                <img src="{{ro.getBaseHref()}}images/opendatalogo_small.png" />
+                                            </a>
+                                        </p>
+                                    </div><!-- /html5-section -->
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
                 {{ slots.footer|raw }}
         <!-- Include for portal footer -->

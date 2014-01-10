@@ -4,21 +4,8 @@
     xmlns:ae="http://agavi.org/agavi/config/global/envelope/1.0"
     parent="%core.module_dir%/Publisher/config/validators.xml">
     <ae:configuration>
-        <validators method="read">
-            <validator class="PublisherDocumentValidator" name="invalid_publisher" required="false">
-                <arguments>
-                    <argument>id</argument>
-                </arguments>
-            </validator>
-        </validators>
-
-        <validators method="write" translation_domain="publisher.errors">
-            <validator class="PublisherDocumentValidator" name="invalid_publisher" required="false">
-                <arguments>
-                    <argument>publisher</argument>
-                </arguments>
-                <error for="invalid_values">The value '%value$s' given for field '%fieldname$s' does not comply.</error>
-                <error for="missing_mandatory_values">Missing required value for field '%fieldname$s'</error>
+        <validator class="publisher" required="false">
+                <argument>publisher</argument>
             </validator>
         </validators>
     </ae:configuration>

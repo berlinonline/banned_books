@@ -5,20 +5,8 @@
     parent="%core.module_dir%/Book/config/validators.xml">
     <ae:configuration>
         <validators method="read">
-            <validator class="BookDocumentValidator" name="invalid_book" required="false">
-                <arguments>
-                    <argument>id</argument>
-                </arguments>
-            </validator>
-        </validators>
-
-        <validators method="write" translation_domain="book.errors">
-            <validator class="BookDocumentValidator" name="invalid_book" required="false">
-                <arguments>
-                    <argument>book</argument>
-                </arguments>
-                <error for="invalid_values">The value '%value$s' given for field '%fieldname$s' does not comply.</error>
-                <error for="missing_mandatory_values">Missing required value for field '%fieldname$s'</error>
+            <validator class="book" required="false">
+                <argument>book</argument>
             </validator>
         </validators>
     </ae:configuration>

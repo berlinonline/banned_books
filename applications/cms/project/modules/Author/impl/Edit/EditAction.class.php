@@ -3,7 +3,7 @@
 use \Honeybee\Agavi\Action\EditAction;
 
 /**
- * The Author_EditAction class is responseable 
+ * The Author_EditAction class is responseable
  * for handling Author editing intents.
  *
  * @copyright       BerlinOnline Stadtportal GmbH & Co. KG
@@ -13,5 +13,4 @@ use \Honeybee\Agavi\Action\EditAction;
  */
 class Author_EditAction extends EditAction
 {
-    
 }

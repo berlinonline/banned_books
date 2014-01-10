@@ -27,7 +27,7 @@
 
         <settings>
             <!-- Change this to whatever you like to name your project -->
-            <setting name="app_name">Verbotene Bücher</setting>
+            <setting name="app_name">Verbannte Bücher</setting>
             <setting name="project_prefix">banned_books</setting>
             <!--
                  DBs are disabled by default to give you a working site

@@ -9,9 +9,7 @@
         </description>
         <option name="prefix">publisher</option>
         <option name="identifier_field">identifier</option>
-        <option name="slugPattern">publisher-{shortId}</option>
-        <!-- <option name="act_as_tree">yes</option>
-        <option name="tree_label_field">title</option> -->
+        <option name="slugPattern">{name}-{shortId}</option>
         <fields>
 
              <field name="name" type="text">

@@ -13,5 +13,11 @@ use Honeybee\Domain\Author\Base;
  */
 class AuthorDocument extends Base\AuthorDocument
 {
+    public function onBeforeWrite()
+    {
+        $fullname = $this->getFullname();
+        $this->setFullname($this->getFirstname() . ' ' . $this->getLastname());
 
+        parent::onBeforeWrite();
+    }
 }

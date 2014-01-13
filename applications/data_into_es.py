@@ -4,7 +4,7 @@ import requests
 import json
 import unicodedata
 
-csv_file = 'honeybee-core/project/app/verbannte-buecher.csv'
+csv_file = 'cms/project/app/verbannte-buecher.csv'
 index_name = "banned_books_development-vagrant_pulq_fe"
 index_file = "frontend/project/app/config/elasticsearch/default.index.json"
 book_mapping_file = "frontend/project/modules/Book/config/elasticsearch/book.mapping.json"
@@ -19,7 +19,7 @@ index["mappings"]["book"] = book_mapping
 index["mappings"]["author"] = author_mapping
 index["mappings"]["publisher"] = publisher_mapping
 
-es_url = "http://banned-books.dev:9200/"
+es_url = "http://banned-books-fe.local:9200/"
 index_url = es_url + index_name + "/"
 book_url = index_url + 'book/'
 author_url = index_url + 'author/'

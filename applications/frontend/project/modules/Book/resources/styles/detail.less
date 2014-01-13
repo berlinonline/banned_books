@@ -1,9 +1,15 @@
 .book-detail,
 .author-detail,
 .publisher-detail {
-    dl {
-        dt {
-            float: none;
+    > dl {
+        > dt {
+            float: left;
+            width: 20%;
+        }
+
+        > dd {
+            float: right;
+            width: 75%;
         }
     }
 }

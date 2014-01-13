@@ -55,7 +55,7 @@ class BookService extends BaseElasticSearchService
             'authors.lastName.raw' => $author->getLastName(),
         ));
         $query = Query::create($filter);
-        #echo json_encode($query->toArray());die();
+#        echo json_encode($query->toArray());die();
 
         $query->setLimit(10000);
 

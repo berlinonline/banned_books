@@ -37,6 +37,7 @@ class AuthorService extends BaseElasticSearchService
     {
         $query = new Query\Field('slug.raw', $slug);
 
+        #echo json_encode(Query::create($query)->toArray());die;
         $resultData = $this->executeQuery(Query::create($query));
 
         $author_set = $this->extractFromResultSet($resultData);

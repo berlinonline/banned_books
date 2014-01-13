@@ -15,9 +15,42 @@ class AuthorDocument extends Base\AuthorDocument
 {
     public function onBeforeWrite()
     {
+        $changed_fields = array();
+        foreach ($this->getChanges() as $change) {
+            $changed_fields[] = $change->getField()->getName();
+        }
+
         $fullname = $this->getFullname();
-        $this->setFullname($this->getFirstname() . ' ' . $this->getLastname());
+        $firstname = $this->getFirstname();
+        $lastname = $this->getLastname();
+
+        if (
+            empty($fullname)
+            || in_array('firstname', $changed_fields)
+            || in_array('lastname', $changed_fields)
+        ) {
+            $this->setFullname($firstname . ' ' . $lastname);
+        } elseif (in_array('fullname', $changed_fields)) {
+            $this->applyFullname();
+        } else {
+            if (!empty($fullname) && empty($firstname) && empty($lastname)) {
+                $this->applyFullname();
+            }
+        }
 
         parent::onBeforeWrite();
+    }
+
+    protected function applyFullname()
+    {
+        // firstname is automated to be "the first part" of the name string
+        $fullname = $this->getFullname();
+        $name_parts = explode(' ', $fullname);
+        if (isset($name_parts[0])) {
+            $this->setFirstname(array_shift($name_parts));
+        }
+        if (count($name_parts) > 0) {
+            $this->setLastname(implode(" ", $name_parts));
+        }
     }
 }

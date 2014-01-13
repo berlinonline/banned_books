@@ -26,7 +26,7 @@ class Migration20140110152745 extends ModuleMigration
             function(array $document_data) use ($couch_db_client, $publisher_module, $book_module, &$migrated_publishers)
             {
                 $editions = empty($document_data['editions']) ? array() : $document_data['editions'];
-
+                $transformed_editions = array();
                 foreach ($editions as &$edition) {
                     $publisher = null;
 
@@ -61,7 +61,9 @@ class Migration20140110152745 extends ModuleMigration
                             echo "No publisher found for dataset: " . print_r($document_data, true) . PHP_EOL;
                         }
                     }
+                    $transformed_editions[] = $edition;
                 }
+                $document_data['editions'] = $transformed_editions;
                 $couch_db_client->storeDoc(null, $document_data);
             }
         );

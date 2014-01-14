@@ -21,5 +21,6 @@
 
         <!-- Validators -->
         <autoload name="SlugValidator">%core.module_dir%/Book/lib/agavi/validate/SlugValidator.class.php</autoload>
+        <autoload name="AlnumCharacterValidator">%core.module_dir%/Book/lib/agavi/validate/AlnumCharacterValidator.class.php</autoload>
     </ae:configuration>
 </ae:configurations>

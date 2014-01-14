@@ -4,12 +4,8 @@
     xmlns:ae="http://agavi.org/agavi/config/global/envelope/1.0"
     parent="%core.module_dir%/Book/config/validators.xml">
     <ae:configuration>
-            <validator class="string" required="false">
+            <validator class="AlnumCharacterValidator" required="false">
                 <argument>letter</argument>
-                <ae:parameters>
-                    <ae:parameter name="min">1</ae:parameter>
-                    <ae:parameter name="max">1</ae:parameter>
-                </ae:parameters>
             </validator>
             <validator class="string">
                 <argument>type</argument>

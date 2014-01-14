@@ -5,7 +5,7 @@
     <ae:configuration context="web">
         <routes>
             <route name="book" pattern="/buecher" module="Book">
-                <route name=".byletter" pattern="/alphabetisch/(letter:[A-Za-zÄÖÜ])?$" action="Alphabetical" method="read">
+                <route name=".byletter" pattern="/alphabetisch/(letter:.+)?$" action="Alphabetical" method="read">
                     <defaults>
                         <default for="letter">A</default>
                         <default for="type">book</default>
@@ -16,7 +16,7 @@
             </route>
 
             <route name="author" pattern="/autoren" module="Book">
-                <route name=".byletter" pattern="/alphabetisch/(letter:[A-Za-zÄÖÜ])?$" action="Alphabetical" method="read">
+                <route name=".byletter" pattern="/alphabetisch/(letter:.+)?$" action="Alphabetical" method="read">
                     <defaults>
                         <default for="letter">A</default>
                         <default for="type">author</default>
@@ -27,7 +27,7 @@
             </route>
 
             <route name="publisher" pattern="/verlage" module="Book">
-                <route name=".byletter" pattern="/alphabetisch/(letter:[A-Za-zÄÖÜ])?$" action="Alphabetical" method="read">
+                <route name=".byletter" pattern="/alphabetisch/(letter:.+)?$" action="Alphabetical" method="read">
                     <defaults>
                         <default for="letter">A</default>
                         <default for="type">publisher</default>

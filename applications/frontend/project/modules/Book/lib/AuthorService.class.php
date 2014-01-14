@@ -35,6 +35,10 @@ class AuthorService extends BaseElasticSearchService
 
     public function getBySlug($slug)
     {
+        if (substr($slug, 0 ,1)) {
+            $slug = '\\'.$slug;
+        }
+
         $query = new Query\Field('slug.raw', $slug);
 
         #echo json_encode(Query::create($query)->toArray());die;

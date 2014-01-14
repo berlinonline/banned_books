@@ -85,10 +85,11 @@ class AlphabeticalService extends BaseElasticSearchService
     {
         $filter = new Filter\Term(array($this->letter_field => $letter));
         $query = Query::create($filter);
-        #echo json_encode($query->toArray());die();
 
         $query->setLimit(10000);
         $query->setSort(array($this->sort_field => array("order" => "asc")));
+
+        #echo json_encode($query->toArray());die();
 
         $resultData = $this->executeQuery($query);
 

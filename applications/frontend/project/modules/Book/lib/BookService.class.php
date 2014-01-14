@@ -54,10 +54,17 @@ class BookService extends BaseElasticSearchService
     }
 
     public function getByAuthor(Author $author) {
-        $filter = new Filter\Term(array(
+        $first_name_filter = new Filter\Term(array(
             'authors.firstName.raw' => $author->getFirstName(),
+        ));
+        $last_name_filter = new Filter\Term(array(
             'authors.lastName.raw' => $author->getLastName(),
         ));
+
+        $filter = new Filter\Bool();
+        $filter->addMust($first_name_filter);
+        $filter->addMust($last_name_filter);
+
         $query = Query::create($filter);
 #        echo json_encode($query->toArray());die();
 

@@ -12,6 +12,8 @@ class Book_AuthorDetail_AuthorDetailSuccessView extends BookBaseView
         $this->setupHtml($parameters);
 
         $author = $parameters->getParameter('author');
+        
+        $this->setAttribute('_title', $author->getFullName());
 
         $this->setAttribute('author', $author->toArray('detail'));
     }

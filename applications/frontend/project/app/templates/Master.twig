@@ -6,7 +6,7 @@
     {% set locale = tm.getCurrentLocale() %}
     {% set dir = locale.getCharacterOrientation() == 'right-to-left' ? 'rtl' : 'ltr' %}
     {% set is_error_page = TRUE == rq.getAttribute('is_error_page') %}
-    <!-- <base href="{{ ro.getBaseHref() }}" id="base_href"/> -->
+    <base href="{{ ro.getBaseHref() }}" id="base_href"/>
     <esi:include src="https://www.berlin.de/template/land9/__ml/land9_abs/head.inc" /> 
     <!-- %%STYLESHEETS%% -->
 

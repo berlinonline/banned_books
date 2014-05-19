@@ -6,6 +6,7 @@ use Pulq\Exceptions\NotFoundException;
 use Elastica\Query;
 use Elastica\Filter;
 use Elastica\Facet;
+use Elastica\Util;
 
 /**
  * @copyright BerlinOnline Stadtportal GmbH & Co. KG
@@ -19,7 +20,8 @@ class BookService extends BaseElasticSearchService
 
     public function getById($id)
     {
-        $query = new Query\Field('_id', $id);
+        $query = new Query\Field('_id', Util::escapeTerm($id));
+
         $resultData = $this->executeQuery(Query::create($query));
 
         $book_set = $this->extractFromResultSet($resultData);
@@ -35,11 +37,7 @@ class BookService extends BaseElasticSearchService
 
     public function getBySlug($slug)
     {
-        if (substr($slug, 0 ,1)) {
-            $slug = '\\'.$slug;
-        }
-
-        $query = new Query\Field('slug.raw', $slug);
+        $query = new Query\Field('slug.raw', Util::escapeTerm($slug));
 
         $resultData = $this->executeQuery(Query::create($query));
 

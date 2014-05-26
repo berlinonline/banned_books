@@ -3,6 +3,8 @@
 use Pulq\Data\DataObject;
 use Pulq\Data\DataObjectSet;
 
+use Elastica\Util;
+
 /**
  * @copyright       BerlinOnline Stadtportal GmbH & Co. KG
  * @package         Common
@@ -58,7 +60,7 @@ class Common_Search_SearchSuccessView extends CommonBaseView
         $query = new Elastica\Query\FuzzyLikeThis();
         $query->addFields(array('_all'));
         $query->setPrefixLength(3);
-        $query->setLikeText($query_string);
+        $query->setLikeText(Util::escapeTerm($query_string));
         $query->setMaxQueryTerms(5);
 
         $search = new Elastica\Search($es_client);

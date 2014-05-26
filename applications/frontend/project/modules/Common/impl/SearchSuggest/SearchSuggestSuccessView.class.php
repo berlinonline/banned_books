@@ -2,6 +2,7 @@
 
 use Elastica\Search;
 use Elastica\Request;
+use Elastica\Util;
 
 /**
  * @copyright       BerlinOnline Stadtportal GmbH & Co. KG
@@ -15,7 +16,7 @@ class Common_SearchSuggest_SearchSuggestSuccessView extends CommonBaseView
         $database = $this->getContext()->getDatabaseManager()->getDatabase('Default.Read');
         $es_client = $database->getConnection();
 
-        $query_string = $parameters->getParameter('q');
+        $query_string = Util::escapeTerm($parameters->getParameter('q'));
 
         $query_data = array(
             "size" => 0,

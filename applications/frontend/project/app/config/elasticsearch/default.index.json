@@ -22,7 +22,10 @@
                 },
                 "FirstLetterAnalyzer": {
                     "type": "custom",
-                    "tokenizer": "first_letter"
+                    "tokenizer": "first_letter",
+                    "filter": [
+                        "lowercase"
+                    ]
                 },
                 "IcuAnalyzer_DE": {
                     "type": "custom",

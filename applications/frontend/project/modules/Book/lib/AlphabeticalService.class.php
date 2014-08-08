@@ -83,7 +83,8 @@ class AlphabeticalService extends BaseElasticSearchService
 
     public function getByStartingLetter($letter)
     {
-        $filter = new Filter\Term(array($this->letter_field => strtolower($letter)));
+        $filter_query = new Query\Field($this->letter_field, $letter);
+        $filter = new Filter\Query($filter_query);
         $query = Query::create($filter);
 
         $query->setLimit(10000);

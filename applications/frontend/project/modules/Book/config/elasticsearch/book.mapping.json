@@ -19,6 +19,7 @@
                 "first": {
                     "type": "string",
                     "index_analyzer": "FirstLetterAnalyzer",
+                    "search_analyzer": "FirstLetterAnalyzer",
                     "store": true
                 }
             }

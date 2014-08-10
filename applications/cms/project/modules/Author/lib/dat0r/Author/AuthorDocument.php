@@ -41,6 +41,26 @@ class AuthorDocument extends Base\AuthorDocument
         parent::onBeforeWrite();
     }
 
+    public function setFirstname($firstname)
+    {
+        parent::setFirstname($firstname);
+
+        $firstname = $this->getFirstname();
+        $lastname = $this->getLastname();
+
+        $this->setFullname($firstname . ' ' . $lastname);
+    }
+
+    public function setLastname($lastname)
+    {
+        parent::setLastname($lastname);
+
+        $firstname = $this->getFirstname();
+        $lastname = $this->getLastname();
+
+        $this->setFullname($firstname . ' ' . $lastname);
+    }
+
     protected function applyFullname()
     {
         // firstname is automated to be "the first part" of the name string

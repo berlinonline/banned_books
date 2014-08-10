@@ -8,12 +8,10 @@ class Migration20130827192821 implements IMigration
     {
         $book_module = Book\BookModule::getInstance();
         $service = $book_module->getService();
-        $result = $service->fetchAll(0, 100000);
-        foreach ($result['documents'] as $book)
-        {
+        $result = $service->walkDocuments(array(), 100, function ($book) use ($service) {
             $book->setSlug(null);
             $service->save($book);
-        }
+        });
     }
 
     public function down()

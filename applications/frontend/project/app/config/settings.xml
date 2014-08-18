@@ -43,15 +43,7 @@
             <setting name="imperia_head">www.berlin.de/geschichte/verbannte-buecher/__i9/ohne/head.inc</setting>
             <setting name="imperia_top">www.berlin.de/geschichte/verbannte-buecher/__i9/ohne/top.inc</setting>
             <setting name="imperia_foot">www.berlin.de/geschichte/verbannte-buecher/__i9/ohne/foot.inc</setting>
-        
-        <!--
-            <setting name="imperia_head">www.berlin.de/template/land9/__ml/land9_abs/head.inc</setting>
-            <setting name="imperia_top">www.berlin.de/template/land9/__ml/land9_abs/top.inc</setting>
-            <setting name="imperia_foot">www.berlin.de/template/land9/__ml/land9_abs/foot.inc</setting>
-        -->
-        
         </settings>
-
     </ae:configuration>
 
     <ae:configuration environment="stage">

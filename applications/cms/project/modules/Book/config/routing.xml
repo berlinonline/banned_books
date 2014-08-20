@@ -25,6 +25,10 @@
             <route pattern="^export$" action="Export" method="write">
                 <ae:parameter name="description">Export data from the Book module as specified in exports.xml file.</ae:parameter>
             </route>
+            <route pattern="^process$" action="ProcessAll" method="write">
+                <ae:parameter name="description">Process data from the Book module, executing the workflow (as specified in workflow.xml file) toward a specific step, just for the documents in the 'gate' state.
+                </ae:parameter>
+            </route>
         </routes>
     </ae:configuration>
 </ae:configurations>

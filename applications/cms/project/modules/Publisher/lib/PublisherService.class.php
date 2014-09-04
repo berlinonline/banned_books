@@ -52,7 +52,6 @@ class PublisherService extends DocumentService
         $result_keys = array_filter(
             $result_keys,
             function ($key) {
-                error_log(ShortIdService::SEQUENCE_KEY);
                 return ($key != ShortIdService::SEQUENCE_KEY);
             }
         );

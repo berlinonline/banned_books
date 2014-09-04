@@ -1,6 +1,7 @@
 <?php
 
 use Honeybee\Core\Service\DocumentService;
+use Honeybee\Core\Service\ShortIdService;
 
 /**
  * @copyright BerlinOnline Stadtportal GmbH & Co. KG
@@ -51,8 +52,7 @@ class AuthorService extends DocumentService
         $result_keys = array_filter(
             $result_keys,
             function ($key) {
-                $self = __CLASS__;
-                return ($key != $self::SEQUENCE_KEY);
+                return ($key != ShortIdService::SEQUENCE_KEY);
             }
         );
         $result = $repository->read($result_keys);

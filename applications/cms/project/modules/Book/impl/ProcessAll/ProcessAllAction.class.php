@@ -22,20 +22,18 @@ class Book_ProcessAllAction extends BookBaseAction
 
         $step = $parameters->getParameter('step');
         $gate = $parameters->getParameter('gate', 'promote');
-        $chunk_size = $parameters->getParameter('chunk_size', 500);
+        $chunk_size = $parameters->getParameter('chunk_size', 150);
 
         $module = $this->getModule();
         $workflow_manager = $module->getWorkflowManager();
         $document_service = $module->getService();
         $module_prefix = $this->getModule()->getOption('prefix');
         
-        // @todo check if are valid gate/step
+        // @todo check if are existent gate and step
 
         $doc_count = 0;
         $fail_count = 0;
         $op_count = 0;
-        $search_spec = array('workflowStep' => $step);
-        // rewrite them for CouchDB
         $container = $this->getContainer();
 
         $process_document = function ($document) use (
@@ -49,28 +47,19 @@ class Book_ProcessAllAction extends BookBaseAction
             &$op_count
         ) {
             if ($document->getWorkflowTicket()->first()->getWorkflowStep() !== $step) {
-                return false;
+                return;
             }
-            $spec_changed = false;
+            $doc_count++;
             try {
                 $result = $workflow_manager->executeWorkflowFor($document, $gate, $container);
                 $document_service->save($document);
-                // tell to 'walkDocument' that the document will be removed from the results
-                $spec_changed = ($document->getWorkflowTicket()->first()->getWorkflowStep() !== $step);
+
                 echo sprintf(
                     PHP_EOL . "%s - Success: %s document '%s' (new step: %s)",
                     $op_count,
                     $gate,
                     $document->getTitle(),
                     $document->getWorkflowTicket()->first()->getWorkflowStep()
-                );
-                error_log(
-                    sprintf(
-                        '%s - Success - %s document to step: %s',
-                        $op_count,
-                        $gate,
-                        $document->getWorkflowTicket()->first()->getWorkflowStep()
-                    )
                 );
             } catch (Exception $e) {
                 echo sprintf(PHP_EOL . "%s - Error: %s document '%s'", $op_count, $gate, $document->getTitle());
@@ -82,12 +71,9 @@ class Book_ProcessAllAction extends BookBaseAction
                 );
                 $fail_count++;
             }
-            $doc_count++;
             $op_count++;
-
-            return $spec_changed;
         };
-        $document_service->walkStorageDocuments($search_spec, $chunk_size, $process_document);
+        $document_service->walkStorageDocuments($chunk_size, $process_document);
 
         $this->setAttribute('success_count', $doc_count);
         $this->setAttribute('fail_count', $fail_count);

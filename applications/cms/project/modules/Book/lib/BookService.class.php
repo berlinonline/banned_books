@@ -52,7 +52,8 @@ class BookService extends DocumentService
         $result_keys = array_filter(
             $result_keys,
             function ($key) {
-                return ($key != self::SEQUENCE_KEY);
+                $self = __CLASS__;
+                return ($key != $self::SEQUENCE_KEY);
             }
         );
         $result = $repository->read($result_keys);

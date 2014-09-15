@@ -7,14 +7,14 @@
     {% set dir = locale.getCharacterOrientation() == 'right-to-left' ? 'rtl' : 'ltr' %}
     {% set is_error_page = TRUE == rq.getAttribute('is_error_page') %}
     <base href="{{ ro.getBaseHref() }}" id="base_href"/>
-    <esi:include src="{{ rq.getUrlScheme() }}://{{ ac('esi_include.imperia_head') }}" />
+    <esi:include src="{{ ac('esi_include.imperia_head') }}" />
     <!-- %%STYLESHEETS%% -->
 
    
    </head>
    <body data-spy="scroll" data-target=".famport.content-navi-left" data-offset="100" class="{{_body_class}}">
         <!-- Include for portal header -->
-        <esi:include src="{{ rq.getUrlScheme() }}://{{ ac('esi_include.imperia_top') }}" />
+        <esi:include src="{{ ac('esi_include.imperia_top') }}" />
             <!-- *********************************************************
                     MAIN CONTENT AREA (WHITE BG)
             ********************************************************** -->
@@ -51,7 +51,7 @@
                 </div>
                 {{ slots.footer|raw }}
         <!-- Include for portal footer -->
-        <esi:include src="{{ rq.getUrlScheme() }}://{{ ac('esi_include.imperia_foot') }}" />
+        <esi:include src="{{ ac('esi_include.imperia_foot') }}" />
         <!-- %%JAVASCRIPTS%% -->
         <script src="http://service.berlin.de/feedback/js.php"></script>
     </body>

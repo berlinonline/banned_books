@@ -1,0 +1,972 @@
+<!DOCTYPE html><html xmlns:date="http://exslt.org/dates-and-times" lang="en">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="viewport" content="width=device-width; initial-scale=1.0; maximum-scale=1.0; user-scalable=0;">
+<meta charset="utf-8">
+<title>phpDocumentor » Default</title>
+<meta name="author" content="Mike van Riel">
+<meta name="description" content="">
+<link href="../css/template.css" rel="stylesheet" media="all">
+<script src="../js/jquery-1.7.1.min.js" type="text/javascript"></script><script src="../js/jquery-ui-1.8.2.custom.min.js" type="text/javascript"></script><script src="../js/jquery.mousewheel.min.js" type="text/javascript"></script><script src="../js/bootstrap.js" type="text/javascript"></script><script src="../js/template.js" type="text/javascript"></script><script src="../js/prettify/prettify.min.js" type="text/javascript"></script><link rel="shortcut icon" href="../img/favicon.ico">
+<link rel="apple-touch-icon" href="../img/apple-touch-icon.png">
+<link rel="apple-touch-icon" sizes="72x72" href="../img/apple-touch-icon-72x72.png">
+<link rel="apple-touch-icon" sizes="114x114" href="../img/apple-touch-icon-114x114.png">
+</head>
+<body>
+<div class="navbar navbar-fixed-top">
+<div class="navbar-inner"><div class="container">
+<a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse"><span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar"></span></a><a class="brand" href="../index.html">phpDocumentor</a><div class="nav-collapse"><ul class="nav">
+<li class="dropdown">
+<a href="#api" class="dropdown-toggle" data-toggle="dropdown">
+                                    API Documentation <b class="caret"></b></a><ul class="dropdown-menu">
+<li><a>Packages</a></li>
+<li><a href="../packages/db_Default.html"><i class="icon-folder-open"></i> Default</a></li>
+<li><a href="../packages/db_Frontend.html"><i class="icon-folder-open"></i> Frontend</a></li>
+<li><a href="../packages/db_Magic.html"><i class="icon-folder-open"></i> Magic</a></li>
+<li><a href="../packages/db_NVM.html"><i class="icon-folder-open"></i> NVM</a></li>
+<li><a href="../packages/db_Views.html"><i class="icon-folder-open"></i> Views</a></li>
+</ul>
+</li>
+<li class="dropdown" id="charts-menu">
+<a href="#charts" class="dropdown-toggle" data-toggle="dropdown">
+                                    Charts <b class="caret"></b></a><ul class="dropdown-menu"><li><a href="../graph_class.html"><i class="icon-list-alt"></i> Class hierarchy diagram</a></li></ul>
+</li>
+<li class="dropdown" id="reports-menu">
+<a href="#reports" class="dropdown-toggle" data-toggle="dropdown">
+                                    Reports <b class="caret"></b></a><ul class="dropdown-menu">
+<li><a href="../errors.html"><i class="icon-remove-sign"></i> Errors 
+                <span class="label label-info">813</span></a></li>
+<li><a href="../markers.html"><i class="icon-map-marker"></i> Markers 
+                <ul><li>todo 
+                <span class="label label-info">2</span>
+</li></ul></a></li>
+<li><a href="../deprecated.html"><i class="icon-stop"></i> Deprecated elements 
+                <span class="label label-info">0</span></a></li>
+</ul>
+</li>
+</ul></div>
+</div></div>
+<div class="go_to_top"><a href="#___" style="color: inherit">Back to top  <i class="icon-upload icon-white"></i></a></div>
+</div>
+<div id="___" class="container">
+<noscript><div class="alert alert-warning">
+                            Javascript is disabled; several features are only available
+                            if Javascript is enabled.
+                        </div></noscript>
+<div class="row">
+<div class="span4">
+<div class="btn-group view pull-right" data-toggle="buttons-radio">
+<button class="btn details" title="Show descriptions and method names"><i class="icon-list"></i></button><button class="btn simple" title="Show only method names"><i class="icon-align-justify"></i></button>
+</div>
+<ul class="side-nav nav nav-list">
+<li class="nav-header">
+<i class="icon-map-marker"></i> Packages</li>
+<li>
+<a href="../packages/db_Default.html" title="Default"><i class="icon-folder-open"></i>Default</a><ul class="nav nav-list nav-packages"></ul>
+</li>
+<li class="nav-header">
+<i class="icon-custom icon-class"></i> Classes</li>
+<li><a href="#Textile" title="">Textile</a></li>
+<li><a href="#Textile" title="">Textile</a></li>
+<li><a href="#NVM_Textile" title="Extend Textile for php5 compatibility">NVM_Textile</a></li>
+<li><a href="#NVM_Translate" title="Singleton to translate templates">NVM_Translate</a></li>
+<li><a href="#Views_Document_Simplesearch" title="Base for using flex moduls in views
+It enables to access specific flex instances">Views_Document_Simplesearch</a></li>
+<li><a href="#Views_Flex_Iframe" title="Base for any flex module">Views_Flex_Iframe</a></li>
+<li><a href="#Views_Flex_Search" title="Base for any flex module">Views_Flex_Search</a></li>
+<li><a href="#Views_Flex_Simplesearch_Geo" title="Base for any simplesearch flex module">Views_Flex_Simplesearch_Geo</a></li>
+<li><a href="#Views_Flex_Simplesearch_Abstract" title="Base for any simplesearch flex module">Views_Flex_Simplesearch_Abstract</a></li>
+<li><a href="#Views_Flex_Simplesearch_Column" title="Base for any simplesearch flex module">Views_Flex_Simplesearch_Column</a></li>
+<li><a href="#Views_Flex_Metalink" title="Base for any flex module">Views_Flex_Metalink</a></li>
+<li><a href="#Views_Flex_InstanceList" title="List Flex instances">Views_Flex_InstanceList</a></li>
+<li><a href="#Views_Flex_List" title="List flex">Views_Flex_List</a></li>
+<li><a href="#Views_Flex_Relation_List" title="Get a list of relations">Views_Flex_Relation_List</a></li>
+<li><a href="#Views_Flex_Relation_Language" title="Base for any flex module">Views_Flex_Relation_Language</a></li>
+<li><a href="#Views_Flex_Metalangselector" title="Base for any flex module">Views_Flex_Metalangselector</a></li>
+<li><a href="#Views_Flex_Search_Collection" title="NVM_Base
+Basis fuer alle NVM Klassen">Views_Flex_Search_Collection</a></li>
+<li><a href="#Views_Flex_Linkup" title="Base for any flex module">Views_Flex_Linkup</a></li>
+<li><a href="#Views_Flex_Abstract" title="Base for any flex module">Views_Flex_Abstract</a></li>
+<li><a href="#Views_Flex_Container_Autoteaser" title="Wrapper Klasse für Autoteaser, benutzt normales Flex-Autoteaser Modul">Views_Flex_Container_Autoteaser</a></li>
+<li><a href="#Views_Flex_Container_Rsslist" title="Wrapper Klasse für RSS-Listen, benutzt normales Flex-Rsslist Modul">Views_Flex_Container_Rsslist</a></li>
+<li><a href="#Views_Flex_Container_Text" title="Wrapper Klasse für Flex Text, benutzt normales Flex-Text Modul">Views_Flex_Container_Text</a></li>
+<li><a href="#Views_Flex_Container_Teaser" title="Wrapper Klasse für Teaser, benutzt normales Flex-Teaser Modul">Views_Flex_Container_Teaser</a></li>
+<li><a href="#Views_Flex_Headline" title="Base for any flex module">Views_Flex_Headline</a></li>
+<li><a href="#Views_Flex_Form_Start" title="Base for any flex module">Views_Flex_Form_Start</a></li>
+<li><a href="#Views_Flex_Form_End" title="Base for any flex module">Views_Flex_Form_End</a></li>
+<li><a href="#Views_Flex_Form_Ipaddress" title="Base for any flex module">Views_Flex_Form_Ipaddress</a></li>
+<li><a href="#Views_FlexBase" title="Base for using flex moduls in views
+It enables to access specific flex instances">Views_FlexBase</a></li>
+<li><a href="#Views_Rss_Item" title="Base for Rss Elements">Views_Rss_Item</a></li>
+<li><a href="#Views_Rss_Itemlist" title="List for Rss Items">Views_Rss_Itemlist</a></li>
+<li><a href="#Views_Rss_List" title="Base for Rss Elements">Views_Rss_List</a></li>
+<li><a href="#Views_Rss_Abstract" title="Base for Rss Elements">Views_Rss_Abstract</a></li>
+<li><a href="#Views_Languages" title="Preferences for different languages">Views_Languages</a></li>
+<li><a href="#Views_Factory_Infocolumn" title="Build a preview for Sidebar">Views_Factory_Infocolumn</a></li>
+<li><a href="#Views_Factory_Start" title="Build a start page">Views_Factory_Start</a></li>
+<li><a href="#Views_Factory_Articlecontactonly" title="Build an article">Views_Factory_Articlecontactonly</a></li>
+<li><a href="#Views_Factory_Search" title="Build a search page">Views_Factory_Search</a></li>
+<li><a href="#Views_Factory_Metanavi" title="Build a preview for Metanavi">Views_Factory_Metanavi</a></li>
+<li><a href="#Views_Factory_Article23width" title="Build an article">Views_Factory_Article23width</a></li>
+<li><a href="#Views_Factory_Rathausaktuell" title="Build an article">Views_Factory_Rathausaktuell</a></li>
+<li><a href="#Views_Factory_Articlefullwidth" title="Build an article">Views_Factory_Articlefullwidth</a></li>
+<li><a href="#Views_Factory_Simplesearch" title="Build a simplesearch application">Views_Factory_Simplesearch</a></li>
+<li><a href="#Views_Factory_Overview" title="Build a overview page">Views_Factory_Overview</a></li>
+<li><a href="#Views_Factory_Article" title="Build an article">Views_Factory_Article</a></li>
+<li><a href="#Views_Factory_Publication" title="Build a publication page">Views_Factory_Publication</a></li>
+<li><a href="#Views_Factory_Abstract" title="Function for factory types">Views_Factory_Abstract</a></li>
+<li><a href="#Views_Factory_Footer" title="Build a preview for Footer">Views_Factory_Footer</a></li>
+<li><a href="#Views_Factory_Infocolumninclude" title="Build a preview for Sidebar">Views_Factory_Infocolumninclude</a></li>
+<li><a href="#Views_Factory_Formular" title="Build a formular page">Views_Factory_Formular</a></li>
+<li><a href="#Views_Factory_Press" title="Build a press page">Views_Factory_Press</a></li>
+<li><a href="#Views_Container_List" title="Behavior for containers
+- Maximal 12 containers
+- Group into Rows">Views_Container_List</a></li>
+<li><a href="#Views_Container_Row" title="Behavior for containers
+- Maximal 12 containers
+- Group into Rows">Views_Container_Row</a></li>
+<li><a href="#Views_Container_Decorator" title="Behavior for containers
+- Maximal 12 containers
+- Group into Rows">Views_Container_Decorator</a></li>
+<li><a href="#Views_Define" title="Simple Class to hold defines for all Views">Views_Define</a></li>
+<li><a href="#Views_Navigation_Vertical_Item" title="Special behavior for vertical navigation items">Views_Navigation_Vertical_Item</a></li>
+<li><a href="#Views_Navigation_Vertical_List" title="Special behavior for vertical navigation lists">Views_Navigation_Vertical_List</a></li>
+<li><a href="#Views_Navigation_Horizontal_Item" title="Special behavior for vertical navigation items">Views_Navigation_Horizontal_Item</a></li>
+<li><a href="#Views_Navigation_Horizontal_List" title="Special behavior for vertical navigation lists">Views_Navigation_Horizontal_List</a></li>
+<li><a href="#Frontend_Rss" title="Fetch a RSS feed">Frontend_Rss</a></li>
+<li><a href="#Frontend_Uri" title="Handle Uri special cases">Frontend_Uri</a></li>
+<li><a href="#Frontend_Navigation_Item" title="Handle navigation items">Frontend_Navigation_Item</a></li>
+<li><a href="#Frontend_Navigation_Trail" title="Typed array for navigation trails used by breadcrumbs etc.">Frontend_Navigation_Trail</a></li>
+<li><a href="#Frontend_Navigation_Sublist" title="List of Navigation Items">Frontend_Navigation_Sublist</a></li>
+<li><a href="#Magic_Json" title="Json decoding with proper error handling">Magic_Json</a></li>
+<li><a href="#Imperia_Database" title="Get Access to the Imperia Database">Imperia_Database</a></li>
+<li><a href="#Imperia_SystemConf" title="Access layer for the imperia system.conf">Imperia_SystemConf</a></li>
+<li class="nav-header">
+<i class="icon-custom icon-constant"></i> Constants</li>
+<li class="constant  "><a href="#CHARSET" title="CHARSET :: "><span class="description">CHARSET</span><pre>CHARSET</pre></a></li>
+<li class="constant  "><a href="#txt_apostrophe" title="txt_apostrophe :: "><span class="description">txt_apostrophe</span><pre>txt_apostrophe</pre></a></li>
+<li class="constant  "><a href="#txt_apostrophe" title="txt_apostrophe :: "><span class="description">txt_apostrophe</span><pre>txt_apostrophe</pre></a></li>
+<li class="constant  "><a href="#txt_copyright" title="txt_copyright :: "><span class="description">txt_copyright</span><pre>txt_copyright</pre></a></li>
+<li class="constant  "><a href="#txt_copyright" title="txt_copyright :: "><span class="description">txt_copyright</span><pre>txt_copyright</pre></a></li>
+<li class="constant  "><a href="#txt_degrees" title="txt_degrees :: "><span class="description">txt_degrees</span><pre>txt_degrees</pre></a></li>
+<li class="constant  "><a href="#txt_degrees" title="txt_degrees :: "><span class="description">txt_degrees</span><pre>txt_degrees</pre></a></li>
+<li class="constant  "><a href="#txt_dimension" title="txt_dimension :: "><span class="description">txt_dimension</span><pre>txt_dimension</pre></a></li>
+<li class="constant  "><a href="#txt_dimension" title="txt_dimension :: "><span class="description">txt_dimension</span><pre>txt_dimension</pre></a></li>
+<li class="constant  "><a href="#txt_ellipsis" title="txt_ellipsis :: "><span class="description">txt_ellipsis</span><pre>txt_ellipsis</pre></a></li>
+<li class="constant  "><a href="#txt_ellipsis" title="txt_ellipsis :: "><span class="description">txt_ellipsis</span><pre>txt_ellipsis</pre></a></li>
+<li class="constant  "><a href="#txt_emdash" title="txt_emdash :: "><span class="description">txt_emdash</span><pre>txt_emdash</pre></a></li>
+<li class="constant  "><a href="#txt_emdash" title="txt_emdash :: "><span class="description">txt_emdash</span><pre>txt_emdash</pre></a></li>
+<li class="constant  "><a href="#txt_endash" title="txt_endash :: "><span class="description">txt_endash</span><pre>txt_endash</pre></a></li>
+<li class="constant  "><a href="#txt_endash" title="txt_endash :: "><span class="description">txt_endash</span><pre>txt_endash</pre></a></li>
+<li class="constant  "><a href="#txt_fn_foot_pattern" title="txt_fn_foot_pattern :: "><span class="description">txt_fn_foot_pattern</span><pre>txt_fn_foot_pattern</pre></a></li>
+<li class="constant  "><a href="#txt_fn_foot_pattern" title="txt_fn_foot_pattern :: "><span class="description">txt_fn_foot_pattern</span><pre>txt_fn_foot_pattern</pre></a></li>
+<li class="constant  "><a href="#txt_fn_ref_pattern" title="txt_fn_ref_pattern :: "><span class="description">txt_fn_ref_pattern</span><pre>txt_fn_ref_pattern</pre></a></li>
+<li class="constant  "><a href="#txt_fn_ref_pattern" title="txt_fn_ref_pattern :: "><span class="description">txt_fn_ref_pattern</span><pre>txt_fn_ref_pattern</pre></a></li>
+<li class="constant  "><a href="#txt_half" title="txt_half :: "><span class="description">txt_half</span><pre>txt_half</pre></a></li>
+<li class="constant  "><a href="#txt_half" title="txt_half :: "><span class="description">txt_half</span><pre>txt_half</pre></a></li>
+<li class="constant  "><a href="#txt_has_unicode" title="txt_has_unicode :: "><span class="description">txt_has_unicode</span><pre>txt_has_unicode</pre></a></li>
+<li class="constant  "><a href="#txt_has_unicode" title="txt_has_unicode :: "><span class="description">txt_has_unicode</span><pre>txt_has_unicode</pre></a></li>
+<li class="constant  "><a href="#txt_nl_ref_pattern" title="txt_nl_ref_pattern :: "><span class="description">txt_nl_ref_pattern</span><pre>txt_nl_ref_pattern</pre></a></li>
+<li class="constant  "><a href="#txt_nl_ref_pattern" title="txt_nl_ref_pattern :: "><span class="description">txt_nl_ref_pattern</span><pre>txt_nl_ref_pattern</pre></a></li>
+<li class="constant  "><a href="#txt_plusminus" title="txt_plusminus :: "><span class="description">txt_plusminus</span><pre>txt_plusminus</pre></a></li>
+<li class="constant  "><a href="#txt_plusminus" title="txt_plusminus :: "><span class="description">txt_plusminus</span><pre>txt_plusminus</pre></a></li>
+<li class="constant  "><a href="#txt_prime" title="txt_prime :: "><span class="description">txt_prime</span><pre>txt_prime</pre></a></li>
+<li class="constant  "><a href="#txt_prime" title="txt_prime :: "><span class="description">txt_prime</span><pre>txt_prime</pre></a></li>
+<li class="constant  "><a href="#txt_prime_double" title="txt_prime_double :: "><span class="description">txt_prime_double</span><pre>txt_prime_double</pre></a></li>
+<li class="constant  "><a href="#txt_prime_double" title="txt_prime_double :: "><span class="description">txt_prime_double</span><pre>txt_prime_double</pre></a></li>
+<li class="constant  "><a href="#txt_quarter" title="txt_quarter :: "><span class="description">txt_quarter</span><pre>txt_quarter</pre></a></li>
+<li class="constant  "><a href="#txt_quarter" title="txt_quarter :: "><span class="description">txt_quarter</span><pre>txt_quarter</pre></a></li>
+<li class="constant  "><a href="#txt_quote_double_close" title="txt_quote_double_close :: "><span class="description">txt_quote_double_close</span><pre>txt_quote_double_close</pre></a></li>
+<li class="constant  "><a href="#txt_quote_double_close" title="txt_quote_double_close :: "><span class="description">txt_quote_double_close</span><pre>txt_quote_double_close</pre></a></li>
+<li class="constant  "><a href="#txt_quote_double_open" title="txt_quote_double_open :: "><span class="description">txt_quote_double_open</span><pre>txt_quote_double_open</pre></a></li>
+<li class="constant  "><a href="#txt_quote_double_open" title="txt_quote_double_open :: "><span class="description">txt_quote_double_open</span><pre>txt_quote_double_open</pre></a></li>
+<li class="constant  "><a href="#txt_quote_single_close" title="txt_quote_single_close :: "><span class="description">txt_quote_single_close</span><pre>txt_quote_single_close</pre></a></li>
+<li class="constant  "><a href="#txt_quote_single_close" title="txt_quote_single_close :: "><span class="description">txt_quote_single_close</span><pre>txt_quote_single_close</pre></a></li>
+<li class="constant  "><a href="#txt_quote_single_open" title="txt_quote_single_open :: Example: get XHTML from a given Textile-markup string ($string)"><span class="description">Example: get XHTML from a given Textile-markup string ($string)</span><pre>txt_quote_single_open</pre></a></li>
+<li class="constant  "><a href="#txt_quote_single_open" title="txt_quote_single_open :: Example: get XHTML from a given Textile-markup string ($string)"><span class="description">Example: get XHTML from a given Textile-markup string ($string)</span><pre>txt_quote_single_open</pre></a></li>
+<li class="constant  "><a href="#txt_registered" title="txt_registered :: "><span class="description">txt_registered</span><pre>txt_registered</pre></a></li>
+<li class="constant  "><a href="#txt_registered" title="txt_registered :: "><span class="description">txt_registered</span><pre>txt_registered</pre></a></li>
+<li class="constant  "><a href="#txt_threequarters" title="txt_threequarters :: "><span class="description">txt_threequarters</span><pre>txt_threequarters</pre></a></li>
+<li class="constant  "><a href="#txt_threequarters" title="txt_threequarters :: "><span class="description">txt_threequarters</span><pre>txt_threequarters</pre></a></li>
+<li class="constant  "><a href="#txt_trademark" title="txt_trademark :: "><span class="description">txt_trademark</span><pre>txt_trademark</pre></a></li>
+<li class="constant  "><a href="#txt_trademark" title="txt_trademark :: "><span class="description">txt_trademark</span><pre>txt_trademark</pre></a></li>
+</ul>
+</div>
+<div class="span8 package-contents">
+<ul class="breadcrumb">
+<li>
+<a href="../index.html"><i class="icon-folder-open"></i></a><span class="divider">\</span>
+</li>
+<li class="active"><a href="../packages/db_Default.html">Default</a></li>
+</ul>
+<div class="package-indent">
+<div class="alert alert-info">This package does not contain any documentable elements</div>
+<h3>
+<i class="icon-custom icon-class"></i> Classes and interfaces</h3>
+<a name="Frontend_Navigation_Item" id="Frontend_Navigation_Item"></a><div class="element ajax clickable class" href="../classes/db_%5CFrontend_Navigation_Item.html">
+<h1>Frontend_Navigation_Item<a href="../classes/db_%5CFrontend_Navigation_Item.html">¶</a>
+</h1>
+<p class="short_description">Handle navigation items</p>
+<div class="details collapse"></div>
+<a href="../classes/db_%5CFrontend_Navigation_Item.html" class="more">« More »</a>
+</div>
+<a name="Frontend_Navigation_Sublist" id="Frontend_Navigation_Sublist"></a><div class="element ajax clickable class" href="../classes/db_%5CFrontend_Navigation_Sublist.html">
+<h1>Frontend_Navigation_Sublist<a href="../classes/db_%5CFrontend_Navigation_Sublist.html">¶</a>
+</h1>
+<p class="short_description">List of Navigation Items</p>
+<div class="details collapse"></div>
+<a href="../classes/db_%5CFrontend_Navigation_Sublist.html" class="more">« More »</a>
+</div>
+<a name="Frontend_Navigation_Trail" id="Frontend_Navigation_Trail"></a><div class="element ajax clickable class" href="../classes/db_%5CFrontend_Navigation_Trail.html">
+<h1>Frontend_Navigation_Trail<a href="../classes/db_%5CFrontend_Navigation_Trail.html">¶</a>
+</h1>
+<p class="short_description">Typed array for navigation trails used by breadcrumbs etc.</p>
+<div class="details collapse"></div>
+<a href="../classes/db_%5CFrontend_Navigation_Trail.html" class="more">« More »</a>
+</div>
+<a name="Frontend_Rss" id="Frontend_Rss"></a><div class="element ajax clickable class" href="../classes/db_%5CFrontend_Rss.html">
+<h1>Frontend_Rss<a href="../classes/db_%5CFrontend_Rss.html">¶</a>
+</h1>
+<p class="short_description">Fetch a RSS feed</p>
+<div class="details collapse"></div>
+<a href="../classes/db_%5CFrontend_Rss.html" class="more">« More »</a>
+</div>
+<a name="Frontend_Uri" id="Frontend_Uri"></a><div class="element ajax clickable class" href="../classes/db_%5CFrontend_Uri.html">
+<h1>Frontend_Uri<a href="../classes/db_%5CFrontend_Uri.html">¶</a>
+</h1>
+<p class="short_description">Handle Uri special cases</p>
+<div class="details collapse"></div>
+<a href="../classes/db_%5CFrontend_Uri.html" class="more">« More »</a>
+</div>
+<a name="Imperia_Database" id="Imperia_Database"></a><div class="element ajax clickable class" href="../classes/db_%5CImperia_Database.html">
+<h1>Imperia_Database<a href="../classes/db_%5CImperia_Database.html">¶</a>
+</h1>
+<p class="short_description">Get Access to the Imperia Database</p>
+<div class="details collapse"></div>
+<a href="../classes/db_%5CImperia_Database.html" class="more">« More »</a>
+</div>
+<a name="Imperia_SystemConf" id="Imperia_SystemConf"></a><div class="element ajax clickable class" href="../classes/db_%5CImperia_SystemConf.html">
+<h1>Imperia_SystemConf<a href="../classes/db_%5CImperia_SystemConf.html">¶</a>
+</h1>
+<p class="short_description">Access layer for the imperia system.conf</p>
+<div class="details collapse"></div>
+<a href="../classes/db_%5CImperia_SystemConf.html" class="more">« More »</a>
+</div>
+<a name="Magic_Json" id="Magic_Json"></a><div class="element ajax clickable class" href="../classes/db_%5CMagic_Json.html">
+<h1>Magic_Json<a href="../classes/db_%5CMagic_Json.html">¶</a>
+</h1>
+<p class="short_description">Json decoding with proper error handling</p>
+<div class="details collapse"></div>
+<a href="../classes/db_%5CMagic_Json.html" class="more">« More »</a>
+</div>
+<a name="NVM_Textile" id="NVM_Textile"></a><div class="element ajax clickable class" href="../classes/db_%5CNVM_Textile.html">
+<h1>NVM_Textile<a href="../classes/db_%5CNVM_Textile.html">¶</a>
+</h1>
+<p class="short_description">Extend Textile for php5 compatibility</p>
+<div class="details collapse"></div>
+<a href="../classes/db_%5CNVM_Textile.html" class="more">« More »</a>
+</div>
+<a name="NVM_Translate" id="NVM_Translate"></a><div class="element ajax clickable class" href="../classes/db_%5CNVM_Translate.html">
+<h1>NVM_Translate<a href="../classes/db_%5CNVM_Translate.html">¶</a>
+</h1>
+<p class="short_description">Singleton to translate templates</p>
+<div class="details collapse"></div>
+<a href="../classes/db_%5CNVM_Translate.html" class="more">« More »</a>
+</div>
+<a name="Textile" id="Textile"></a><div class="element ajax clickable class" href="../classes/db_%5CTextile.html">
+<h1>Textile<a href="../classes/db_%5CTextile.html">¶</a>
+</h1>
+<p class="short_description"></p>
+<div class="details collapse"></div>
+<a href="../classes/db_%5CTextile.html" class="more">« More »</a>
+</div>
+<a name="Textile" id="Textile"></a><div class="element ajax clickable class" href="../classes/db_%5CTextile.html">
+<h1>Textile<a href="../classes/db_%5CTextile.html">¶</a>
+</h1>
+<p class="short_description"></p>
+<div class="details collapse"></div>
+<a href="../classes/db_%5CTextile.html" class="more">« More »</a>
+</div>
+<a name="Views_Container_Decorator" id="Views_Container_Decorator"></a><div class="element ajax clickable class" href="../classes/db_%5CViews_Container_Decorator.html">
+<h1>Views_Container_Decorator<a href="../classes/db_%5CViews_Container_Decorator.html">¶</a>
+</h1>
+<p class="short_description">Behavior for containers
+- Maximal 12 containers
+- Group into Rows</p>
+<div class="details collapse"></div>
+<a href="../classes/db_%5CViews_Container_Decorator.html" class="more">« More »</a>
+</div>
+<a name="Views_Container_List" id="Views_Container_List"></a><div class="element ajax clickable class" href="../classes/db_%5CViews_Container_List.html">
+<h1>Views_Container_List<a href="../classes/db_%5CViews_Container_List.html">¶</a>
+</h1>
+<p class="short_description">Behavior for containers
+- Maximal 12 containers
+- Group into Rows</p>
+<div class="details collapse"></div>
+<a href="../classes/db_%5CViews_Container_List.html" class="more">« More »</a>
+</div>
+<a name="Views_Container_Row" id="Views_Container_Row"></a><div class="element ajax clickable class" href="../classes/db_%5CViews_Container_Row.html">
+<h1>Views_Container_Row<a href="../classes/db_%5CViews_Container_Row.html">¶</a>
+</h1>
+<p class="short_description">Behavior for containers
+- Maximal 12 containers
+- Group into Rows</p>
+<div class="details collapse"></div>
+<a href="../classes/db_%5CViews_Container_Row.html" class="more">« More »</a>
+</div>
+<a name="Views_Define" id="Views_Define"></a><div class="element ajax clickable class" href="../classes/db_%5CViews_Define.html">
+<h1>Views_Define<a href="../classes/db_%5CViews_Define.html">¶</a>
+</h1>
+<p class="short_description">Simple Class to hold defines for all Views</p>
+<div class="details collapse"></div>
+<a href="../classes/db_%5CViews_Define.html" class="more">« More »</a>
+</div>
+<a name="Views_Document_Simplesearch" id="Views_Document_Simplesearch"></a><div class="element ajax clickable class" href="../classes/db_%5CViews_Document_Simplesearch.html">
+<h1>Views_Document_Simplesearch<a href="../classes/db_%5CViews_Document_Simplesearch.html">¶</a>
+</h1>
+<p class="short_description">Base for using flex moduls in views
+It enables to access specific flex instances</p>
+<div class="details collapse"></div>
+<a href="../classes/db_%5CViews_Document_Simplesearch.html" class="more">« More »</a>
+</div>
+<a name="Views_Factory_Abstract" id="Views_Factory_Abstract"></a><div class="element ajax clickable class" href="../classes/db_%5CViews_Factory_Abstract.html">
+<h1>Views_Factory_Abstract<a href="../classes/db_%5CViews_Factory_Abstract.html">¶</a>
+</h1>
+<p class="short_description">Function for factory types</p>
+<div class="details collapse"></div>
+<a href="../classes/db_%5CViews_Factory_Abstract.html" class="more">« More »</a>
+</div>
+<a name="Views_Factory_Article" id="Views_Factory_Article"></a><div class="element ajax clickable class" href="../classes/db_%5CViews_Factory_Article.html">
+<h1>Views_Factory_Article<a href="../classes/db_%5CViews_Factory_Article.html">¶</a>
+</h1>
+<p class="short_description">Build an article</p>
+<div class="details collapse"></div>
+<a href="../classes/db_%5CViews_Factory_Article.html" class="more">« More »</a>
+</div>
+<a name="Views_Factory_Article23width" id="Views_Factory_Article23width"></a><div class="element ajax clickable class" href="../classes/db_%5CViews_Factory_Article23width.html">
+<h1>Views_Factory_Article23width<a href="../classes/db_%5CViews_Factory_Article23width.html">¶</a>
+</h1>
+<p class="short_description">Build an article</p>
+<div class="details collapse"></div>
+<a href="../classes/db_%5CViews_Factory_Article23width.html" class="more">« More »</a>
+</div>
+<a name="Views_Factory_Articlecontactonly" id="Views_Factory_Articlecontactonly"></a><div class="element ajax clickable class" href="../classes/db_%5CViews_Factory_Articlecontactonly.html">
+<h1>Views_Factory_Articlecontactonly<a href="../classes/db_%5CViews_Factory_Articlecontactonly.html">¶</a>
+</h1>
+<p class="short_description">Build an article</p>
+<div class="details collapse"></div>
+<a href="../classes/db_%5CViews_Factory_Articlecontactonly.html" class="more">« More »</a>
+</div>
+<a name="Views_Factory_Articlefullwidth" id="Views_Factory_Articlefullwidth"></a><div class="element ajax clickable class" href="../classes/db_%5CViews_Factory_Articlefullwidth.html">
+<h1>Views_Factory_Articlefullwidth<a href="../classes/db_%5CViews_Factory_Articlefullwidth.html">¶</a>
+</h1>
+<p class="short_description">Build an article</p>
+<div class="details collapse"></div>
+<a href="../classes/db_%5CViews_Factory_Articlefullwidth.html" class="more">« More »</a>
+</div>
+<a name="Views_Factory_Footer" id="Views_Factory_Footer"></a><div class="element ajax clickable class" href="../classes/db_%5CViews_Factory_Footer.html">
+<h1>Views_Factory_Footer<a href="../classes/db_%5CViews_Factory_Footer.html">¶</a>
+</h1>
+<p class="short_description">Build a preview for Footer</p>
+<div class="details collapse"></div>
+<a href="../classes/db_%5CViews_Factory_Footer.html" class="more">« More »</a>
+</div>
+<a name="Views_Factory_Formular" id="Views_Factory_Formular"></a><div class="element ajax clickable class" href="../classes/db_%5CViews_Factory_Formular.html">
+<h1>Views_Factory_Formular<a href="../classes/db_%5CViews_Factory_Formular.html">¶</a>
+</h1>
+<p class="short_description">Build a formular page</p>
+<div class="details collapse"></div>
+<a href="../classes/db_%5CViews_Factory_Formular.html" class="more">« More »</a>
+</div>
+<a name="Views_Factory_Infocolumn" id="Views_Factory_Infocolumn"></a><div class="element ajax clickable class" href="../classes/db_%5CViews_Factory_Infocolumn.html">
+<h1>Views_Factory_Infocolumn<a href="../classes/db_%5CViews_Factory_Infocolumn.html">¶</a>
+</h1>
+<p class="short_description">Build a preview for Sidebar</p>
+<div class="details collapse"></div>
+<a href="../classes/db_%5CViews_Factory_Infocolumn.html" class="more">« More »</a>
+</div>
+<a name="Views_Factory_Infocolumninclude" id="Views_Factory_Infocolumninclude"></a><div class="element ajax clickable class" href="../classes/db_%5CViews_Factory_Infocolumninclude.html">
+<h1>Views_Factory_Infocolumninclude<a href="../classes/db_%5CViews_Factory_Infocolumninclude.html">¶</a>
+</h1>
+<p class="short_description">Build a preview for Sidebar</p>
+<div class="details collapse"></div>
+<a href="../classes/db_%5CViews_Factory_Infocolumninclude.html" class="more">« More »</a>
+</div>
+<a name="Views_Factory_Metanavi" id="Views_Factory_Metanavi"></a><div class="element ajax clickable class" href="../classes/db_%5CViews_Factory_Metanavi.html">
+<h1>Views_Factory_Metanavi<a href="../classes/db_%5CViews_Factory_Metanavi.html">¶</a>
+</h1>
+<p class="short_description">Build a preview for Metanavi</p>
+<div class="details collapse"></div>
+<a href="../classes/db_%5CViews_Factory_Metanavi.html" class="more">« More »</a>
+</div>
+<a name="Views_Factory_Overview" id="Views_Factory_Overview"></a><div class="element ajax clickable class" href="../classes/db_%5CViews_Factory_Overview.html">
+<h1>Views_Factory_Overview<a href="../classes/db_%5CViews_Factory_Overview.html">¶</a>
+</h1>
+<p class="short_description">Build a overview page</p>
+<div class="details collapse"></div>
+<a href="../classes/db_%5CViews_Factory_Overview.html" class="more">« More »</a>
+</div>
+<a name="Views_Factory_Press" id="Views_Factory_Press"></a><div class="element ajax clickable class" href="../classes/db_%5CViews_Factory_Press.html">
+<h1>Views_Factory_Press<a href="../classes/db_%5CViews_Factory_Press.html">¶</a>
+</h1>
+<p class="short_description">Build a press page</p>
+<div class="details collapse"></div>
+<a href="../classes/db_%5CViews_Factory_Press.html" class="more">« More »</a>
+</div>
+<a name="Views_Factory_Publication" id="Views_Factory_Publication"></a><div class="element ajax clickable class" href="../classes/db_%5CViews_Factory_Publication.html">
+<h1>Views_Factory_Publication<a href="../classes/db_%5CViews_Factory_Publication.html">¶</a>
+</h1>
+<p class="short_description">Build a publication page</p>
+<div class="details collapse"></div>
+<a href="../classes/db_%5CViews_Factory_Publication.html" class="more">« More »</a>
+</div>
+<a name="Views_Factory_Rathausaktuell" id="Views_Factory_Rathausaktuell"></a><div class="element ajax clickable class" href="../classes/db_%5CViews_Factory_Rathausaktuell.html">
+<h1>Views_Factory_Rathausaktuell<a href="../classes/db_%5CViews_Factory_Rathausaktuell.html">¶</a>
+</h1>
+<p class="short_description">Build an article</p>
+<div class="details collapse"></div>
+<a href="../classes/db_%5CViews_Factory_Rathausaktuell.html" class="more">« More »</a>
+</div>
+<a name="Views_Factory_Search" id="Views_Factory_Search"></a><div class="element ajax clickable class" href="../classes/db_%5CViews_Factory_Search.html">
+<h1>Views_Factory_Search<a href="../classes/db_%5CViews_Factory_Search.html">¶</a>
+</h1>
+<p class="short_description">Build a search page</p>
+<div class="details collapse"></div>
+<a href="../classes/db_%5CViews_Factory_Search.html" class="more">« More »</a>
+</div>
+<a name="Views_Factory_Simplesearch" id="Views_Factory_Simplesearch"></a><div class="element ajax clickable class" href="../classes/db_%5CViews_Factory_Simplesearch.html">
+<h1>Views_Factory_Simplesearch<a href="../classes/db_%5CViews_Factory_Simplesearch.html">¶</a>
+</h1>
+<p class="short_description">Build a simplesearch application</p>
+<div class="details collapse"></div>
+<a href="../classes/db_%5CViews_Factory_Simplesearch.html" class="more">« More »</a>
+</div>
+<a name="Views_Factory_Start" id="Views_Factory_Start"></a><div class="element ajax clickable class" href="../classes/db_%5CViews_Factory_Start.html">
+<h1>Views_Factory_Start<a href="../classes/db_%5CViews_Factory_Start.html">¶</a>
+</h1>
+<p class="short_description">Build a start page</p>
+<div class="details collapse"></div>
+<a href="../classes/db_%5CViews_Factory_Start.html" class="more">« More »</a>
+</div>
+<a name="Views_FlexBase" id="Views_FlexBase"></a><div class="element ajax clickable class" href="../classes/db_%5CViews_FlexBase.html">
+<h1>Views_FlexBase<a href="../classes/db_%5CViews_FlexBase.html">¶</a>
+</h1>
+<p class="short_description">Base for using flex moduls in views
+It enables to access specific flex instances</p>
+<div class="details collapse"></div>
+<a href="../classes/db_%5CViews_FlexBase.html" class="more">« More »</a>
+</div>
+<a name="Views_Flex_Abstract" id="Views_Flex_Abstract"></a><div class="element ajax clickable class" href="../classes/db_%5CViews_Flex_Abstract.html">
+<h1>Views_Flex_Abstract<a href="../classes/db_%5CViews_Flex_Abstract.html">¶</a>
+</h1>
+<p class="short_description">Base for any flex module</p>
+<div class="details collapse"></div>
+<a href="../classes/db_%5CViews_Flex_Abstract.html" class="more">« More »</a>
+</div>
+<a name="Views_Flex_Container_Autoteaser" id="Views_Flex_Container_Autoteaser"></a><div class="element ajax clickable class" href="../classes/db_%5CViews_Flex_Container_Autoteaser.html">
+<h1>Views_Flex_Container_Autoteaser<a href="../classes/db_%5CViews_Flex_Container_Autoteaser.html">¶</a>
+</h1>
+<p class="short_description">Wrapper Klasse für Autoteaser, benutzt normales Flex-Autoteaser Modul</p>
+<div class="details collapse"></div>
+<a href="../classes/db_%5CViews_Flex_Container_Autoteaser.html" class="more">« More »</a>
+</div>
+<a name="Views_Flex_Container_Rsslist" id="Views_Flex_Container_Rsslist"></a><div class="element ajax clickable class" href="../classes/db_%5CViews_Flex_Container_Rsslist.html">
+<h1>Views_Flex_Container_Rsslist<a href="../classes/db_%5CViews_Flex_Container_Rsslist.html">¶</a>
+</h1>
+<p class="short_description">Wrapper Klasse für RSS-Listen, benutzt normales Flex-Rsslist Modul</p>
+<div class="details collapse"></div>
+<a href="../classes/db_%5CViews_Flex_Container_Rsslist.html" class="more">« More »</a>
+</div>
+<a name="Views_Flex_Container_Teaser" id="Views_Flex_Container_Teaser"></a><div class="element ajax clickable class" href="../classes/db_%5CViews_Flex_Container_Teaser.html">
+<h1>Views_Flex_Container_Teaser<a href="../classes/db_%5CViews_Flex_Container_Teaser.html">¶</a>
+</h1>
+<p class="short_description">Wrapper Klasse für Teaser, benutzt normales Flex-Teaser Modul</p>
+<div class="details collapse"></div>
+<a href="../classes/db_%5CViews_Flex_Container_Teaser.html" class="more">« More »</a>
+</div>
+<a name="Views_Flex_Container_Text" id="Views_Flex_Container_Text"></a><div class="element ajax clickable class" href="../classes/db_%5CViews_Flex_Container_Text.html">
+<h1>Views_Flex_Container_Text<a href="../classes/db_%5CViews_Flex_Container_Text.html">¶</a>
+</h1>
+<p class="short_description">Wrapper Klasse für Flex Text, benutzt normales Flex-Text Modul</p>
+<div class="details collapse"></div>
+<a href="../classes/db_%5CViews_Flex_Container_Text.html" class="more">« More »</a>
+</div>
+<a name="Views_Flex_Form_End" id="Views_Flex_Form_End"></a><div class="element ajax clickable class" href="../classes/db_%5CViews_Flex_Form_End.html">
+<h1>Views_Flex_Form_End<a href="../classes/db_%5CViews_Flex_Form_End.html">¶</a>
+</h1>
+<p class="short_description">Base for any flex module</p>
+<div class="details collapse"></div>
+<a href="../classes/db_%5CViews_Flex_Form_End.html" class="more">« More »</a>
+</div>
+<a name="Views_Flex_Form_Ipaddress" id="Views_Flex_Form_Ipaddress"></a><div class="element ajax clickable class" href="../classes/db_%5CViews_Flex_Form_Ipaddress.html">
+<h1>Views_Flex_Form_Ipaddress<a href="../classes/db_%5CViews_Flex_Form_Ipaddress.html">¶</a>
+</h1>
+<p class="short_description">Base for any flex module</p>
+<div class="details collapse"></div>
+<a href="../classes/db_%5CViews_Flex_Form_Ipaddress.html" class="more">« More »</a>
+</div>
+<a name="Views_Flex_Form_Start" id="Views_Flex_Form_Start"></a><div class="element ajax clickable class" href="../classes/db_%5CViews_Flex_Form_Start.html">
+<h1>Views_Flex_Form_Start<a href="../classes/db_%5CViews_Flex_Form_Start.html">¶</a>
+</h1>
+<p class="short_description">Base for any flex module</p>
+<div class="details collapse"></div>
+<a href="../classes/db_%5CViews_Flex_Form_Start.html" class="more">« More »</a>
+</div>
+<a name="Views_Flex_Headline" id="Views_Flex_Headline"></a><div class="element ajax clickable class" href="../classes/db_%5CViews_Flex_Headline.html">
+<h1>Views_Flex_Headline<a href="../classes/db_%5CViews_Flex_Headline.html">¶</a>
+</h1>
+<p class="short_description">Base for any flex module</p>
+<div class="details collapse"></div>
+<a href="../classes/db_%5CViews_Flex_Headline.html" class="more">« More »</a>
+</div>
+<a name="Views_Flex_Iframe" id="Views_Flex_Iframe"></a><div class="element ajax clickable class" href="../classes/db_%5CViews_Flex_Iframe.html">
+<h1>Views_Flex_Iframe<a href="../classes/db_%5CViews_Flex_Iframe.html">¶</a>
+</h1>
+<p class="short_description">Base for any flex module</p>
+<div class="details collapse"></div>
+<a href="../classes/db_%5CViews_Flex_Iframe.html" class="more">« More »</a>
+</div>
+<a name="Views_Flex_InstanceList" id="Views_Flex_InstanceList"></a><div class="element ajax clickable class" href="../classes/db_%5CViews_Flex_InstanceList.html">
+<h1>Views_Flex_InstanceList<a href="../classes/db_%5CViews_Flex_InstanceList.html">¶</a>
+</h1>
+<p class="short_description">List Flex instances</p>
+<div class="details collapse"></div>
+<a href="../classes/db_%5CViews_Flex_InstanceList.html" class="more">« More »</a>
+</div>
+<a name="Views_Flex_Linkup" id="Views_Flex_Linkup"></a><div class="element ajax clickable class" href="../classes/db_%5CViews_Flex_Linkup.html">
+<h1>Views_Flex_Linkup<a href="../classes/db_%5CViews_Flex_Linkup.html">¶</a>
+</h1>
+<p class="short_description">Base for any flex module</p>
+<div class="details collapse"></div>
+<a href="../classes/db_%5CViews_Flex_Linkup.html" class="more">« More »</a>
+</div>
+<a name="Views_Flex_List" id="Views_Flex_List"></a><div class="element ajax clickable class" href="../classes/db_%5CViews_Flex_List.html">
+<h1>Views_Flex_List<a href="../classes/db_%5CViews_Flex_List.html">¶</a>
+</h1>
+<p class="short_description">List flex</p>
+<div class="details collapse"></div>
+<a href="../classes/db_%5CViews_Flex_List.html" class="more">« More »</a>
+</div>
+<a name="Views_Flex_Metalangselector" id="Views_Flex_Metalangselector"></a><div class="element ajax clickable class" href="../classes/db_%5CViews_Flex_Metalangselector.html">
+<h1>Views_Flex_Metalangselector<a href="../classes/db_%5CViews_Flex_Metalangselector.html">¶</a>
+</h1>
+<p class="short_description">Base for any flex module</p>
+<div class="details collapse"></div>
+<a href="../classes/db_%5CViews_Flex_Metalangselector.html" class="more">« More »</a>
+</div>
+<a name="Views_Flex_Metalink" id="Views_Flex_Metalink"></a><div class="element ajax clickable class" href="../classes/db_%5CViews_Flex_Metalink.html">
+<h1>Views_Flex_Metalink<a href="../classes/db_%5CViews_Flex_Metalink.html">¶</a>
+</h1>
+<p class="short_description">Base for any flex module</p>
+<div class="details collapse"></div>
+<a href="../classes/db_%5CViews_Flex_Metalink.html" class="more">« More »</a>
+</div>
+<a name="Views_Flex_Relation_Language" id="Views_Flex_Relation_Language"></a><div class="element ajax clickable class" href="../classes/db_%5CViews_Flex_Relation_Language.html">
+<h1>Views_Flex_Relation_Language<a href="../classes/db_%5CViews_Flex_Relation_Language.html">¶</a>
+</h1>
+<p class="short_description">Base for any flex module</p>
+<div class="details collapse"></div>
+<a href="../classes/db_%5CViews_Flex_Relation_Language.html" class="more">« More »</a>
+</div>
+<a name="Views_Flex_Relation_List" id="Views_Flex_Relation_List"></a><div class="element ajax clickable class" href="../classes/db_%5CViews_Flex_Relation_List.html">
+<h1>Views_Flex_Relation_List<a href="../classes/db_%5CViews_Flex_Relation_List.html">¶</a>
+</h1>
+<p class="short_description">Get a list of relations</p>
+<div class="details collapse"></div>
+<a href="../classes/db_%5CViews_Flex_Relation_List.html" class="more">« More »</a>
+</div>
+<a name="Views_Flex_Search" id="Views_Flex_Search"></a><div class="element ajax clickable class" href="../classes/db_%5CViews_Flex_Search.html">
+<h1>Views_Flex_Search<a href="../classes/db_%5CViews_Flex_Search.html">¶</a>
+</h1>
+<p class="short_description">Base for any flex module</p>
+<div class="details collapse"></div>
+<a href="../classes/db_%5CViews_Flex_Search.html" class="more">« More »</a>
+</div>
+<a name="Views_Flex_Search_Collection" id="Views_Flex_Search_Collection"></a><div class="element ajax clickable class" href="../classes/db_%5CViews_Flex_Search_Collection.html">
+<h1>Views_Flex_Search_Collection<a href="../classes/db_%5CViews_Flex_Search_Collection.html">¶</a>
+</h1>
+<p class="short_description">NVM_Base
+Basis fuer alle NVM Klassen</p>
+<div class="details collapse"></div>
+<a href="../classes/db_%5CViews_Flex_Search_Collection.html" class="more">« More »</a>
+</div>
+<a name="Views_Flex_Simplesearch_Abstract" id="Views_Flex_Simplesearch_Abstract"></a><div class="element ajax clickable class" href="../classes/db_%5CViews_Flex_Simplesearch_Abstract.html">
+<h1>Views_Flex_Simplesearch_Abstract<a href="../classes/db_%5CViews_Flex_Simplesearch_Abstract.html">¶</a>
+</h1>
+<p class="short_description">Base for any simplesearch flex module</p>
+<div class="details collapse"></div>
+<a href="../classes/db_%5CViews_Flex_Simplesearch_Abstract.html" class="more">« More »</a>
+</div>
+<a name="Views_Flex_Simplesearch_Column" id="Views_Flex_Simplesearch_Column"></a><div class="element ajax clickable class" href="../classes/db_%5CViews_Flex_Simplesearch_Column.html">
+<h1>Views_Flex_Simplesearch_Column<a href="../classes/db_%5CViews_Flex_Simplesearch_Column.html">¶</a>
+</h1>
+<p class="short_description">Base for any simplesearch flex module</p>
+<div class="details collapse"></div>
+<a href="../classes/db_%5CViews_Flex_Simplesearch_Column.html" class="more">« More »</a>
+</div>
+<a name="Views_Flex_Simplesearch_Geo" id="Views_Flex_Simplesearch_Geo"></a><div class="element ajax clickable class" href="../classes/db_%5CViews_Flex_Simplesearch_Geo.html">
+<h1>Views_Flex_Simplesearch_Geo<a href="../classes/db_%5CViews_Flex_Simplesearch_Geo.html">¶</a>
+</h1>
+<p class="short_description">Base for any simplesearch flex module</p>
+<div class="details collapse"></div>
+<a href="../classes/db_%5CViews_Flex_Simplesearch_Geo.html" class="more">« More »</a>
+</div>
+<a name="Views_Languages" id="Views_Languages"></a><div class="element ajax clickable class" href="../classes/db_%5CViews_Languages.html">
+<h1>Views_Languages<a href="../classes/db_%5CViews_Languages.html">¶</a>
+</h1>
+<p class="short_description">Preferences for different languages</p>
+<div class="details collapse"></div>
+<a href="../classes/db_%5CViews_Languages.html" class="more">« More »</a>
+</div>
+<a name="Views_Navigation_Horizontal_Item" id="Views_Navigation_Horizontal_Item"></a><div class="element ajax clickable class" href="../classes/db_%5CViews_Navigation_Horizontal_Item.html">
+<h1>Views_Navigation_Horizontal_Item<a href="../classes/db_%5CViews_Navigation_Horizontal_Item.html">¶</a>
+</h1>
+<p class="short_description">Special behavior for vertical navigation items</p>
+<div class="details collapse"></div>
+<a href="../classes/db_%5CViews_Navigation_Horizontal_Item.html" class="more">« More »</a>
+</div>
+<a name="Views_Navigation_Horizontal_List" id="Views_Navigation_Horizontal_List"></a><div class="element ajax clickable class" href="../classes/db_%5CViews_Navigation_Horizontal_List.html">
+<h1>Views_Navigation_Horizontal_List<a href="../classes/db_%5CViews_Navigation_Horizontal_List.html">¶</a>
+</h1>
+<p class="short_description">Special behavior for vertical navigation lists</p>
+<div class="details collapse"></div>
+<a href="../classes/db_%5CViews_Navigation_Horizontal_List.html" class="more">« More »</a>
+</div>
+<a name="Views_Navigation_Vertical_Item" id="Views_Navigation_Vertical_Item"></a><div class="element ajax clickable class" href="../classes/db_%5CViews_Navigation_Vertical_Item.html">
+<h1>Views_Navigation_Vertical_Item<a href="../classes/db_%5CViews_Navigation_Vertical_Item.html">¶</a>
+</h1>
+<p class="short_description">Special behavior for vertical navigation items</p>
+<div class="details collapse"></div>
+<a href="../classes/db_%5CViews_Navigation_Vertical_Item.html" class="more">« More »</a>
+</div>
+<a name="Views_Navigation_Vertical_List" id="Views_Navigation_Vertical_List"></a><div class="element ajax clickable class" href="../classes/db_%5CViews_Navigation_Vertical_List.html">
+<h1>Views_Navigation_Vertical_List<a href="../classes/db_%5CViews_Navigation_Vertical_List.html">¶</a>
+</h1>
+<p class="short_description">Special behavior for vertical navigation lists</p>
+<div class="details collapse"></div>
+<a href="../classes/db_%5CViews_Navigation_Vertical_List.html" class="more">« More »</a>
+</div>
+<a name="Views_Rss_Abstract" id="Views_Rss_Abstract"></a><div class="element ajax clickable class" href="../classes/db_%5CViews_Rss_Abstract.html">
+<h1>Views_Rss_Abstract<a href="../classes/db_%5CViews_Rss_Abstract.html">¶</a>
+</h1>
+<p class="short_description">Base for Rss Elements</p>
+<div class="details collapse"></div>
+<a href="../classes/db_%5CViews_Rss_Abstract.html" class="more">« More »</a>
+</div>
+<a name="Views_Rss_Item" id="Views_Rss_Item"></a><div class="element ajax clickable class" href="../classes/db_%5CViews_Rss_Item.html">
+<h1>Views_Rss_Item<a href="../classes/db_%5CViews_Rss_Item.html">¶</a>
+</h1>
+<p class="short_description">Base for Rss Elements</p>
+<div class="details collapse"></div>
+<a href="../classes/db_%5CViews_Rss_Item.html" class="more">« More »</a>
+</div>
+<a name="Views_Rss_Itemlist" id="Views_Rss_Itemlist"></a><div class="element ajax clickable class" href="../classes/db_%5CViews_Rss_Itemlist.html">
+<h1>Views_Rss_Itemlist<a href="../classes/db_%5CViews_Rss_Itemlist.html">¶</a>
+</h1>
+<p class="short_description">List for Rss Items</p>
+<div class="details collapse"></div>
+<a href="../classes/db_%5CViews_Rss_Itemlist.html" class="more">« More »</a>
+</div>
+<a name="Views_Rss_List" id="Views_Rss_List"></a><div class="element ajax clickable class" href="../classes/db_%5CViews_Rss_List.html">
+<h1>Views_Rss_List<a href="../classes/db_%5CViews_Rss_List.html">¶</a>
+</h1>
+<p class="short_description">Base for Rss Elements</p>
+<div class="details collapse"></div>
+<a href="../classes/db_%5CViews_Rss_List.html" class="more">« More »</a>
+</div>
+<h3>
+<i class="icon-custom icon-constant"></i> Constants</h3>
+<a name="CHARSET" id="CHARSET"> </a><div class="element clickable constant  CHARSET" data-toggle="collapse" data-target=".CHARSET .collapse">
+<h2>CHARSET</h2>
+<pre>CHARSET </pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="span8"><p class="long_description"></p></div></div>
+</div>
+<a name="txt_apostrophe" id="txt_apostrophe"> </a><div class="element clickable constant  txt_apostrophe" data-toggle="collapse" data-target=".txt_apostrophe .collapse">
+<h2>txt_apostrophe</h2>
+<pre>txt_apostrophe </pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="span8"><p class="long_description"></p></div></div>
+</div>
+<a name="txt_apostrophe" id="txt_apostrophe"> </a><div class="element clickable constant  txt_apostrophe" data-toggle="collapse" data-target=".txt_apostrophe .collapse">
+<h2>txt_apostrophe</h2>
+<pre>txt_apostrophe </pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="span8"><p class="long_description"></p></div></div>
+</div>
+<a name="txt_copyright" id="txt_copyright"> </a><div class="element clickable constant  txt_copyright" data-toggle="collapse" data-target=".txt_copyright .collapse">
+<h2>txt_copyright</h2>
+<pre>txt_copyright </pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="span8"><p class="long_description"></p></div></div>
+</div>
+<a name="txt_copyright" id="txt_copyright"> </a><div class="element clickable constant  txt_copyright" data-toggle="collapse" data-target=".txt_copyright .collapse">
+<h2>txt_copyright</h2>
+<pre>txt_copyright </pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="span8"><p class="long_description"></p></div></div>
+</div>
+<a name="txt_degrees" id="txt_degrees"> </a><div class="element clickable constant  txt_degrees" data-toggle="collapse" data-target=".txt_degrees .collapse">
+<h2>txt_degrees</h2>
+<pre>txt_degrees </pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="span8"><p class="long_description"></p></div></div>
+</div>
+<a name="txt_degrees" id="txt_degrees"> </a><div class="element clickable constant  txt_degrees" data-toggle="collapse" data-target=".txt_degrees .collapse">
+<h2>txt_degrees</h2>
+<pre>txt_degrees </pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="span8"><p class="long_description"></p></div></div>
+</div>
+<a name="txt_dimension" id="txt_dimension"> </a><div class="element clickable constant  txt_dimension" data-toggle="collapse" data-target=".txt_dimension .collapse">
+<h2>txt_dimension</h2>
+<pre>txt_dimension </pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="span8"><p class="long_description"></p></div></div>
+</div>
+<a name="txt_dimension" id="txt_dimension"> </a><div class="element clickable constant  txt_dimension" data-toggle="collapse" data-target=".txt_dimension .collapse">
+<h2>txt_dimension</h2>
+<pre>txt_dimension </pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="span8"><p class="long_description"></p></div></div>
+</div>
+<a name="txt_ellipsis" id="txt_ellipsis"> </a><div class="element clickable constant  txt_ellipsis" data-toggle="collapse" data-target=".txt_ellipsis .collapse">
+<h2>txt_ellipsis</h2>
+<pre>txt_ellipsis </pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="span8"><p class="long_description"></p></div></div>
+</div>
+<a name="txt_ellipsis" id="txt_ellipsis"> </a><div class="element clickable constant  txt_ellipsis" data-toggle="collapse" data-target=".txt_ellipsis .collapse">
+<h2>txt_ellipsis</h2>
+<pre>txt_ellipsis </pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="span8"><p class="long_description"></p></div></div>
+</div>
+<a name="txt_emdash" id="txt_emdash"> </a><div class="element clickable constant  txt_emdash" data-toggle="collapse" data-target=".txt_emdash .collapse">
+<h2>txt_emdash</h2>
+<pre>txt_emdash </pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="span8"><p class="long_description"></p></div></div>
+</div>
+<a name="txt_emdash" id="txt_emdash"> </a><div class="element clickable constant  txt_emdash" data-toggle="collapse" data-target=".txt_emdash .collapse">
+<h2>txt_emdash</h2>
+<pre>txt_emdash </pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="span8"><p class="long_description"></p></div></div>
+</div>
+<a name="txt_endash" id="txt_endash"> </a><div class="element clickable constant  txt_endash" data-toggle="collapse" data-target=".txt_endash .collapse">
+<h2>txt_endash</h2>
+<pre>txt_endash </pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="span8"><p class="long_description"></p></div></div>
+</div>
+<a name="txt_endash" id="txt_endash"> </a><div class="element clickable constant  txt_endash" data-toggle="collapse" data-target=".txt_endash .collapse">
+<h2>txt_endash</h2>
+<pre>txt_endash </pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="span8"><p class="long_description"></p></div></div>
+</div>
+<a name="txt_fn_foot_pattern" id="txt_fn_foot_pattern"> </a><div class="element clickable constant  txt_fn_foot_pattern" data-toggle="collapse" data-target=".txt_fn_foot_pattern .collapse">
+<h2>txt_fn_foot_pattern</h2>
+<pre>txt_fn_foot_pattern </pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="span8"><p class="long_description"></p></div></div>
+</div>
+<a name="txt_fn_foot_pattern" id="txt_fn_foot_pattern"> </a><div class="element clickable constant  txt_fn_foot_pattern" data-toggle="collapse" data-target=".txt_fn_foot_pattern .collapse">
+<h2>txt_fn_foot_pattern</h2>
+<pre>txt_fn_foot_pattern </pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="span8"><p class="long_description"></p></div></div>
+</div>
+<a name="txt_fn_ref_pattern" id="txt_fn_ref_pattern"> </a><div class="element clickable constant  txt_fn_ref_pattern" data-toggle="collapse" data-target=".txt_fn_ref_pattern .collapse">
+<h2>txt_fn_ref_pattern</h2>
+<pre>txt_fn_ref_pattern </pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="span8"><p class="long_description"></p></div></div>
+</div>
+<a name="txt_fn_ref_pattern" id="txt_fn_ref_pattern"> </a><div class="element clickable constant  txt_fn_ref_pattern" data-toggle="collapse" data-target=".txt_fn_ref_pattern .collapse">
+<h2>txt_fn_ref_pattern</h2>
+<pre>txt_fn_ref_pattern </pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="span8"><p class="long_description"></p></div></div>
+</div>
+<a name="txt_half" id="txt_half"> </a><div class="element clickable constant  txt_half" data-toggle="collapse" data-target=".txt_half .collapse">
+<h2>txt_half</h2>
+<pre>txt_half </pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="span8"><p class="long_description"></p></div></div>
+</div>
+<a name="txt_half" id="txt_half"> </a><div class="element clickable constant  txt_half" data-toggle="collapse" data-target=".txt_half .collapse">
+<h2>txt_half</h2>
+<pre>txt_half </pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="span8"><p class="long_description"></p></div></div>
+</div>
+<a name="txt_has_unicode" id="txt_has_unicode"> </a><div class="element clickable constant  txt_has_unicode" data-toggle="collapse" data-target=".txt_has_unicode .collapse">
+<h2>txt_has_unicode</h2>
+<pre>txt_has_unicode </pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="span8"><p class="long_description"></p></div></div>
+</div>
+<a name="txt_has_unicode" id="txt_has_unicode"> </a><div class="element clickable constant  txt_has_unicode" data-toggle="collapse" data-target=".txt_has_unicode .collapse">
+<h2>txt_has_unicode</h2>
+<pre>txt_has_unicode </pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="span8"><p class="long_description"></p></div></div>
+</div>
+<a name="txt_nl_ref_pattern" id="txt_nl_ref_pattern"> </a><div class="element clickable constant  txt_nl_ref_pattern" data-toggle="collapse" data-target=".txt_nl_ref_pattern .collapse">
+<h2>txt_nl_ref_pattern</h2>
+<pre>txt_nl_ref_pattern </pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="span8"><p class="long_description"></p></div></div>
+</div>
+<a name="txt_nl_ref_pattern" id="txt_nl_ref_pattern"> </a><div class="element clickable constant  txt_nl_ref_pattern" data-toggle="collapse" data-target=".txt_nl_ref_pattern .collapse">
+<h2>txt_nl_ref_pattern</h2>
+<pre>txt_nl_ref_pattern </pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="span8"><p class="long_description"></p></div></div>
+</div>
+<a name="txt_plusminus" id="txt_plusminus"> </a><div class="element clickable constant  txt_plusminus" data-toggle="collapse" data-target=".txt_plusminus .collapse">
+<h2>txt_plusminus</h2>
+<pre>txt_plusminus </pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="span8"><p class="long_description"></p></div></div>
+</div>
+<a name="txt_plusminus" id="txt_plusminus"> </a><div class="element clickable constant  txt_plusminus" data-toggle="collapse" data-target=".txt_plusminus .collapse">
+<h2>txt_plusminus</h2>
+<pre>txt_plusminus </pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="span8"><p class="long_description"></p></div></div>
+</div>
+<a name="txt_prime" id="txt_prime"> </a><div class="element clickable constant  txt_prime" data-toggle="collapse" data-target=".txt_prime .collapse">
+<h2>txt_prime</h2>
+<pre>txt_prime </pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="span8"><p class="long_description"></p></div></div>
+</div>
+<a name="txt_prime" id="txt_prime"> </a><div class="element clickable constant  txt_prime" data-toggle="collapse" data-target=".txt_prime .collapse">
+<h2>txt_prime</h2>
+<pre>txt_prime </pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="span8"><p class="long_description"></p></div></div>
+</div>
+<a name="txt_prime_double" id="txt_prime_double"> </a><div class="element clickable constant  txt_prime_double" data-toggle="collapse" data-target=".txt_prime_double .collapse">
+<h2>txt_prime_double</h2>
+<pre>txt_prime_double </pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="span8"><p class="long_description"></p></div></div>
+</div>
+<a name="txt_prime_double" id="txt_prime_double"> </a><div class="element clickable constant  txt_prime_double" data-toggle="collapse" data-target=".txt_prime_double .collapse">
+<h2>txt_prime_double</h2>
+<pre>txt_prime_double </pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="span8"><p class="long_description"></p></div></div>
+</div>
+<a name="txt_quarter" id="txt_quarter"> </a><div class="element clickable constant  txt_quarter" data-toggle="collapse" data-target=".txt_quarter .collapse">
+<h2>txt_quarter</h2>
+<pre>txt_quarter </pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="span8"><p class="long_description"></p></div></div>
+</div>
+<a name="txt_quarter" id="txt_quarter"> </a><div class="element clickable constant  txt_quarter" data-toggle="collapse" data-target=".txt_quarter .collapse">
+<h2>txt_quarter</h2>
+<pre>txt_quarter </pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="span8"><p class="long_description"></p></div></div>
+</div>
+<a name="txt_quote_double_close" id="txt_quote_double_close"> </a><div class="element clickable constant  txt_quote_double_close" data-toggle="collapse" data-target=".txt_quote_double_close .collapse">
+<h2>txt_quote_double_close</h2>
+<pre>txt_quote_double_close </pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="span8"><p class="long_description"></p></div></div>
+</div>
+<a name="txt_quote_double_close" id="txt_quote_double_close"> </a><div class="element clickable constant  txt_quote_double_close" data-toggle="collapse" data-target=".txt_quote_double_close .collapse">
+<h2>txt_quote_double_close</h2>
+<pre>txt_quote_double_close </pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="span8"><p class="long_description"></p></div></div>
+</div>
+<a name="txt_quote_double_open" id="txt_quote_double_open"> </a><div class="element clickable constant  txt_quote_double_open" data-toggle="collapse" data-target=".txt_quote_double_open .collapse">
+<h2>txt_quote_double_open</h2>
+<pre>txt_quote_double_open </pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="span8"><p class="long_description"></p></div></div>
+</div>
+<a name="txt_quote_double_open" id="txt_quote_double_open"> </a><div class="element clickable constant  txt_quote_double_open" data-toggle="collapse" data-target=".txt_quote_double_open .collapse">
+<h2>txt_quote_double_open</h2>
+<pre>txt_quote_double_open </pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="span8"><p class="long_description"></p></div></div>
+</div>
+<a name="txt_quote_single_close" id="txt_quote_single_close"> </a><div class="element clickable constant  txt_quote_single_close" data-toggle="collapse" data-target=".txt_quote_single_close .collapse">
+<h2>txt_quote_single_close</h2>
+<pre>txt_quote_single_close </pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="span8"><p class="long_description"></p></div></div>
+</div>
+<a name="txt_quote_single_close" id="txt_quote_single_close"> </a><div class="element clickable constant  txt_quote_single_close" data-toggle="collapse" data-target=".txt_quote_single_close .collapse">
+<h2>txt_quote_single_close</h2>
+<pre>txt_quote_single_close </pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="span8"><p class="long_description"></p></div></div>
+</div>
+<a name="txt_quote_single_open" id="txt_quote_single_open"> </a><div class="element clickable constant  txt_quote_single_open" data-toggle="collapse" data-target=".txt_quote_single_open .collapse">
+<h2>Example: get XHTML from a given Textile-markup string ($string)</h2>
+<pre>txt_quote_single_open </pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="span8"><p class="long_description"><p>$textile = new Textile;
+       echo $textile->TextileThis($string);</p></p></div></div>
+</div>
+<a name="txt_quote_single_open" id="txt_quote_single_open"> </a><div class="element clickable constant  txt_quote_single_open" data-toggle="collapse" data-target=".txt_quote_single_open .collapse">
+<h2>Example: get XHTML from a given Textile-markup string ($string)</h2>
+<pre>txt_quote_single_open </pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="span8"><p class="long_description"><p>$textile = new Textile;
+      echo $textile->TextileThis($string);</p></p></div></div>
+</div>
+<a name="txt_registered" id="txt_registered"> </a><div class="element clickable constant  txt_registered" data-toggle="collapse" data-target=".txt_registered .collapse">
+<h2>txt_registered</h2>
+<pre>txt_registered </pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="span8"><p class="long_description"></p></div></div>
+</div>
+<a name="txt_registered" id="txt_registered"> </a><div class="element clickable constant  txt_registered" data-toggle="collapse" data-target=".txt_registered .collapse">
+<h2>txt_registered</h2>
+<pre>txt_registered </pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="span8"><p class="long_description"></p></div></div>
+</div>
+<a name="txt_threequarters" id="txt_threequarters"> </a><div class="element clickable constant  txt_threequarters" data-toggle="collapse" data-target=".txt_threequarters .collapse">
+<h2>txt_threequarters</h2>
+<pre>txt_threequarters </pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="span8"><p class="long_description"></p></div></div>
+</div>
+<a name="txt_threequarters" id="txt_threequarters"> </a><div class="element clickable constant  txt_threequarters" data-toggle="collapse" data-target=".txt_threequarters .collapse">
+<h2>txt_threequarters</h2>
+<pre>txt_threequarters </pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="span8"><p class="long_description"></p></div></div>
+</div>
+<a name="txt_trademark" id="txt_trademark"> </a><div class="element clickable constant  txt_trademark" data-toggle="collapse" data-target=".txt_trademark .collapse">
+<h2>txt_trademark</h2>
+<pre>txt_trademark </pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="span8"><p class="long_description"></p></div></div>
+</div>
+<a name="txt_trademark" id="txt_trademark"> </a><div class="element clickable constant  txt_trademark" data-toggle="collapse" data-target=".txt_trademark .collapse">
+<h2>txt_trademark</h2>
+<pre>txt_trademark </pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="span8"><p class="long_description"></p></div></div>
+</div>
+</div>
+</div>
+</div>
+<div class="row"><footer class="span12">
+            Template is built using <a href="http://twitter.github.com/bootstrap/">Twitter Bootstrap 2</a> and icons provided by <a href="http://glyphicons.com/">Glyphicons</a>.<br>
+            Documentation is powered by <a href="http://www.phpdoc.org/">phpDocumentor 2.0.0a1</a> and<br>
+            generated on 2013-05-30T11:05:23+02:00.<br></footer></div>
+</div>
+</body>
+</html>

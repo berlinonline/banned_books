@@ -36,6 +36,12 @@
             <setting name="use_database">true</setting>
         </settings>
 
+        <settings prefix="include.">
+            <setting name="base_path">includes/</setting>
+            <setting name="imperia_head">head.twig</setting>
+            <setting name="imperia_top">top.twig</setting>
+            <setting name="imperia_foot">foot.twig</setting>
+        </settings>
         <!--
             Specify ESI includes without the scheme
         -->
